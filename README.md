@@ -1,4 +1,4 @@
-# Chamovskikh ([demo](https://rawgit.com/xiiivii/ch/master/www/index.html))
+# Chamovskikh ([demo](https://rawgit.com/xiiivii/ch/master/build/index.html))
 
 ### Easy Way
 Уже собранное забираем из папки **[build](https://github.com/xiiivii/ch/tree/master/build)**. 
