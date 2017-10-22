@@ -16,7 +16,8 @@ gulp.task('watch', () => {
 });
 
 gulp.task('dev', [
-    'html', 'css', 'js'
+    'html', 'css', 'js',
+    'move-fonts', 'move-img', 'move-meta',
 ]);
 
 gulp.task('html', () => {
@@ -43,10 +44,33 @@ gulp.task('js', () => {
         .pipe(dev());
 });
 
+gulp.task('move-fonts', () => {
+    return gulp
+        .src('build/fonts/**')
+        .pipe(gulp.dest('dev/fonts'));
+});
+
+gulp.task('move-img', () => {
+    return gulp
+        .src('build/img/**')
+        .pipe(gulp.dest('dev/img'));
+});
+
+gulp.task('move-meta', () => {
+    return gulp
+        .src('build/meta/**')
+        .pipe(gulp.dest('dev/meta'));
+});
+
 gulp.task('build', [
-    'html-build', 'css-build', 'js-build',
-    'move-fonts', 'move-img', 'move-meta',
+    'html-build', 'css-build', 'js-build'
 ]);
+
+gulp.task('html-build', () => {
+    return gulp
+        .src('dev/*.html')
+        .pipe(build());
+});
 
 gulp.task('css-build', () => {
     return gulp
@@ -60,28 +84,4 @@ gulp.task('js-build', () => {
         .src('dev/bundle.js')
         .pipe(uglify())
         .pipe(build());
-});
-
-gulp.task('html-build', () => {
-    return gulp
-        .src('dev/*.html')
-        .pipe(build());
-});
-
-gulp.task('move-fonts', () => {
-    return gulp
-        .src('dev/fonts/**')
-        .pipe(gulp.dest('build/fonts'));
-});
-
-gulp.task('move-img', () => {
-    return gulp
-        .src('dev/img/**')
-        .pipe(gulp.dest('build/img'));
-});
-
-gulp.task('move-meta', () => {
-    return gulp
-        .src('dev/meta/**')
-        .pipe(gulp.dest('build/meta'));
 });
