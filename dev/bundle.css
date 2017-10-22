@@ -1,19 +1,12 @@
-body
-{
-    margin: 0;
-    padding: 0;
-
-    font-family: LazurskiC, sans-serif;
-}
-
 @font-face
 {
     font-family: 'IntroCaps';
     font-weight: normal;
     font-style: normal;
 
-    src: url('fonts/IntroCaps.woff2') format('woff2'),
-    url('fonts/IntroCaps.woff') format('woff');
+    src: url('fonts/intro-regular-caps-webfont.woff2') format('woff2'),
+    url('fonts/intro-regular-caps-webfont.woff') format('woff'),
+    url('fonts/intro-regular-caps-webfont.ttf') format('truetype');
 }
 
 @font-face
@@ -22,8 +15,9 @@ body
     font-weight: normal;
     font-style: normal;
 
-    src: url('fonts/LazurskiC.woff2') format('woff2'),
-    url('fonts/LazurskiC.woff') format('woff');
+    src: url('fonts/lazurskic-webfont.woff2') format('woff2'),
+    url('fonts/lazurskic-webfont.woff') format('woff'),
+    url('fonts/lazurskic-webfont.ttf') format('truetype');
 }
 
 @font-face
@@ -32,8 +26,9 @@ body
     font-weight: bold;
     font-style: italic;
 
-    src: url('fonts/LazurskiC-BoldItalic.woff2') format('woff2'),
-    url('fonts/LazurskiC-BoldItalic.woff') format('woff');
+    src: url('fonts/lazurskic-bolditalic-webfont.woff2') format('woff2'),
+    url('fonts/lazurskic-bolditalic-webfont.woff') format('woff'),
+    url('fonts/lazurskic-bolditalic-webfont.ttf') format('truetype');
 }
 
 @font-face
@@ -42,8 +37,9 @@ body
     font-weight: normal;
     font-style: italic;
 
-    src: url('fonts/LazurskiC-Italic.woff2') format('woff2'),
-    url('fonts/LazurskiC-Italic.woff') format('woff');
+    src: url('fonts/lazurskic-italic-webfont.woff2') format('woff2'),
+    url('fonts/lazurskic-italic-webfont.woff') format('woff'),
+    url('fonts/lazurskic-italic-webfont.ttf') format('truetype');
 }
 
 @font-face
@@ -52,11 +48,20 @@ body
     font-weight: bold;
     font-style: normal;
 
-    src: url('fonts/PFRegalDisplayPro-Bold.woff2') format('woff2'),
-    url('fonts/PFRegalDisplayPro-Bold.woff') format('woff');
+    src: url('fonts/pfregaldisplaypro-bold-webfont.woff2') format('woff2'),
+    url('fonts/pfregaldisplaypro-bold-webfont.woff') format('woff'),
+    url('fonts/pfregaldisplaypro-bold-webfont.ttf') format('truetype');
 }
 
 .header
 {
     position: fixed;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+
+    font-family: LazurskiC, sans-serif;
 }
