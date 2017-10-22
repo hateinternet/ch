@@ -1,71 +1,3 @@
-body
-{
-    margin: 0;
-    padding: 0;
-
-    font-family: LazurskiC, sans-serif;
-}
-
-@font-face
-{
-    font-family: 'IntroCaps';
-    font-weight: normal;
-    font-style: normal;
-
-    src: url('fonts/intro-regular-caps-webfont.woff2') format('woff2'),
-    url('fonts/intro-regular-caps-webfont.woff') format('woff'),
-    url('fonts/intro-regular-caps-webfont.ttf') format('truetype');
-}
-
-@font-face
-{
-    font-family: 'LazurskiC';
-    font-weight: normal;
-    font-style: normal;
-
-    src: url('fonts/lazurskic-webfont.woff2') format('woff2'),
-    url('fonts/lazurskic-webfont.woff') format('woff'),
-    url('fonts/lazurskic-webfont.ttf') format('truetype');
-}
-
-@font-face
-{
-    font-family: 'LazurskiC';
-    font-weight: bold;
-    font-style: italic;
-
-    src: url('fonts/lazurskic-bolditalic-webfont.woff2') format('woff2'),
-    url('fonts/lazurskic-bolditalic-webfont.woff') format('woff'),
-    url('fonts/lazurskic-bolditalic-webfont.ttf') format('truetype');
-}
-
-@font-face
-{
-    font-family: 'LazurskiC';
-    font-weight: normal;
-    font-style: italic;
-
-    src: url('fonts/lazurskic-italic-webfont.woff2') format('woff2'),
-    url('fonts/lazurskic-italic-webfont.woff') format('woff'),
-    url('fonts/lazurskic-italic-webfont.ttf') format('truetype');
-}
-
-@font-face
-{
-    font-family: 'PFRegal';
-    font-weight: bold;
-    font-style: normal;
-
-    src: url('fonts/pfregaldisplaypro-bold-webfont.woff2') format('woff2'),
-    url('fonts/pfregaldisplaypro-bold-webfont.woff') format('woff'),
-    url('fonts/pfregaldisplaypro-bold-webfont.ttf') format('truetype');
-}
-
-.header
-{
-    position: fixed;
-}
-
 *,
 *::before,
 *::after
@@ -276,8 +208,7 @@ select,
 summary,
 textarea
 {
-    -ms-touch-action: manipulation;
-        touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 table
