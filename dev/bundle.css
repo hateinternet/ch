@@ -1,3 +1,55 @@
+body
+{
+    margin: 0;
+    padding: 0;
+
+    font-family: LazurskiC, sans-serif;
+}
+
+.button
+{
+    color: #fff;
+    background-color: #bd8f65;
+    border: none;
+    padding: 22px 104px 22px 38px;
+    position: relative;
+    cursor: pointer;
+}
+
+.button__text
+{
+    font-family: 'IntroCaps', sans-serif;
+    opacity: 0.9;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+}
+
+.button__icon
+{
+    position: absolute;
+
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMxLjQ5IDMxLjQ5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMS40OSAzMS40OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIGQ9Ik0yMS4yMDUsNS4wMDdjLTAuNDI5LTAuNDQ0LTEuMTQzLTAuNDQ0LTEuNTg3LDBjLTAuNDI5LDAuNDI5LTAuNDI5LDEuMTQzLDAsMS41NzFsOC4wNDcsOC4wNDdIMS4xMTEgIEMwLjQ5MiwxNC42MjYsMCwxNS4xMTgsMCwxNS43MzdjMCwwLjYxOSwwLjQ5MiwxLjEyNywxLjExMSwxLjEyN2gyNi41NTRsLTguMDQ3LDguMDMyYy0wLjQyOSwwLjQ0NC0wLjQyOSwxLjE1OSwwLDEuNTg3ICBjMC40NDQsMC40NDQsMS4xNTksMC40NDQsMS41ODcsMGw5Ljk1Mi05Ljk1MmMwLjQ0NC0wLjQyOSwwLjQ0NC0xLjE0MywwLTEuNTcxTDIxLjIwNSw1LjAwN3oiIGZpbGw9IiNGRkZGRkYiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    width: 65px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.button__icon::before
+{
+    position: absolute;
+    content: '';
+    width: 1px;
+    background-color: #eeede9;
+    opacity: 0.5;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
 @font-face
 {
     font-family: 'IntroCaps';
@@ -58,10 +110,57 @@
     position: fixed;
 }
 
-body
+.loading
 {
-    margin: 0;
-    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
 
-    font-family: LazurskiC, sans-serif;
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+
+    -ms-flex-pack: center;
+
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    background-color: rgb(241, 241, 237);
+}
+
+.loading__content
+{
+    max-width: 690px;
+    text-align: center;
+    color: #6e6e6d;
+}
+
+.loading__image
+{
+    width: 106px;
+    height: 136px;
+    background-color: #666;
+    display: inline-block;
+    font-size: 0;
+    margin-bottom: 8px;
+    border-radius: 50%;
+}
+
+.loading__title
+{
+    font-family: 'PFRegal', serif;
+    font-size: 64px;
+    line-height: 58px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 28px;
+}
+
+.loading__text
+{
+    font-family: 'LazurskiC', serif;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 0;
+    margin-bottom: 47px;
 }
