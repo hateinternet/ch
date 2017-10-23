@@ -2,5 +2,6 @@
 .horizontal-slide
 {
     position: relative;
+
     min-height: 100vh; /* fixme after sliders */
 }
