@@ -23,7 +23,12 @@ gulp.task('dev', [
 gulp.task('html', () => {
     return gulp
         .src('src/html/*.html')
-        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({
+            collapseInlineTagWhitespace: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true,
+            removeComments: true
+        }))
         .pipe(dev());
 });
 

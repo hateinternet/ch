@@ -1,0 +1,94 @@
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    padding: 0 65px 0 0;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    line-height: 65px;
+
+    color: rgba(255, 255, 255, .9);
+    border: none;
+    background: #bd8f65;
+}
+
+.button_big
+{
+    padding: 0 72px 0 0;
+
+    line-height: 72px;
+
+    box-shadow: 10px 15px 44px 0 rgba(174, 129, 89, .5);
+}
+
+.button__text
+{
+    display: inline-block;
+
+    padding: 0 40px;
+
+    letter-spacing: .2px;
+
+    font: 14px IntroCaps, sans-serif;
+}
+
+.button_big .button__text
+{
+    padding: 0 60px;
+}
+
+.button__icon
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 65px;
+
+    border-left: 1px solid rgba(255, 255, 255, .3);
+}
+
+.button_big .button__icon
+{
+    width: 72px;
+}
+
+.button__icon:before,
+.button__icon:after
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    margin: auto;
+
+    content: '';
+}
+
+.button__icon:before
+{
+    right: 0;
+    left: 0;
+
+    width: 14px;
+    height: 0;
+
+    border-top: 1px solid;
+}
+
+.button__icon:after
+{
+    width: 11px;
+    height: 11px;
+    margin-left: -5px;
+
+    border-top: 1px solid;
+    border-right: 1px solid;
+
+    transform: rotate(45deg);
+}
