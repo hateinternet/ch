@@ -1,0 +1,30 @@
+.nav
+{
+    display: inline-block;
+}
+
+.nav__link
+{
+    display: inline-block;
+
+    padding: 25px;
+
+    text-decoration: none;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+
+    font: 13px 'IntroCaps', sans-serif;
+
+    opacity: .5;
+    color: #fff;
+}
+
+.nav_alt .nav__link
+{
+    color: #363636;
+}
+
+.nav__link_active
+{
+    opacity: .7;
+}
