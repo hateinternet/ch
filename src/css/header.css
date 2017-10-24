@@ -17,4 +17,17 @@
     left: 40px;
 
     width: 285px;
+    height: 72px;
+
+    color: rgba(255, 255, 255, .9);
+}
+
+.header_dark .header__logo
+{
+    color: rgba(255, 255, 255, .65);
+}
+
+.header_light .header__logo
+{
+    color: rgba(110, 110, 109, .8);
 }

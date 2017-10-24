@@ -53,8 +53,9 @@
     left: 0;
 
     width: 238px;
-    height: 60px; /* fixme after image */
     margin: auto;
+
+    color: rgba(255, 255, 255, .5);
 }
 
 .footer__copyright
