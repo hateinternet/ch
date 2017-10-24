@@ -5,3 +5,8 @@
 
     min-height: 100vh; /* fixme after sliders */
 }
+
+.horizontal-slider_shifted .horizontal-slide
+{
+    max-width: 90%;
+}
