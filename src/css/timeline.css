@@ -1,0 +1,56 @@
+.timeline
+{
+    position: absolute;
+    bottom: 0;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    background-color: green;
+}
+
+.timeline li:before
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    width: 7px;
+    height: 7px;
+    margin: auto 0;
+
+    content: '';
+
+    border-radius: 50%;
+    background: #ae8159;
+}
+
+.timeline__item
+{
+    display: inline-block;
+
+    text-align: center;
+
+    font: 11px IntroCaps, sans-serif;
+
+    color: #ae8159;
+}
+
+.timeline__year
+{
+    margin-bottom: 11px;
+
+    font-size: 13px;
+}
+
+.timeline__item_active .timeline__year
+{
+    font-size: 15px;
+}
+
+.timeline__text
+{
+    margin-top: 15px;
+}
