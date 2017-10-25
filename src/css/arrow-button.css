@@ -25,6 +25,11 @@
     color: #ae8159;
 }
 
+.arrow-button_grey
+{
+    color: rgba(110, 110, 109, .6);
+}
+
 .arrow-button:before,
 .arrow-button:after
 {
