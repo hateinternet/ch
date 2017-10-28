@@ -12,11 +12,20 @@
 
     opacity: .5;
     color: #fff;
+    outline: none;
+
+    transition: .15s opacity linear;
 }
 
-.nav_alt .nav__link
+.nav__link:hover,
+.nav__link:focus
 {
-    color: #363636;
+    opacity: .7;
+}
+
+.nav__link
+{
+    color: inherit;
 }
 
 .nav__link_active
