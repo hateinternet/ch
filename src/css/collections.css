@@ -2,7 +2,7 @@
 {
     display: flex;
 
-    background: url(img/decoration/pattern.png) 0 / 400px auto; /* fixme after image */
+    background: #eeede9 url(img/decoration/pattern.svg) 0 / 300px auto;
 
     align-items: center;
     justify-content: center;
@@ -62,7 +62,6 @@
     top: -50px;
 
     width: 120px;
-    height: 360px;  /* fixme after image */
 }
 
 .collections__image_left

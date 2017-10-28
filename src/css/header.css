@@ -10,6 +10,11 @@
     text-align: center;
 }
 
+.page_story .header
+{
+    position: absolute;
+}
+
 .header__logo
 {
     position: absolute;

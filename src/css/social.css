@@ -10,7 +10,7 @@
     margin: 0 0 0 40px;
 }
 
-.social__link:before /* fixme after image */
+.social__link:before
 {
     position: absolute;
     top: 0;
@@ -20,8 +20,8 @@
 
     content: '';
 
-    opacity: .35;
     color: #fff;
+    background-repeat: no-repeat;
 }
 
 .social__link_facebook:before
@@ -31,7 +31,7 @@
     width: 11px;
     height: 22px;
 
-    background: url('img/icons/fb_logo.svg') no-repeat;
+    background-image: url('img/socials/facebook.svg');
 }
 
 .social__link_instagram:before
@@ -41,7 +41,7 @@
     width: 19px;
     height: 19px;
 
-    background: url('img/icons/insta_logo.svg') no-repeat;
+    background-image: url('img/socials/instagram.svg');
 }
 
 .social__link_youtube:before
@@ -51,5 +51,5 @@
     width: 25px;
     height: 19px;
 
-    background: url('img/icons/youtube_logo.svg') no-repeat;
+    background-image: url('img/socials/youtube.svg');
 }

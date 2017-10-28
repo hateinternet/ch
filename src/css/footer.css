@@ -11,15 +11,38 @@
 
     font: 10px Intro-Caps, sans-serif;
 
-    color: rgba(255, 255, 255, .35);
+    color: #fff;
     background: #3a3a3a;
 }
 
-.footer a
+.page_story .footer
+{
+    position: relative;
+}
+
+.footer a,
+.footer a:visited
 {
     text-decoration: none;
 
+    opacity: .35;
     color: inherit;
+
+    transition: .15s opacity linear;
+}
+
+.footer a:hover,
+.footer a:focus
+{
+    opacity: .7;
+    outline: none;
+}
+
+.footer a:active
+{
+    opacity: 1;
+
+    transition: .05s opacity linear;
 }
 
 .footer__content
@@ -54,8 +77,6 @@
 
     width: 238px;
     margin: auto;
-
-    color: rgba(255, 255, 255, .5);
 }
 
 .footer__copyright
@@ -64,5 +85,6 @@
 
     padding: 16px 0;
 
+    opacity: .35;
     background: #303030;
 }
