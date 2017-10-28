@@ -13,12 +13,43 @@
 .social__link:before /* fixme after image */
 {
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 0;
+    bottom: 0;
 
-    width: 22px;
-    height: 22px;
-    margin: -11px 0 0;
+    margin: auto 0;
 
     content: '';
+
+    opacity: .35;
+    color: #fff;
+}
+
+.social__link_facebook:before
+{
+    left: 10px;
+
+    width: 11px;
+    height: 22px;
+
+    background: url('img/icons/fb_logo.svg') no-repeat;
+}
+
+.social__link_instagram:before
+{
+    left: 0;
+
+    width: 19px;
+    height: 19px;
+
+    background: url('img/icons/insta_logo.svg') no-repeat;
+}
+
+.social__link_youtube:before
+{
+    left: -5px;
+
+    width: 25px;
+    height: 19px;
+
+    background: url('img/icons/youtube_logo.svg') no-repeat;
 }
