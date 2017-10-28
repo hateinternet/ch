@@ -1,0 +1,79 @@
+.achievements__slide
+{
+    display: flex;
+
+    background: #f7f6f5;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.achievements__diploma
+{
+    width: 45%;
+    max-height: 400px;
+    margin: 0 5% 0 0;
+
+    text-align: right;
+}
+
+.achievements__dimploma-image
+{
+    max-width: 440px;
+    max-height: 400px;
+}
+
+.achievements__content
+{
+    width: 50%;
+
+    font-family: IntroCaps, sans-serif;
+}
+
+.achievements__title
+{
+    margin: 0 0 5px;
+
+    font-size: 22px;
+    line-height: 26px;
+
+    color: rgba(54, 54, 54, .8);
+}
+
+.achievements__sub-title
+{
+    margin: 0 0 20px;
+
+    font-size: 14px;
+
+    color: rgba(0, 0, 0, .5);
+}
+
+.achievements__jewellery-image
+{
+    display: inline-block; /* temporary */
+
+    width: 280px; /* temporary */
+    height: 90px; /* temporary */
+    margin: 0 0 15px;
+
+    background: #666; /* temporary */
+}
+
+.achievements__jewellery-name
+{
+    margin: 0 0 5px;
+
+    font-size: 12px;
+
+    color: #6e6e6d;
+}
+
+.achievements__passport
+{
+    text-decoration: none;
+
+    font: italic 14px / 18px Lazurski, serif;
+
+    color: rgba(0, 0, 0, .55);
+}
