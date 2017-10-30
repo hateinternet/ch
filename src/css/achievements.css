@@ -17,12 +17,6 @@
     text-align: right;
 }
 
-.achievements__dimploma-image
-{
-    max-width: 440px;
-    max-height: 400px;
-}
-
 .achievements__content
 {
     width: 50%;
@@ -51,13 +45,7 @@
 
 .achievements__jewellery-image
 {
-    display: inline-block; /* temporary */
-
-    width: 280px; /* temporary */
-    height: 90px; /* temporary */
     margin: 0 0 15px;
-
-    background: #666; /* temporary */
 }
 
 .achievements__jewellery-name

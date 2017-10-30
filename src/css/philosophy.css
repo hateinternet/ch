@@ -1,0 +1,24 @@
+.philosophy__slide
+{
+    background: center / cover no-repeat;
+}
+
+.philosophy__slide:nth-child(1)
+{
+    background-image: url('img/content/main_bg_perfect.jpg');
+}
+
+.philosophy__slide:nth-child(2)
+{
+    background-image: url('img/content/main_bg_unique.jpg');
+}
+
+.philosophy__slide:nth-child(3)
+{
+    background-image: url('img/content/main_bg_master.jpg');
+}
+
+.philosophy__slide:nth-child(4)
+{
+    background-image: url('img/content/main_bg_king.jpg');
+}
