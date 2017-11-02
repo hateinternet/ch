@@ -6,6 +6,25 @@
     min-height: 100vh; /* fixme after sliders */
 }
 
+.horizontal-slider
+{
+    overflow: hidden;
+
+    width: 100%;
+}
+
+.horizontal-slider__list
+{
+    display: flex;
+
+    flex-wrap: nowrap;
+}
+
+.horizontal-slide
+{
+    flex: 100% 1 0;
+}
+
 .horizontal-slider_shifted .horizontal-slide
 {
     max-width: 90%;
