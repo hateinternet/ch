@@ -1,9 +1,29 @@
+.philosophy .arrow-button
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    margin: auto;
+}
+
+.philosophy .arrow-button_prev
+{
+    left: 23px;
+}
+
+.philosophy .arrow-button_next
+{
+    right: 23px;
+}
+
 .philosophy__slide
 {
     background: center / cover no-repeat;
 }
 
-.philosophy__slide:nth-child(1)
+.philosophy__slide:nth-child(1),
+.philosophy__slide:last-child
 {
     background-image: url('img/content/main_bg_perfect.jpg');
 }
@@ -21,4 +41,57 @@
 .philosophy__slide:nth-child(4)
 {
     background-image: url('img/content/main_bg_king.jpg');
+}
+
+.philosophy__content
+{
+    position: absolute;
+    top: 30vh;
+    left: 110px;
+
+    width: 620px;
+    padding: 30px 30px 45px 45px;
+
+    background-color: rgba(255, 255, 255, .95);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
+}
+
+.philosophy__content:after
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    width: 350px;
+    height: 5px;
+
+    content: '';
+
+    background-color: #bd8f65;
+}
+
+.philosophy__label
+{
+    padding: 0 0 0 25px;
+
+    letter-spacing: .5px;
+    text-transform: uppercase;
+
+    font: 13px IntroCaps, sans-serif;
+
+    opacity: .5;
+}
+
+.philosophy__quote
+{
+    margin: 7px 0 40px;
+
+    font: bold 48px / .8 PFRegal, serif;
+}
+
+.philosophy__link
+{
+    width: 320px;
 }

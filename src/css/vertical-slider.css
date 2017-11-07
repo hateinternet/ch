@@ -1,0 +1,16 @@
+.vertical-slider
+{
+    overflow: hidden;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.vertical-slide
+{
+    position: relative;
+
+    height: 100%;
+
+    transform: translateZ(0);
+}

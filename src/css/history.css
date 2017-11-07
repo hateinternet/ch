@@ -3,19 +3,17 @@
     position: relative;
 }
 
-.history__slide
+.horizontal-slide.history__slide
 {
-    display: flex;
-
-    min-height: 100vh; /* temporary */
-    padding: 10% 0 0;
+    display: inline-flex;
 
     background: #f7f6f5;
 
     justify-content: center;
+    align-items: center;
 }
 
-.history__slide_dark
+.horizontal-slide.history__slide_dark
 {
     background: #303030;
 }

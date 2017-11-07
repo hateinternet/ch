@@ -1,0 +1,50 @@
+.horizontal-slider
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.horizontal-slider__list-wrapper
+{
+    overflow: inherit;
+
+    width: 100%;
+    height: 100%;
+}
+
+.horizontal-slider__list
+{
+    height: 100%;
+
+    white-space: nowrap;
+
+    transform: translateZ(0);
+}
+
+.horizontal-slide
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    white-space: normal;
+    vertical-align: top;
+}
+
+.horizontal-slider_shifted .horizontal-slide
+{
+    width: 90%;
+}
+
+.horizontal-slider_shifted .horizontal-slide:last-child
+{
+    box-sizing: content-box;
+    padding-right: 10%;
+}

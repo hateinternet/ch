@@ -35,8 +35,10 @@
 {
     display: inline-block;
 
+    width: 100%;
     padding: 0 40px;
 
+    text-align: center;
     letter-spacing: .2px;
 
     font: 14px IntroCaps, sans-serif;
@@ -66,7 +68,7 @@
 
 .button_reverse .button__icon
 {
-    right: none;
+    right: auto;
     left: 0;
 
     border: none;
@@ -94,7 +96,7 @@
 .button:hover .button__icon:before,
 .button:focus .button__icon:before
 {
-    background-position: 100% 50%;
+    background-position: 75% 50%;
 }
 
 .button_reverse .button__icon:before

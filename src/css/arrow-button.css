@@ -11,9 +11,10 @@
     color: #fff;
     border: 1px solid;
     border-radius: 50%;
-    background: transparent;
 
-    transition: .15s opacity linear;
+    transition: .15s all linear;
+    background: none;
+    transform: translateZ(0);
 }
 
 .arrow-button:before
@@ -30,7 +31,7 @@
 
     content: '';
 
-    background: url('img/icons/arrow-white.svg') 100% 50% / auto no-repeat;
+    background: url('img/icons/arrow-white.svg') 100% 50% no-repeat;
 }
 
 .arrow-button:hover,
@@ -52,6 +53,34 @@
     cursor: default;
 
     opacity: .15;
+}
+
+.arrow-button.arrow-button_white
+{
+    width: 64px;
+    height: 64px;
+
+    opacity: 1;
+    border: none;
+    background-color: rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+}
+
+.arrow-button_white:hover,
+.arrow-button_white:focus
+{
+    background-color: rgba(255, 255, 255, .35);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
+}
+
+.arrow-button_white:active
+{
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.arrow-button_white:before
+{
+    width: 15px;
 }
 
 .arrow-button_brown
@@ -82,7 +111,8 @@
 .arrow-button__text
 {
     position: absolute;
-    top: 13px;
+    top: 12px;
+    padding: 0 10px;
 
     text-transform: uppercase;
 
@@ -91,14 +121,14 @@
 
 .arrow-button_next .arrow-button__text
 {
-    left: 65px;
+    left: 50px;
 
     text-align: left;
 }
 
 .arrow-button_prev .arrow-button__text
 {
-    right: 65px;
+    right: 50px;
 
     text-align: right;
 }

@@ -1,11 +1,30 @@
-.achievements__slide
+.horizontal-slide.achievements__slide
 {
-    display: flex;
+    display: inline-flex;
 
     background: #f7f6f5;
 
     justify-content: center;
     align-items: center;
+}
+
+.achievements .arrow-button
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    margin: auto;
+}
+
+.achievements .arrow-button_prev
+{
+    left: 120px;
+}
+
+.achievements .arrow-button_next
+{
+    right: 120px;
 }
 
 .achievements__diploma

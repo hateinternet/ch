@@ -43,7 +43,10 @@ gulp.task('css', () => {
 gulp.task('js', () => {
     return gulp
         .src([
-            'src/js/page.js'
+            'src/js/page.js',
+            'src/js/wheel-indicator.js',
+            'src/js/horizontal-slider.js',
+            'src/js/vertical-slider.js',
         ])
         .pipe(concat('bundle.js'))
         .pipe(dev());

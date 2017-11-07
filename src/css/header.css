@@ -11,6 +11,8 @@
     text-align: center;
 
     color: #fff;
+
+    transition: color .75s ease-in;
 }
 
 .header_dark
