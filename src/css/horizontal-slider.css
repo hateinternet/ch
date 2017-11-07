@@ -34,8 +34,8 @@
     width: 100%;
     height: 100%;
 
-    white-space: normal;
     vertical-align: top;
+    white-space: normal;
 }
 
 .horizontal-slider_shifted .horizontal-slide

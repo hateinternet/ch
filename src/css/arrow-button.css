@@ -11,9 +11,9 @@
     color: #fff;
     border: 1px solid;
     border-radius: 50%;
+    background: none;
 
     transition: .15s all linear;
-    background: none;
     transform: translateZ(0);
 }
 
@@ -112,6 +112,7 @@
 {
     position: absolute;
     top: 12px;
+
     padding: 0 10px;
 
     text-transform: uppercase;
