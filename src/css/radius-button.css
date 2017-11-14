@@ -9,9 +9,26 @@
 
     font-size: 0;
 
+    opacity: .6;
     border: none;
     border-radius: 50%;
     outline: none;
-    background: url(img/icons/zoom.svg) center / 25px 25px no-repeat rgba(255, 255, 255, .8);
+    background: url(img/icons/zoom.svg) center / 25px 25px no-repeat #fff;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .1);
+
+    transition: .15s opacity linear;
+}
+
+.radius-button:hover,
+.radius-button:focus
+{
+    opacity: .8;
+    outline: none;
+}
+
+.radius-button:active
+{
+    opacity: 1;
+
+    transition-duration: .05s;
 }
