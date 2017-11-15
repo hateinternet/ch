@@ -32,3 +32,71 @@
 {
     opacity: .7;
 }
+
+.nav__logo-link
+{
+    display: none;
+}
+
+@media (max-width: 1280px)
+{
+    .nav__link
+    {
+        padding: 15px;
+
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .nav
+    {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        overflow: hidden;
+
+        width: 0;
+        padding: 50px 0 0;
+
+        background: #373737 url(img/decoration/pattern_dark.svg);
+
+        transition: .2s width linear;
+    }
+
+    .nav__link
+    {
+        display: block;
+
+        margin: 0 auto;
+
+        letter-spacing: .8px;
+
+        font-size: 15px;
+        line-height: .8;
+
+        color: rgba(255, 255, 255, .8);
+    }
+
+    .nav__logo-link
+    {
+        display: block;
+
+        margin: 0 0 30px;
+    }
+
+    .nav_logo
+    {
+        width: 110px;
+        height: 110px;
+    }
+
+    .page_menu-opened .nav
+    {
+        width: 100%;
+    }
+}

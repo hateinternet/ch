@@ -2,3 +2,40 @@
 {
     display: none;
 }
+
+.page_menu-opened .header__burger
+{
+    left: 80%;
+}
+
+.page_menu-opened .header__burger-icon
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+
+.page_menu-opened .header__burger-icon
+{
+    border-color: transparent;
+}
+
+.page_menu-opened .header__burger-icon:before,
+.page_menu-opened .header__burger-icon:after
+{
+    top: 0;
+}
+
+.page_menu-opened .header__burger-icon:before
+{
+    transform: rotate(45deg);
+}
+
+.page_menu-opened .header__burger-icon:after
+{
+    transform: rotate(-45deg);
+}
