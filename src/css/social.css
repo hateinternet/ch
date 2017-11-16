@@ -53,3 +53,41 @@
 
     background-image: url('img/socials/youtube.svg');
 }
+
+@media (max-width: 1280px)
+{
+    .social__link + .social__link
+    {
+        margin: 0 0 0 15px;
+    }
+}
+
+@media (max-width: 1024px)
+{
+    .social__link + .social__link
+    {
+        margin: 0 0 0 40px;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .social__link
+    {
+        display: block;
+
+        text-align: left;
+
+        line-height: 30px;
+    }
+
+    .social__link + .social__link
+    {
+        margin: 0;
+    }
+
+    .social__link_facebook:before
+    {
+        left: 2px;
+    }
+}

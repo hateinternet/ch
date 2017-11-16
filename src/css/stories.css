@@ -91,3 +91,44 @@
 
     opacity: .5;
 }
+
+@media (max-width: 1024px)
+{
+    .stories__item
+    {
+        display: block;
+
+        width: auto;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .stories
+    {
+        margin: auto;
+        padding: 30px 0 100px;
+    }
+
+    .stories__title
+    {
+        font-size: 30px;
+    }
+
+    .stories__item
+    {
+        padding: 50px 50px 65px;
+    }
+
+    .stories__item:before
+    {
+        top: 15px;
+        right: 15px;
+        left: 15px;
+    }
+
+    .stories__item-title
+    {
+        font-size: 22px;
+    }
+}
