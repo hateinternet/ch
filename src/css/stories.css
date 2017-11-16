@@ -77,7 +77,7 @@
 
     content: '';
 
-    background: #fff url(img/decoration/story-item.svg) 50% 0 / 54px auto no-repeat;
+    background: #fff url(img/decoration/story/item.svg) 50% 0 / 54px auto no-repeat;
 }
 
 .stories__item-text

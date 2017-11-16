@@ -25,22 +25,22 @@
 .philosophy__slide:nth-child(1),
 .philosophy__slide:last-child
 {
-    background-image: url('img/content/main_bg_perfect.jpg');
+    background-image: url('img/decoration/philosophy/bg_perfect.jpg');
 }
 
 .philosophy__slide:nth-child(2)
 {
-    background-image: url('img/content/main_bg_unique.jpg');
+    background-image: url('img/decoration/philosophy/bg_master.jpg');
 }
 
 .philosophy__slide:nth-child(3)
 {
-    background-image: url('img/content/main_bg_master.jpg');
+    background-image: url('img/decoration/philosophy/bg_unique.jpg');
 }
 
 .philosophy__slide:nth-child(4)
 {
-    background-image: url('img/content/main_bg_king.jpg');
+    background-image: url('img/decoration/philosophy/bg_king.jpg');
 }
 
 .philosophy__content
@@ -94,4 +94,46 @@
 .philosophy__link
 {
     width: 320px;
+}
+
+.philosophy__image
+{
+    position: absolute;
+}
+
+.philosophy__slide:nth-child(1) .philosophy__image,
+.philosophy__slide:last-child .philosophy__image
+{
+    right: 10px;
+    bottom: -50px;
+
+    width: 190px;
+    height: 210px;
+}
+
+.philosophy__slide:nth-child(2) .philosophy__image
+{
+    right: 10px;
+    bottom: -45px;
+
+    width: 200px;
+    height: 175px;
+}
+
+.philosophy__slide:nth-child(3) .philosophy__image
+{
+    right: 5px;
+    bottom: -50px;
+
+    width: 173px;
+    height: 206px;
+}
+
+.philosophy__slide:nth-child(4) .philosophy__image
+{
+    right: 30px;
+    bottom: -45px;
+
+    width: 155px;
+    height: 186px;
 }

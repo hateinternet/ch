@@ -72,7 +72,7 @@
     <main class="vertical-slider">
         <section class="philosophy vertical-slide">
 
-            <div class="horizontal-slider">
+            <div class="horizontal-slider horizontal-slider_infinite">
                 <div class="horizontal-slider__list-wrapper">
                     <div class="horizontal-slider__list">
                     <article class="philosophy__slide horizontal-slide">
@@ -86,12 +86,12 @@
                                 «Когда я создаю украшения, мне хочется, чтобы вы ощутили тепло»
                             </blockquote>
 
-                            <a href="perfection.html" class="button  philosophy__link">
+                            <a href="perfect.html" class="button  philosophy__link">
                                 <div class="button__text">Читать больше</div>
                                 <div class="button__icon"></div>
                             </a>
 
-                            <img src="" alt="" class="philosophy__image">
+                            <img draggable="false" src="img/decoration/philosophy/jewelry_perfect.png" srcset="img/decoration/philosophy/jewelry_perfect_2x.png 2x" alt="" class="philosophy__image">
                         </div>
 
                     </article>
@@ -107,14 +107,13 @@
                                  «Чтобы работать с камнями, их нужно почувствовать, понять, полюбить»
                             </blockquote>
 
-                            <a href="story.html" class="button philosophy__link">
+                            <a href="master.html" class="button philosophy__link">
                                 <div class="button__text">Читать больше</div>
                                 <div class="button__icon"></div>
                             </a>
 
-                            <img src="" alt="" class="philosophy__image">
+                            <img draggable="false" src="img/decoration/philosophy/jewelry_master.png" srcset="img/decoration/philosophy/jewelry_master_2x.png 2x" alt="" class="philosophy__image">
                         </div>
-
 
                     </article>
 
@@ -134,7 +133,7 @@
                                 <div class="button__icon"></div>
                             </a>
 
-                            <img src="" alt="" class="philosophy__image">
+                            <img draggable="false" src="img/decoration/philosophy/jewelry_unique.png" srcset="img/decoration/philosophy/jewelry_unique_2x.png 2x" alt="" class="philosophy__image">
                         </div>
 
                     </article>
@@ -150,12 +149,12 @@
                                 «Князь остался доволен, мы же были истощены, но счастливы»
                             </blockquote>
 
-                            <a href="wish.html" class="button  philosophy__link">
+                            <a href="king.html" class="button  philosophy__link">
                                 <div class="button__text">Читать больше</div>
                                 <div class="button__icon"></div>
                             </a>
 
-                            <img src="" alt="" class="philosophy__image">
+                            <img draggable="false" src="img/decoration/philosophy/jewelry_king.png" srcset="img/decoration/philosophy/jewelry_king_2x.png 2x" alt="" class="philosophy__image">
                         </div>
 
                     </article>
@@ -172,7 +171,6 @@
                 </div>
             </div>
         </section>
-
 
         <section class="history vertical-slide">
             <div class="horizontal-slider horizontal-slider_shifted">
@@ -295,24 +293,24 @@
                 <button class="arrow-button arrow-button_brown arrow-button_prev"></button>
                 <button class="arrow-button arrow-button_brown arrow-button_next"></button>
 
-                <ul class="timeline">
-                    <li></li>
+                <div class="timeline">
+                    <ul class="timeline__inner">
+                        <li class="timeline__item timeline__item_active">
+                            <div class="timeline__year">1996</div>
+                            <div class="timeline__text">Начало</div>
+                        </li>
 
-                    <li class="timeline__item">
-                        <div class="timeline__year">1996</div>
-                        <div class="timeline__text">Начало</div>
-                    </li>
+                        <li class="timeline__item">
+                            <div class="timeline__year">1998</div>
+                            <div class="timeline__text">Развитие<br>ювелирной сети</div>
+                        </li>
 
-                    <li class="timeline__item timeline__item_active">
-                        <div class="timeline__year">1998</div>
-                        <div class="timeline__text">Развитие ювелирной сети</div>
-                    </li>
-
-                    <li class="timeline__item">
-                        <div class="timeline__year">2001</div>
-                        <div class="timeline__text">Открытие производства</div>
-                    </li>
-                </ul>
+                        <li class="timeline__item">
+                            <div class="timeline__year">2001</div>
+                            <div class="timeline__text">Открытие<br>производства</div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -321,82 +319,88 @@
             <div class="horizontal-slider">
                 <div class="horizontal-slider__list-wrapper">
                     <div class="horizontal-slider__list">
-
-                    <article class="achievements__slide horizontal-slide">
-
-                        <div class="achievements__diploma">
-                            <picture>
-                                <img class="achievements__dimploma-image" src="img/content/diploma_vert.png" srcset="img/content/diploma_vert_2x.png 2x" alt="">
-                            </picture>
-                        </div>
-
-                        <div class="achievements__content">
-                            <div class="achievements__title">
-                                XXII Конкурс-выставка<br>
-                                <q>Призвание Петербурга</q>
+                        <article class="achievements__slide horizontal-slide">
+                            <div class="achievements__total">
+                                <div class="achievements__total-number">32</div>
+                                <div class="achievements__total-text">награды</div>
                             </div>
+                        </article>
 
-                            <div class="achievements__sub-title">
-                                Номинация <q>Классика 20 столетия</q>
-                            </div>
+                        <article class="achievements__slide horizontal-slide">
 
-                            <figure>
+                            <div class="achievements__diploma">
                                 <picture>
-                                    <img class="achievements__jewellery-image" src="img/content/purara_group.png" srcset="img/content/purara_group_2x.png 2x" alt="">
+                                    <img class="achievements__dimploma-image" src="img/content/diploma_vert.png" srcset="img/content/diploma_vert_2x.png 2x" alt="">
                                 </picture>
-
-                                <figcaption>
-                                    <p class="achievements__jewellery-name">
-                                        Парюра <q>Сингапур</q>
-                                    </p>
-
-                                    <a href="" class="achievements__passport">
-                                        Белое золото 750˚, бриллианты, морганиты
-                                    </a>
-                                </figcaption>
-                            </figure>
-                        </div>
-
-                    </article>
-
-                    <article class="achievements__slide horizontal-slide">
-
-                        <div class="achievements__diploma">
-                            <picture>
-                                <img class="achievements__dimploma-image" src="img/content/diploma_horiz.png" srcset="img/content/diploma_horiz_2x.png 2x" alt="">
-                            </picture>
-                        </div>
-
-                        <div class="achievements__content">
-                            <div class="achievements__title">
-                                XIV Конкурс-выставка<br>
-                                <q>Junvex новый русский стиль'14</q>
                             </div>
 
-                            <div class="achievements__sub-title">
-                                Номинация <q>Модные тенденции</q>
+                            <div class="achievements__content">
+                                <div class="achievements__title">
+                                    XXII Конкурс-выставка<br>
+                                    <q>Призвание Петербурга</q>
+                                </div>
+
+                                <div class="achievements__sub-title">
+                                    Номинация <q>Классика 20 столетия</q>
+                                </div>
+
+                                <figure>
+                                    <picture>
+                                        <img class="achievements__jewellery-image" src="img/content/purara_group.png" srcset="img/content/purara_group_2x.png 2x" alt="">
+                                    </picture>
+
+                                    <figcaption>
+                                        <p class="achievements__jewellery-name">
+                                            Парюра <q>Сингапур</q>
+                                        </p>
+
+                                        <a href="" class="achievements__passport">
+                                            Белое золото 750˚, бриллианты, морганиты
+                                        </a>
+                                    </figcaption>
+                                </figure>
                             </div>
 
-                            <figure>
+                        </article>
+
+                        <article class="achievements__slide horizontal-slide">
+
+                            <div class="achievements__diploma">
                                 <picture>
-                                    <img class="achievements__jewellery-image" src="img/content/purara_group.png" srcset="img/content/purara_group_2x.png 2x" alt="">
+                                    <img class="achievements__dimploma-image" src="img/content/diploma_horiz.png" srcset="img/content/diploma_horiz_2x.png 2x" alt="">
                                 </picture>
+                            </div>
 
-                                <figcaption>
-                                    <p class="achievements__jewellery-name">
-                                        Парюра <q>Сингапур</q>
-                                    </p>
+                            <div class="achievements__content">
+                                <div class="achievements__title">
+                                    XIV Конкурс-выставка<br>
+                                    <q>Junvex новый русский стиль'14</q>
+                                </div>
 
-                                    <a href="" class="achievements__passport">
-                                        Белое золото 750˚, бриллианты, морганиты
-                                    </a>
-                                </figcaption>
-                            </figure>
-                        </div>
+                                <div class="achievements__sub-title">
+                                    Номинация <q>Модные тенденции</q>
+                                </div>
 
-                    </article>
+                                <figure>
+                                    <picture>
+                                        <img class="achievements__jewellery-image" src="img/content/purara_group.png" srcset="img/content/purara_group_2x.png 2x" alt="">
+                                    </picture>
 
-                </div>
+                                    <figcaption>
+                                        <p class="achievements__jewellery-name">
+                                            Парюра <q>Сингапур</q>
+                                        </p>
+
+                                        <a href="" class="achievements__passport">
+                                            Белое золото 750˚, бриллианты, морганиты
+                                        </a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+
+                        </article>
+
+                    </div>
                 </div>
 
                 <button class="achievements__button arrow-button arrow-button_grey arrow-button_prev">
@@ -406,24 +410,23 @@
                     <span class="arrow-button__text">Следующий диплом</span>
                 </button>
 
-                <!-- <ul class="timeline">
-                    <li></li>
+                <div class="timeline">
+                    <ul class="timeline__inner">
+                        <li class="timeline__item timeline__item_active">
+                            <div class="timeline__text">Все дипломы</div>
+                        </li>
 
-                    <li class="timeline__item">
-                        <div class="timeline__year">1996</div>
-                        <div class="timeline__text">2 Диплома</div>
-                    </li>
+                        <li class="timeline__item">
+                            <div class="timeline__year">1998</div>
+                            <div class="timeline__text">2 диплома</div>
+                        </li>
 
-                    <li class="timeline__item">
-                        <div class="timeline__year">1998</div>
-                        <div class="timeline__text">2 Диплома</div>
-                    </li>
-
-                    <li class="timeline__item">
-                        <div class="timeline__year">2001</div>
-                        <div class="timeline__text">2 Диплома</div>
-                    </li>
-                </ul> -->
+                        <li class="timeline__item">
+                            <div class="timeline__year">2001</div>
+                            <div class="timeline__text">3 диплома</div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -444,12 +447,8 @@
                     </a>
                 </div>
 
-                <picture>
-                    <img class="collections__image collections__image_left" src="img/decoration/key1.png" srcset="img/decoration/key1_2x.png 2x" alt="">
-                </picture>
-                <picture>
-                    <img class="collections__image collections__image_right" src="img/decoration/key2.png" srcset="img/decoration/key2_2x.png 2x" alt="">
-                </picture>
+                <img draggable="false" class="collections__image collections__image_left" src="img/decoration/collections/key1.png" srcset="img/decoration/collections/key1_2x.png 2x" alt="">
+                <img draggable="false" class="collections__image collections__image_right" src="img/decoration/collections/key2.png" srcset="img/decoration/collections/key2_2x.png 2x" alt="">
             </div>
 
             <footer class="footer">

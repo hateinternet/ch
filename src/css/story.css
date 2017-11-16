@@ -2,7 +2,7 @@
 {
     text-align: center;
 
-    background: #eeede9 url(img/decoration/pattern.svg) 0 / 300px auto;
+    background: #eeede9 url(img/decoration/story/pattern.svg) 0 / 300px auto;
 }
 
 .story__image
@@ -87,5 +87,5 @@
     width: 153px;
     margin: 0 auto;
 
-    content: url(img/decoration/story.svg);
+    content: url(img/decoration/story/article.svg);
 }

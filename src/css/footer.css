@@ -49,6 +49,8 @@
 {
     position: relative;
 
+    overflow: hidden;
+
     max-width: 1440px;
     height: 105px;
     margin: 0 auto;
@@ -84,8 +86,6 @@
 
 .footer__copyright
 {
-    clear: both;
-
     padding: 16px 0;
 
     color: #7e7e7e;

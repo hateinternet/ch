@@ -36,6 +36,20 @@
     text-align: right;
 }
 
+.achievements__total-number
+{
+    font: bold 326px / .7 PFRegal, serif;
+
+    color: #c39a78;
+}
+
+.achievements__total-text
+{
+    font: bold 86px / 1 PFRegal, serif;
+
+    color: #979797;
+}
+
 .achievements__content
 {
     width: 50%;
