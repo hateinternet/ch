@@ -1,10 +1,5 @@
 .footer
 {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
     text-align: center;
     letter-spacing: .5px;
     text-transform: uppercase;
@@ -15,9 +10,12 @@
     background: #3a3a3a;
 }
 
-.page_story .footer
+.page_index .footer
 {
-    position: relative;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .footer a,
@@ -90,4 +88,59 @@
 
     color: #7e7e7e;
     background: #303030;
+}
+
+@media (max-width: 1024px)
+{
+    .footer__content
+    {
+        height: auto;
+        min-height: 105px;
+        padding: 80px 25px 0;
+
+        line-height: 50px;
+    }
+
+    .footer .social
+    {
+        float: none;
+    }
+
+    .footer__logo
+    {
+        top: 20px;
+        bottom: auto;
+
+        width: 190px;
+        height: 50px;
+    }
+
+    .footer__legal
+    {
+        float: none;
+
+        margin: 15px 0;
+
+        font-size: 9px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .footer__logo
+    {
+        right: auto;
+        left: 15px;
+    }
+
+    .footer__legal
+    {
+        text-align: left;
+    }
+
+    .footer__copyright
+    {
+        padding: 16px 25px;
+    }
 }

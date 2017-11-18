@@ -87,3 +87,39 @@
         opacity: 1;
     }
 }
+
+
+@media (max-width: 1024px)
+{
+    .scroll-icon
+    {
+        bottom: 25px;
+
+        height: auto;
+
+        border: none;
+        background: none;
+    }
+
+    .scroll-icon:before
+    {
+        display: none;
+    }
+
+    .scroll-icon__arrow
+    {
+        top: 0;
+
+        height: 8px;
+
+        transform: scale(1.6, 1.4);
+    }
+}
+
+@media (max-width: 767px)
+{
+    .scroll-icon
+    {
+        display: none;
+    }
+}
