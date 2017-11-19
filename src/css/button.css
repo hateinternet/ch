@@ -130,11 +130,15 @@
 {
     .button
     {
+        margin: 0 10px;
+
         line-height: 48px;
     }
 
     .button__text
     {
+        padding: 0 20px;
+
         font-size: 11px;
     }
 }

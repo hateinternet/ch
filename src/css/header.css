@@ -44,6 +44,11 @@
     transition: .15s opacity linear;
 }
 
+.header__logo_tablet
+{
+    display: none;
+}
+
 .header_dark .header__logo
 {
     opacity: .65;
@@ -172,10 +177,33 @@
 
 @media (max-width: 767px)
 {
-    .header__logo-mobile,
+    .header__logo_mobile,
     .header__burger,
     .header__close
     {
         display: block;
+    }
+
+    .header__logo
+    {
+        display: none;
+    }
+
+    .header__logo_mobile
+    {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        left: 0;
+
+        width: 150px;
+        height: 30px;
+        margin: 0 auto;
+    }
+
+    .header_dark .header__burger
+    {
+        color: #fff;
+        background: rgba(255, 255, 255, .15);
     }
 }
