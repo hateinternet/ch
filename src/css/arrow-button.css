@@ -133,3 +133,12 @@
 
     text-align: right;
 }
+
+
+@media (max-width: 1024px)
+{
+    .arrow-button__text
+    {
+        display: none;
+    }
+}

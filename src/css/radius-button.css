@@ -32,3 +32,15 @@
 
     transition-duration: .05s;
 }
+
+@media (max-width: 767px)
+{
+    .radius-button
+    {
+        top: 5px;
+        right: -10px;
+
+        width: 42px;
+        height: 42px;
+    }
+}
