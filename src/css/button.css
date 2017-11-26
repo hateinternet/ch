@@ -126,6 +126,19 @@
     box-shadow: 10px 16px 44px 0 rgba(174, 129, 89, .8);
 }
 
+@media (max-width: 1024px)
+{
+    .button
+    {
+        line-height: 50px;
+    }
+
+    .button__text
+    {
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 767px)
 {
     .button
