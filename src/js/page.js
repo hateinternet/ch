@@ -90,3 +90,11 @@ $.fn.toggleClassIf = function (condition, className) {
         Page.$html.toggleClass('page_menu');
     });
 })();
+
+(function () {
+    var gallery = document.querySelector('.gallery');
+    var galleryCloseBtn = document.querySelector('.gallery__close-button');
+    galleryCloseBtn.addEventListener('click', function () {
+        gallery.style.display = 'none';
+    });
+})();
