@@ -246,10 +246,12 @@
     .philosophy__content
     {
         top: auto;
+        right: 0;
         bottom: 25px;
-        left: 25px;
+        left: 0;
 
         width: 270px;
+        margin: auto;
         padding: 20px 15px;
     }
 

@@ -45,6 +45,7 @@ gulp.task('js', () => {
         .src([
             'src/js/page.js',
             'src/js/wheel-indicator.js',
+            'src/js/hammer.js',
             'src/js/horizontal-slider.js',
             'src/js/vertical-slider.js',
         ])

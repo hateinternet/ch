@@ -126,7 +126,7 @@
 {
     .timeline
     {
-        bottom: 45px;
+        bottom: 28px;
     }
 
     .timeline__inner
@@ -146,11 +146,15 @@
 
     .timeline__year
     {
+        padding-bottom: 7px;
+
         font-size: 11px;
     }
 
     .timeline__text
     {
+        margin-top: 7px;
+
         font-size: 10px;
     }
 }

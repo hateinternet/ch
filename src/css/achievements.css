@@ -206,4 +206,9 @@
     {
         right: 6px;
     }
+
+    .achievements .timeline
+    {
+        bottom: 45px;
+    }
 }

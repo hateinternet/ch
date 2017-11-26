@@ -207,4 +207,9 @@
         opacity: 1;
         background-color: #f5f4f2;
     }
+
+    .history .timeline__text
+    {
+        display: none;
+    }
 }
