@@ -10,3 +10,9 @@
     width: 100%;
     height: 100%;
 }
+
+.page:not(.page_hoverable) a:focus,
+.page:not(.page_hoverable) button:focus
+{
+    outline: none;
+}

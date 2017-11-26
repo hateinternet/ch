@@ -19,14 +19,14 @@
     transition: .15s opacity linear;
 }
 
-.radius-button:hover,
-.radius-button:focus
+.page_hoverable .radius-button:hover,
+.page_hoverable .radius-button:focus
 {
     opacity: .8;
     outline: none;
 }
 
-.radius-button:active
+.page_hoverable .radius-button:active
 {
     opacity: 1;
 

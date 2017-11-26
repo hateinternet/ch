@@ -93,8 +93,8 @@
     transition: .15s background-position linear;
 }
 
-.button:hover .button__icon:before,
-.button:focus .button__icon:before
+.page_hoverable .button:hover .button__icon:before,
+.page_hoverable .button:focus .button__icon:before
 {
     background-position: 75% 50%;
 }
@@ -104,8 +104,8 @@
     transform: scaleX(-1);
 }
 
-.button_shadow:hover,
-.button_shadow:focus
+.page_hoverable .button_shadow:hover,
+.page_hoverable .button_shadow:focus
 {
     box-shadow: 0 10px 20px 0 rgba(174, 129, 89, .4);
 }
@@ -115,13 +115,13 @@
     box-shadow: 10px 15px 44px 0 rgba(174, 129, 89, .5);
 }
 
-.button_shadow.button_big:hover,
-.button_shadow.button_big:focus
+.page_hoverable .button_shadow.button_big:hover,
+.page_hoverable .button_shadow.button_big:focus
 {
     box-shadow: 10px 16px 44px 0 rgba(174, 129, 89, .7);
 }
 
-.button_shadow.button_big:active
+.page_hoverable .button_shadow.button_big:active
 {
     box-shadow: 10px 16px 44px 0 rgba(174, 129, 89, .8);
 }

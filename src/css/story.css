@@ -97,9 +97,9 @@
 {
     .story__wrapper
     {
-        margin: 0 10px;
         width: auto;
         max-width: 850px;
+        margin: 0 10px;
     }
 
     .story__content

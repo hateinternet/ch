@@ -34,14 +34,14 @@
     transition: box-shadow .2s ease-in-out;
 }
 
-.stories__item:hover,
-.stories__item:focus
+.page_hoverable .stories__item:hover,
+.page_hoverable .stories__item:focus
 {
     outline: none;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, .12);
 }
 
-.stories__item:active
+.page_hoverable .stories__item:active
 {
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, .15);
 

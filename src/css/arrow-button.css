@@ -34,25 +34,18 @@
     background: url('img/icons/arrow-white.svg') 100% 50% no-repeat;
 }
 
-.arrow-button:hover,
-.arrow-button:focus
+.page_hoverable .arrow-button:hover,
+.page_hoverable .arrow-button:focus
 {
     opacity: .8;
     outline: none;
 }
 
-.arrow-button:active
+.page_hoverable .arrow-button:active
 {
     opacity: 1;
 
     transition-duration: .05s;
-}
-
-.arrow-button:disabled
-{
-    cursor: default;
-
-    opacity: .15;
 }
 
 .arrow-button.arrow-button_white
@@ -66,14 +59,14 @@
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
 }
 
-.arrow-button_white:hover,
-.arrow-button_white:focus
+.page_hoverable .arrow-button_white:hover,
+.page_hoverable .arrow-button_white:focus
 {
     background-color: rgba(255, 255, 255, .35);
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
 }
 
-.arrow-button_white:active
+.page_hoverable .arrow-button_white:active
 {
     background-color: rgba(255, 255, 255, .5);
 }

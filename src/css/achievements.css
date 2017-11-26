@@ -36,6 +36,11 @@
     text-align: right;
 }
 
+.achievements__total
+{
+    text-align: center;
+}
+
 .achievements__total-number
 {
     font: bold 326px / .7 PFRegal, serif;
