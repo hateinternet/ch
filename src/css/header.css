@@ -12,7 +12,7 @@
 
     color: #fff;
 
-    transition: color .75s ease-in;
+    transition: color .3s ease-in;
 }
 
 .page_index .header
@@ -20,7 +20,7 @@
     position: fixed;
 }
 
-.header_dark
+.page_dark .header
 {
     color: #6e6e6d;
 }
@@ -44,9 +44,16 @@
     transition: .15s opacity linear;
 }
 
-.header_dark .header__logo
+.page_dark .header__logo
 {
     opacity: .65;
+}
+
+.page_no-logo .header__logo
+{
+    pointer-events: none;
+
+    opacity: 0;
 }
 
 .page_hoverable .header .header__logo:hover,
@@ -89,7 +96,7 @@
     transition: all .75s ease-in;
 }
 
-.header_dark .header__burger
+.page_dark .header__burger
 {
     color: rgba(110, 110, 109, .7);
     background: rgba(233, 232, 227, .9);

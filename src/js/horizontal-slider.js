@@ -1,59 +1,39 @@
 (function () {
-    $('.horizontal-slider')
+    $('.achievements, .history')
         .each(function () {
             var $scope = $(this);
             var $wrapper = $scope.find('.horizontal-slider__list-wrapper');
             var $slides = $wrapper.find('.horizontal-slide');
+            var $btns = $scope.find('.arrow-button');
+
+            var scrollDuration = 500;
+            var scrollStep = $slides.eq(0).width();
+
             var last = $slides.length - 1;
-
-            var isInfinite = $scope.hasClass('horizontal-slider_infinite');
-
-            if (isInfinite) {
-                $wrapper.find('.horizontal-slider__list').append($slides.eq(0).clone());
-
-                last += 2;
-            }
-
-            var scrollDuration = 750;
-            var scrollStep = 0;
-
             var index = 0;
 
-            $scope.on('click', '.arrow-button', onArrowClick);
-            $(window).on('resize', onResize);
-            onResize();
+            updateBtns(index);
+
+            $btns.on('click', onArrowClick);
+            Page.$win.on('resize', onResize);
 
             function onArrowClick(event) {
-                var direction = $(event.target).hasClass('arrow-button_next') ? 1 : -1;
+                var direction = $(event.target).closest('.arrow-button').hasClass('arrow-button_next') ? 1 : -1;
                 var temp = index + direction;
 
-                isInfinite ? handleInfinite(temp) : handleFinite(temp);
-
-                console.log(index);
-            }
-
-            function handleInfinite(temp) {
-                if (temp > last - 1) {
-                    moveTo(0, true);
-
-                    temp = 1;
-                } else if (temp < 0) {
-                    moveTo(last, true);
-
-                    temp = last - 2;
-                }
-
-                index = temp;
-
-                moveTo(index);
-            }
-
-            function handleFinite(temp) {
                 if (temp <= last && temp >= 0) {
                     index = temp;
 
+                    updateBtns(index);
                     moveTo(index);
                 }
+            }
+
+            function updateBtns() {
+                $btns
+                    .eq(0).prop('disabled', index === 0)
+                    .end()
+                    .eq(1).prop('disabled', index === last);
             }
 
             function onResize() {
@@ -67,6 +47,11 @@
                 var duration = jump ? 0 : scrollDuration;
 
                 $wrapper.animate({ scrollLeft: position }, duration);
+
+                var slide = $scope.data('slide');
+                var type = $slides.eq(index).data('type') || null;
+
+                Page.setState(slide, type);
             }
         });
 })();

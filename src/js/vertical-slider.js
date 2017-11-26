@@ -2,27 +2,38 @@
     $('.vertical-slider')
         .each(function () {
             var $slider = $(this);
+            var $slides = $slider.find('.vertical-slide');
 
             var isScrolling = false;
-            var scrollDuration = 750;
-            var scrollStep = null;
+            var scrollDuration = 500;
+            var scrollStep = $slider.height();
 
             var index = 0;
-            var last = $slider.find('.vertical-slide').length - 1;
+            var last = $slides.length - 1;
 
             bindToWheel();
+            bindToSwipe();
             $(window).on('resize', onResize);
-            onResize();
 
             function bindToWheel() {
                 new WheelIndicator({
-                    elem: document,
+                    elem: $slider[0],
                     callback: function (event) {
                         var direction = event.direction === 'up' ? -1 : 1;
 
                         move(direction);
                     }
                 });
+            }
+
+            function bindToSwipe() {
+                // var hammertime = new Hammer(document.body);
+                //
+                // hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+                //
+                // Hammer(document.body).on('swipe', function (event) {
+                //     console.log(event);
+                // });
             }
 
             function onResize() {
@@ -36,22 +47,24 @@
                     return;
                 }
 
+                var tempIndex = getIndex(direction);
+
+                if (index === tempIndex) {
+                    return;
+                }
+
                 isScrolling = true;
-                index = getIndex(direction);
+                index = tempIndex;
 
                 var position = index * scrollStep;
                 var duration = jump ? 0 : scrollDuration;
+                var slide = $slides.eq(index).data('slide');
 
                 $slider.animate({ scrollTop: position }, duration, function () {
                     isScrolling = false;
                 });
 
-                if (index) {
-                    $('.header').addClass('header_dark');
-                } else {
-                    $('.header').removeClass('header_dark');
-                }
-
+                !jump && Page.setState(slide);
             }
 
             function getIndex(direction) {

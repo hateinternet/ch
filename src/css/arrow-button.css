@@ -48,6 +48,15 @@
     transition-duration: .05s;
 }
 
+.page .arrow-button:disabled
+{
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition: opacity .15s linear, visibility 0s .15s linear;
+}
+
 .arrow-button.arrow-button_white
 {
     width: 64px;

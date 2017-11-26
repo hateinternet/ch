@@ -83,13 +83,11 @@
 
 @media (max-width: 767px)
 {
-    .footer .social
+    .social
     {
-        padding: 0 10px 0 0;
+        padding: 0;
 
         line-height: 25px;
-
-        order: 3;
     }
 
     .social__link + .social__link

@@ -46,6 +46,7 @@
 .philosophy__content
 {
     position: absolute;
+    z-index: 0;
     top: 30vh;
     left: 100px;
 
@@ -59,6 +60,7 @@
 .philosophy__content:after
 {
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
 
@@ -283,4 +285,78 @@
     {
         width: 45px;
     }
+}
+
+.horizontal-slide_current .philosophy__content,
+.horizontal-slide_current .philosophy__label,
+.horizontal-slide_current .philosophy__quote,
+.horizontal-slide_current .philosophy__link,
+.horizontal-slide_current .philosophy__image
+{
+    transition-delay: .4s;
+    transition-timing-function: cubic-bezier(.190, 1.000, .220, 1.000);
+    transition-property: transform;
+}
+
+.philosophy__content
+{
+    transition-duration: .3s;
+}
+
+.horizontal-slide:not(.horizontal-slide_current) .philosophy__content
+{
+    transform: translateX(-30px);
+}
+
+.horizontal-slide_current + .horizontal-slide .philosophy__content
+{
+    transform: translateX(30px);
+}
+
+.philosophy__label
+{
+    transition-duration: .4s;
+}
+
+.horizontal-slide:not(.horizontal-slide_current) .philosophy__label
+{
+    transform: translateX(-60px);
+}
+
+.horizontal-slide_current + .horizontal-slide .philosophy__label
+{
+    transform: translateX(60px);
+}
+
+.philosophy__quote,
+.philosophy__link
+{
+    transition-duration: .5s;
+}
+
+.horizontal-slide:not(.horizontal-slide_current) .philosophy__quote,
+.horizontal-slide:not(.horizontal-slide_current) .philosophy__link
+{
+    transform: translateX(-100px);
+}
+
+.horizontal-slide_current + .horizontal-slide .philosophy__quote,
+.horizontal-slide_current + .horizontal-slide .philosophy__link
+{
+    transform: translateX(100px);
+}
+
+.philosophy__image
+{
+    transition-duration: .6s;
+}
+
+.horizontal-slide:not(.horizontal-slide_current) .philosophy__image
+{
+    transform: translateX(-150px);
+}
+
+.horizontal-slide_current + .horizontal-slide .philosophy__image
+{
+    transform: translateX(150px);
 }

@@ -21,8 +21,6 @@
     height: 100%;
 
     white-space: nowrap;
-
-    transform: translateZ(0);
 }
 
 .horizontal-slide
@@ -36,15 +34,6 @@
 
     vertical-align: top;
     white-space: normal;
-}
 
-.horizontal-slider_shifted .horizontal-slide
-{
-    width: 90%;
-}
-
-.horizontal-slider_shifted .horizontal-slide:last-child
-{
-    box-sizing: content-box;
-    padding-right: 10%;
+    transform: translateZ(0);
 }

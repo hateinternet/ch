@@ -21,6 +21,8 @@
 .footer a,
 .footer a:visited
 {
+    display: inline-block;
+
     text-decoration: none;
 
     opacity: .35;
@@ -121,6 +123,7 @@
 
         flex-wrap: wrap;
     }
+
     .footer__logo-wrapper
     {
         width: 100%;
@@ -131,6 +134,7 @@
 
         order: 1;
     }
+
     .footer__logo
     {
         position: relative;
@@ -152,13 +156,15 @@
         order: 2;
     }
 
-    .footer__copyright
+    .footer .social
     {
-        font-size: 8px;
+        order: 3;
     }
 
     .footer__copyright
     {
         padding: 16px 25px;
+
+        font-size: 8px;
     }
 }

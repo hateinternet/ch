@@ -53,7 +53,7 @@
     border-radius: 50%;
     background: currentColor;
 
-    transition: box-shadow .15s ease-in-out;
+    transition: box-shadow .3s ease-in-out;
 }
 
 .timeline__inner:before
@@ -83,6 +83,11 @@
 }
 
 .timeline__item_active:before
+{
+    box-shadow: 0 0 0 3px #303030, 0 0 0 4px;
+}
+
+.page_dark .timeline__item_active:before
 {
     box-shadow: 0 0 0 3px #f7f6f5, 0 0 0 4px;
 }

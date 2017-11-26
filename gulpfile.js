@@ -48,6 +48,7 @@ gulp.task('js', () => {
             'src/js/hammer.js',
             'src/js/horizontal-slider.js',
             'src/js/vertical-slider.js',
+            'src/js/philosophy-slider.js'
         ])
         .pipe(concat('bundle.js'))
         .pipe(dev());

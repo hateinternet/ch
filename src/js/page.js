@@ -6,8 +6,10 @@ var Page = {
     $header: $('.header'),
 
     scrollTo: _scrollTo,
-    scrollDuration: 700,
+    scrollDuration: 500,
     scrollTop: 0,
+
+    setState: _setState,
 
     calcPosition: _calcPosition,
     setModal: _setModal,
@@ -37,6 +39,23 @@ var Page = {
         return (w1 - w2);
     })()
 };
+
+function _setState(slide, type) {
+    Page.$html
+        .removeClass('page_slide_' + Page.slide)
+        .addClass('page_slide_' + slide);
+
+    Page.slide = slide;
+    Page.state = Page.state || {};
+    Page.state[slide] = type === undefined ? Page.state[slide] : type;
+
+    var isDark = slide !== 'philosophy' && Page.state[slide] !== 'dark';
+    var noLogo = slide === 'collections';
+
+    Page.$html
+        .toggleClassIf(isDark, 'page_dark')
+        .toggleClassIf(noLogo, 'page_no-logo');
+}
 
 function _scrollTo(pos, duration) {
     var $scrollElem = $('html, body');
