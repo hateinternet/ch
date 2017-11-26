@@ -34,15 +34,9 @@
 
 .nav__logo-link
 {
-    color: inherit;
-}
+    display: none;
 
-@media (min-width: 1280px)
-{
-    .nav__logo-link
-    {
-        display: none;
-    }
+    color: inherit;
 }
 
 @media (min-width: 767px) and (max-width: 1279px)
@@ -85,6 +79,11 @@
 
         transition: .3s transform ease-in-out;
         transform: translateX(-100%);
+    }
+
+    .nav__logo-link
+    {
+        display: block;
     }
 
     .page_menu .nav

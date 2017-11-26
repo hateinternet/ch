@@ -44,11 +44,6 @@
     transition: .15s opacity linear;
 }
 
-.header__logo_tablet
-{
-    display: none;
-}
-
 .header_dark .header__logo
 {
     opacity: .65;
@@ -60,6 +55,7 @@
     opacity: 1;
 }
 
+.header__logo_tablet,
 .header__logo_mobile,
 .header__burger,
 .header__close
@@ -169,9 +165,25 @@
         padding: 30px;
     }
 
-    .header__logo-link
+    .header__logo
     {
         display: none;
+    }
+
+    .header__logo_tablet
+    {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+
+        display: block;
+
+        width: 65px;
+        height: 65px;
+
+        opacity: .8;
+
+        transition: .15s opacity linear;
     }
 }
 
