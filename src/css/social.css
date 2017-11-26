@@ -60,14 +60,6 @@
 
 @media (max-width: 1280px)
 {
-    .social__link + .social__link
-    {
-        margin: 0 0 0 15px;
-    }
-}
-
-@media (max-width: 1024px)
-{
     .social__link
     {
         font-size: 0;
