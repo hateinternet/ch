@@ -97,7 +97,8 @@
 {
     .story__wrapper
     {
-        width: calc(100% - 20px);
+        margin: 0 10px;
+        width: auto;
         max-width: 850px;
     }
 
@@ -131,14 +132,9 @@
         height: 100vh;
     }
 
-    .story__wrapper
-    {
-        max-width: 100%;
-    }
-
     .story__content
     {
-        margin: -75vh 10px 25px;
+        margin: -200px 0 25px;
         padding: 45px 35px 50px;
     }
 

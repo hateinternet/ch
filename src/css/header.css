@@ -200,10 +200,4 @@
         height: 30px;
         margin: 0 auto;
     }
-
-    .header_dark .header__burger
-    {
-        color: #fff;
-        background: rgba(255, 255, 255, .15);
-    }
 }

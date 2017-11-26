@@ -114,15 +114,42 @@
     font-size: 11px;
 }
 
+@media (max-width: 1024px) {
+    .timeline__inner
+    {
+        margin-left: 65px;
+    }
+}
+
 @media (max-width: 767px)
 {
     .timeline
     {
-        bottom: 25px;
+        bottom: 45px;
+    }
+
+    .timeline__inner
+    {
+        margin-left: 0;
+    }
+
+    .timeline__inner:before
+    {
+        display: none;
+    }
+
+    .timeline__item:not(:first-child) .timeline__text
+    {
+        display: none;
+    }
+
+    .timeline__year
+    {
+        font-size: 11px;
     }
 
     .timeline__text
     {
-        display: none;
+        font-size: 10px;
     }
 }
