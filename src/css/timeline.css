@@ -113,3 +113,16 @@
 
     font-size: 11px;
 }
+
+@media (max-width: 767px)
+{
+    .timeline
+    {
+        bottom: 25px;
+    }
+
+    .timeline__text
+    {
+        display: none;
+    }
+}

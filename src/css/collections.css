@@ -79,5 +79,94 @@
     .collections__content
     {
         width: 600px;
+        padding: 60px 40px 100px;
+    }
+
+    .collections__content:before
+    {
+        top: 15px;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .collections__text
+    {
+        font-size: 38px;
+        line-height: 36px;
+    }
+
+    .collections__image
+    {
+        width: 108px;
+    }
+
+    .collections__button .button
+    {
+        line-height: 65px;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .collections
+    {
+        display: block;
+
+        padding: 80px 0 0;
+    }
+
+    .collections__text
+    {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .collections__content
+    {
+        width: auto;
+        margin: 0 20px;
+        padding: 60px 30px 70px;
+    }
+
+    .collections__image_left
+    {
+        display: none;
+    }
+
+    .collections__image_right
+    {
+        top: -90px;
+        right: 0;
+        left: 0;
+
+        width: 70px;
+        margin: 0 auto;
+
+        transform: rotate(90deg);
+    }
+
+    .collections__button
+    {
+        bottom: -15px;
+    }
+
+    .collections__button .button
+    {
+        width: 220px;
+        margin: 0 auto;
+        padding: 0 45px 0 0;
+
+        line-height: 45px;
+    }
+
+    .collections__button .button__text
+    {
+        padding: 0;
+    }
+
+    .collections__button .button__icon
+    {
+        width: 45px;
     }
 }
