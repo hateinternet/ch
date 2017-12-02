@@ -21,8 +21,6 @@
 .footer a,
 .footer a:visited
 {
-    display: inline-block;
-
     text-decoration: none;
 
     opacity: .35;

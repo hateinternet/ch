@@ -14,7 +14,7 @@
 
 .timeline__inner
 {
-    margin: 0 0 0 135px;
+    margin: 0 0 0 130px;
     padding: 0;
 
     list-style: none;
@@ -25,7 +25,7 @@
 .timeline__item
 {
     position: absolute;
-    left: 135px;
+    left: 130px;
 
     display: inline-block;
 
@@ -59,7 +59,8 @@
 .timeline__inner:before
 {
     position: absolute;
-    top: -3px;
+
+    margin: -3px 0 0 -3px;
 }
 
 .timeline__item:before
@@ -67,29 +68,48 @@
     margin: -3px auto 0;
 }
 
-.timeline__item:nth-child(1)
+.timeline__item
+{
+    left: 130px;
+
+    opacity: 0;
+
+    transition: all .5s ease-in-out;
+    transform: translateZ(0);
+}
+
+.timeline__item_current
 {
     left: 50%;
 }
 
-.timeline__item:nth-child(2)
+.timeline__item_current + .timeline__item
 {
-    left: 85%;
+    left: calc(100% - 130px * 2);
 }
 
-.timeline__item:nth-child(3)
+.timeline__item_current + .timeline__item + .timeline__item,
+.timeline__item_current + .timeline__item:last-child
 {
-    left: 95%;
+    left: calc(100% - 130px);
 }
 
-.timeline__item_active:before
+.timeline__item_prev,
+.timeline__item_current,
+.timeline__item_current + .timeline__item,
+.timeline__item_current + .timeline__item + .timeline__item
 {
-    box-shadow: 0 0 0 3px #303030, 0 0 0 4px;
+    opacity: 1;
 }
 
-.page_dark .timeline__item_active:before
+.timeline__item_current:before
 {
     box-shadow: 0 0 0 3px #f7f6f5, 0 0 0 4px;
+}
+
+.horizontal-slider__type_dark .timeline__item_current:before
+{
+    box-shadow: 0 0 0 3px #303030, 0 0 0 4px;
 }
 
 .timeline__year
@@ -103,11 +123,11 @@
     font-size: 13px;
     line-height: 1;
 
-    transition: transform .15s ease-in-out;
+    transition: transform .5s ease-in-out;
     transform-origin: 50% 100%;
 }
 
-.timeline__item_active .timeline__year
+.timeline__item_current .timeline__year
 {
     transform: scale(1.2);
 }
@@ -124,6 +144,21 @@
     .timeline__inner
     {
         margin-left: 65px;
+    }
+
+    .timeline__item
+    {
+        left: 65px;
+    }
+
+    .timeline__item_current + .timeline__item
+    {
+        left: calc(100% - 65px);
+    }
+
+    .timeline__item_current + .timeline__item + .timeline__item
+    {
+        opacity: 0;
     }
 }
 

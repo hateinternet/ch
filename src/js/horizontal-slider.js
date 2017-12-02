@@ -10,22 +10,25 @@
             var scrollStep = $slides.eq(0).width();
 
             var last = $slides.length - 1;
-            var index = 0;
+            var index = -1;
 
-            updateBtns(index);
+            var id = $scope.data('id');
+
+            moveTo(0);
 
             $btns.on('click', onArrowClick);
-            Page.$win.on('resize', onResize);
+
+            Page.$win
+                .on('resize', onResize)
+                .on('slider.vertical', onVerticalSliderChange)
+                .on('timeline.click', onTimelineClick);
 
             function onArrowClick(event) {
                 var direction = $(event.target).closest('.arrow-button').hasClass('arrow-button_next') ? 1 : -1;
                 var temp = index + direction;
 
                 if (temp <= last && temp >= 0) {
-                    index = temp;
-
-                    updateBtns(index);
-                    moveTo(index);
+                    moveTo(temp);
                 }
             }
 
@@ -39,19 +42,60 @@
             function onResize() {
                 scrollStep = $slides.eq(0).width();
 
-                moveTo(index, true);
+                if (Page.slide === id) {
+                    moveTo(index, true);
+                }
             }
 
-            function moveTo(index, jump) {
+            function moveTo(newIndex, jump) {
+                if (index === newIndex) {
+                    return;
+                }
+
+                index = newIndex;
+
                 var position = index * scrollStep;
                 var duration = jump ? 0 : scrollDuration;
 
-                $wrapper.animate({ scrollLeft: position }, duration);
+                $wrapper
+                    .stop()
+                    .animate({ scrollLeft: position }, duration);
 
-                var slide = $scope.data('slide');
-                var type = $slides.eq(index).data('type') || null;
+                updateBtns();
+                setCurrent();
+                setType();
+                triggerEvent();
+            }
 
-                Page.setState(slide, type);
+            function setCurrent() {
+                $slides
+                    .removeClass('horizontal-slide_current')
+                    .eq(index)
+                    .addClass('horizontal-slide_current');
+            }
+
+            function setType() {
+                var type = $slides.eq(index).data('type');
+
+                $scope[type === 'dark' ? 'addClass' : 'removeClass']('horizontal-slider__type_dark');
+            }
+
+            function triggerEvent() {
+                Page.$html.trigger('slider.horizontal', {
+                    id: id,
+                    type: $slides.eq(index).data('type'),
+                    index: index
+                });
+            }
+
+            function onVerticalSliderChange() {
+                if (Page.slide === id) {
+                    triggerEvent();
+                }
+            }
+
+            function onTimelineClick(event, data) {
+                data.id === id && moveTo(data.index);
             }
         });
 })();

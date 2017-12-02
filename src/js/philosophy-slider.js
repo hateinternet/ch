@@ -24,6 +24,10 @@
             $(window).on('resize', onResize);
 
             function onArrowClick(event) {
+                if ($wrapper.is(':animated')) {
+                    return;
+                }
+
                 var direction = $(event.target).hasClass('arrow-button_next') ? 1 : -1;
                 var temp = index + direction;
 

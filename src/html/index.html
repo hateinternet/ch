@@ -90,16 +90,16 @@
                 </a>
 
                 <div class="nav__link-wrapper">
-                    <a href="#" class="nav__link">Философия</a>
+                    <a href="#philosophy" class="nav__link">Философия</a>
                 </div>
                 <div class="nav__link-wrapper">
-                    <a href="#" class="nav__link">История</a>
+                    <a href="#history" class="nav__link">История</a>
                 </div>
                 <div class="nav__link-wrapper">
-                    <a href="#" class="nav__link">Достижения</a>
+                    <a href="#achievements" class="nav__link">Достижения</a>
                 </div>
                 <div class="nav__link-wrapper">
-                    <a href="#" class="nav__link">Коллекции</a>
+                    <a href="#collections" class="nav__link">Коллекции</a>
                 </div>
 
                 <button class="header__close">
@@ -109,7 +109,7 @@
         </header>
 
         <main class="vertical-slider">
-            <section class="philosophy vertical-slide" data-slide="philosophy">
+            <section class="philosophy vertical-slide" data-id="philosophy" data-type="dark">
 
                 <div class="horizontal-slider">
                     <div class="horizontal-slider__list-wrapper">
@@ -219,7 +219,7 @@
                 </div>
             </section>
 
-            <section class="history vertical-slide" data-slide="history">
+            <section class="history vertical-slide" data-id="history">
                 <div class="horizontal-slider horizontal-slider_shifted">
                     <div class="horizontal-slider__list-wrapper">
                         <div class="horizontal-slider__list">
@@ -334,9 +334,9 @@
                     <button class="arrow-button arrow-button_brown arrow-button_prev"></button>
                     <button class="arrow-button arrow-button_brown arrow-button_next"></button>
 
-                    <div class="timeline">
+                    <div class="timeline" data-id="history">
                         <ul class="timeline__inner">
-                            <li class="timeline__item timeline__item_active">
+                            <li class="timeline__item">
                                 <div class="timeline__year">1996</div>
                                 <div class="timeline__text">Начало</div>
                             </li>
@@ -355,7 +355,7 @@
                 </div>
             </section>
 
-            <section class="achievements vertical-slide" data-slide="achievements">
+            <section class="achievements vertical-slide" data-id="achievements">
 
                 <div class="horizontal-slider">
                     <div class="horizontal-slider__list-wrapper">
@@ -443,7 +443,7 @@
                         <span class="arrow-button__text">Следующий диплом</span>
                     </button>
 
-                    <div class="timeline">
+                    <div class="timeline" data-id="achievements">
                         <ul class="timeline__inner">
                             <li class="timeline__item timeline__item_active">
                                 <div class="timeline__text">Все дипломы</div>
@@ -463,7 +463,7 @@
                 </div>
             </section>
 
-            <section class="collections vertical-slide" data-slide="collections">
+            <section class="collections vertical-slide" data-id="collections">
 
                 <div class="collections__content">
 

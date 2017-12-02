@@ -1,0 +1,15 @@
+.history .timeline__item_current
+{
+    left: calc(50% - 130px / 2);
+}
+
+.history .timeline__item_current + .timeline__item,
+.history .timeline__item_current + .timeline__item:last-child
+{
+    left: calc(100% - 130px - 130px / 2);
+}
+
+.history .timeline__item_current + .timeline__item + .timeline__item
+{
+    left: calc(100% - 130px / 2);
+}
