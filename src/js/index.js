@@ -26,5 +26,8 @@
                 case 'hide':
                     return Page.delState('menu');
             }
+        })
+        .on('dragstart', '[draggable="false"]', function (event) {
+              event.preventDefault();
         });
 })();

@@ -6,15 +6,35 @@
     height: 50px;
 
     cursor: pointer;
+    user-select: none;
 
-    opacity: .6;
     color: #fff;
     border: 1px solid;
     border-radius: 50%;
     background: none;
 
-    transition: .15s all linear;
     transform: translateZ(0);
+}
+
+.page_hoverable .arrow-button
+{
+    opacity: .6;
+
+    transition: .15s all linear;
+}
+
+.page_hoverable .arrow-button:hover,
+.page_hoverable .arrow-button:focus
+{
+    opacity: .8;
+    outline: none;
+}
+
+.page_hoverable .arrow-button:active
+{
+    opacity: 1;
+
+    transition-duration: .05s;
 }
 
 .arrow-button:before
@@ -32,20 +52,6 @@
     content: '';
 
     background: url('img/icons/arrow-white.svg') 100% 50% no-repeat;
-}
-
-.page_hoverable .arrow-button:hover,
-.page_hoverable .arrow-button:focus
-{
-    opacity: .8;
-    outline: none;
-}
-
-.page_hoverable .arrow-button:active
-{
-    opacity: 1;
-
-    transition-duration: .05s;
 }
 
 .page .arrow-button:disabled
@@ -82,7 +88,10 @@
 
 .arrow-button_white:before
 {
-    width: 15px;
+    width: 20px;
+    height: 24px;
+
+    background-size: cover;
 }
 
 .arrow-button_brown
@@ -137,7 +146,7 @@
 }
 
 
-@media (max-width: 1024px)
+@media (max-width: 1280px)
 {
     .arrow-button__text
     {

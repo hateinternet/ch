@@ -11,6 +11,11 @@
     height: 100%;
 }
 
+.page_unselectable
+{
+    user-select: none;
+}
+
 .page:not(.page_hoverable) a:focus,
 .page:not(.page_hoverable) button:focus
 {

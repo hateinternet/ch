@@ -7,7 +7,7 @@
             var $btns = $scope.find('.arrow-button');
 
             var scrollDuration = 500;
-            var scrollStep = $slides.eq(0).width();
+            var scrollStep = $slides.eq(0).innerWidth();
 
             var last = $slides.length - 1;
             var index = -1;
@@ -18,18 +18,37 @@
 
             $btns.on('click', onArrowClick);
 
-            Page.$win
-                .on('resize', onResize)
-                .on('slider.vertical', onVerticalSliderChange)
-                .on('timeline.click', onTimelineClick);
+            bindToWin();
+            bindToSwipe();
+
+            function bindToWin() {
+                Page.$win
+                    .on('resize', onResize)
+                    .on('slider.vertical', onVerticalSliderChange)
+                    .on('timeline.click', onTimelineClick);
+            }
+
+            function bindToSwipe() {
+                var hammertime = new Hammer($scope[0]);
+
+                hammertime
+                    .get('swipe')
+                    .set({ direction: Hammer.DIRECTION_HORIZONTAL });
+
+                hammertime.on('swipe', function(event) {
+                    switch (event.direction) {
+                        case Hammer.DIRECTION_RIGHT:
+                            return move(-1);
+                        case Hammer.DIRECTION_LEFT:
+                            return move(1);
+                    }
+                });
+            }
 
             function onArrowClick(event) {
                 var direction = $(event.target).closest('.arrow-button').hasClass('arrow-button_next') ? 1 : -1;
-                var temp = index + direction;
 
-                if (temp <= last && temp >= 0) {
-                    moveTo(temp);
-                }
+                move(direction);
             }
 
             function updateBtns() {
@@ -40,18 +59,20 @@
             }
 
             function onResize() {
-                scrollStep = $slides.eq(0).width();
+                scrollStep = $slides.eq(0).innerWidth();
 
-                if (Page.slide === id) {
-                    moveTo(index, true);
+                moveTo(index, true);
+            }
+
+            function move(direction) {
+                var temp = index + direction;
+
+                if (temp <= last && temp >= 0) {
+                    moveTo(temp);
                 }
             }
 
             function moveTo(newIndex, jump) {
-                if (index === newIndex) {
-                    return;
-                }
-
                 index = newIndex;
 
                 var position = index * scrollStep;

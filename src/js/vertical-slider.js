@@ -26,12 +26,9 @@
 
             function moveFromHash() {
                 var id = location.hash.slice(1);
+                var newIndex = findIndexById(id);
 
-                index = findIndexById(id);
-
-                console.log(index);
-
-                moveTo(index > -1 ? index : 0, true);
+                moveTo(newIndex > -1 ? newIndex : 0, true);
             }
 
             function bindToWin() {
@@ -43,15 +40,14 @@
             function onResize() {
                 scrollStep = $slider.height();
 
-                move(0, true);
+                moveTo(index, true);
             }
 
             function onMenuClick(event, id) {
                 var jump = Page.hasState('menu');
+                var newIndex = findIndexById(id);
 
-                index = findIndexById(id);
-
-                moveTo(index > -1 ? index : 0, jump);
+                moveTo(newIndex, jump);
             }
 
             function findIndexById(id) {
@@ -63,38 +59,6 @@
 
                 return -1;
             }
-
-            var isDown = false;
-            var initY = 0;
-            var initScroll = 0;
-            var delta = 0;
-
-            Page.$win
-                .on('mousedown touchstart', function (event) {
-                    if (isScrolling) {
-                        return;
-                    }
-
-                    isDown = true;
-                    initY = event.clientY;
-                    initScroll = $slider.scrollTop();
-                })
-                .on('mousemove touchmove', function (event) {
-                    if (isDown) {
-                        delta = initY - event.clientY;
-
-                        $slider.scrollTop(initScroll + delta);
-                    }
-                })
-                .on('mouseup touchend', function () {
-                    if (Math.abs(delta) > scrollStep / 10) {
-                        move(delta > 0 ? 1 : -1);
-                    } else {
-                        moveTo(index);
-                    }
-
-                    isDown = false;
-                });
 
             function bindToWheel() {
                 new WheelIndicator({
@@ -108,13 +72,20 @@
             }
 
             function bindToSwipe() {
-                // var hammertime = new Hammer(document.body);
-                //
-                // hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
-                //
-                // Hammer(document.body).on('swipe', function (event) {
-                //     console.log(event);
-                // });
+                var hammertime = new Hammer($slider[0]);
+
+                hammertime
+                    .get('swipe')
+                    .set({ direction: Hammer.DIRECTION_VERTICAL });
+
+                hammertime.on('swipe', function(event) {
+                    switch (event.direction) {
+                        case Hammer.DIRECTION_DOWN:
+                            return move(-1);
+                        case Hammer.DIRECTION_UP:
+                            return move(1);
+                    }
+                });
             }
 
             function move(direction) {
@@ -133,11 +104,12 @@
                 return temp < 0 || temp > last ? index : temp;
             }
 
-            function moveTo(index, jump) {
+            function moveTo(newIndex, jump) {
                 if (isScrolling) {
                     return;
                 }
 
+                index = newIndex;
                 isScrolling = true;
 
                 var position = index * scrollStep;

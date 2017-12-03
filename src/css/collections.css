@@ -149,13 +149,7 @@
     {
         display: block;
 
-        padding: 80px 0 0;
-    }
-
-    .collections__text
-    {
-        font-size: 22px;
-        line-height: 22px;
+        padding: calc(45vh - 175px) 0 0;
     }
 
     .collections__content
@@ -163,6 +157,12 @@
         width: auto;
         margin: 0 20px;
         padding: 70px 30px;
+    }
+
+    .collections__text
+    {
+        font-size: 22px;
+        line-height: 22px;
     }
 
     .collections__image_left

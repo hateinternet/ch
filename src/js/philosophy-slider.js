@@ -22,6 +22,24 @@
 
             $scope.on('click', '.arrow-button', onArrowClick);
             $(window).on('resize', onResize);
+            bindToSwipe();
+
+            function bindToSwipe() {
+                var hammertime = new Hammer($scope[0]);
+
+                hammertime
+                    .get('swipe')
+                    .set({ direction: Hammer.DIRECTION_HORIZONTAL });
+
+                hammertime.on('swipe', function(event) {
+                    switch (event.direction) {
+                        case Hammer.DIRECTION_RIGHT:
+                            return move(-1);
+                        case Hammer.DIRECTION_LEFT:
+                            return move(1);
+                    }
+                });
+            }
 
             function onArrowClick(event) {
                 if ($wrapper.is(':animated')) {
@@ -29,6 +47,17 @@
                 }
 
                 var direction = $(event.target).hasClass('arrow-button_next') ? 1 : -1;
+
+                move(direction);
+            }
+
+            function onResize() {
+                scrollStep = $wrapper.eq(0).width();
+
+                moveTo(index, true);
+            }
+
+            function move(direction) {
                 var temp = index + direction;
 
                 if (temp > last) {
@@ -46,12 +75,6 @@
                 moveTo(index);
                 removeCurrent();
                 setCurrent(index === last ? 0 : index);
-            }
-
-            function onResize() {
-                scrollStep = $wrapper.eq(0).width();
-
-                moveTo(index, true);
             }
 
             function moveTo(index, jump) {

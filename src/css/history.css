@@ -52,7 +52,7 @@
 
 .horizontal-slide_current + .history__slide .history__content
 {
-    transform: translateX(-75%);
+    transform: translateX(-20%);
 }
 
 .history__title
@@ -142,6 +142,11 @@
 
 @media (max-width: 1024px)
 {
+    .horizontal-slide.history__slide:before
+    {
+        transform: translateX(-100px);
+    }
+
     .history__content
     {
         margin: -80px 0 0;
@@ -173,12 +178,12 @@
 
     .history .arrow-button_prev
     {
-        left: 40px;
+        left: 45px;
     }
 
     .history .arrow-button_next
     {
-        right: 30px;
+        right: 25px;
     }
 }
 

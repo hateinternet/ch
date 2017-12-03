@@ -92,7 +92,7 @@
     color: #fff;
     background: rgba(255, 255, 255, .15);
 
-    transition: all .75s ease-in;
+    transition: all .5s linear;
 }
 
 .page_type_dark .header__burger

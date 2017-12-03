@@ -1,5 +1,7 @@
 body
 {
+    min-width: 320px;
+    min-height: 560px;
     margin: 0;
     padding: 0;
 
@@ -7,4 +9,18 @@ body
 
     color: #363636;
     background: #303030;
+}
+
+*::selection
+{
+    color: #fff;
+    background: #bd8f65;
+}
+
+[draggable='false']
+{
+    user-select: none;
+    pointer-events: none;
+
+    user-drag: none;
 }

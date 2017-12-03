@@ -21,6 +21,16 @@
     transition: all .2s ease-in-out;
 }
 
+.page:not(.page_hoverable) .scroll-icon
+{
+    bottom: 25px;
+
+    height: auto;
+
+    border: none;
+    background: none;
+}
+
 .scroll-icon:before
 {
     display: inline-block;
@@ -31,6 +41,11 @@
     content: '';
 
     background: #fff;
+}
+
+.page:not(.page_hoverable) .scroll-icon:before
+{
+    display: none;
 }
 
 .scroll-icon__arrow
@@ -44,6 +59,15 @@
 
     transform: scaleX(1.2);
     animation: pulse infinite 1.5s linear;
+}
+
+.page:not(.page_hoverable) .scroll-icon__arrow
+{
+    top: 0;
+
+    height: 8px;
+
+    transform: scale(1.6, 1.4);
 }
 
 .scroll-icon__arrow:nth-child(2)
@@ -85,34 +109,6 @@
     50%
     {
         opacity: 1;
-    }
-}
-
-
-@media (max-width: 1024px)
-{
-    .scroll-icon
-    {
-        bottom: 25px;
-
-        height: auto;
-
-        border: none;
-        background: none;
-    }
-
-    .scroll-icon:before
-    {
-        display: none;
-    }
-
-    .scroll-icon__arrow
-    {
-        top: 0;
-
-        height: 8px;
-
-        transform: scale(1.6, 1.4);
     }
 }
 

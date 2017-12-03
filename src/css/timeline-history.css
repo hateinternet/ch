@@ -13,3 +13,8 @@
 {
     left: calc(100% - 130px / 2);
 }
+
+.history .timeline__item:last-child
+{
+    left: 50%;
+}
