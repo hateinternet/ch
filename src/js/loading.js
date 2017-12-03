@@ -1,8 +1,8 @@
 (function () {
     $('.loading')
         .each(function () {
-            var scopeTransition = 500;
-            var progressBarTransition = 200;
+            var scopeTransitionDuration = 500;
+            var progressBarTransitionDuration = 200;
 
             var $scope = $(this);
             var $progressBar = $scope.find('.loading__progress-bar');
@@ -10,7 +10,10 @@
             $scope.on('click', '.button', function () {
                 $scope.addClass('loading_closed');
 
-                setTimeout($scope.remove.bind($scope), scopeTransition);
+                setTimeout(
+                    $scope.remove.bind($scope),
+                    scopeTransitionDuration
+                );
             });
 
             Page.$body
@@ -18,7 +21,7 @@
                 .always(function () {
                     setTimeout(
                         $scope.addClass.bind($scope, 'loading_finished'),
-                        progressBarTransition
+                        progressBarTransitionDuration
                     );
 
                     document.cookie = [
@@ -32,8 +35,6 @@
 
                     $progressBar.css('transform', 'scaleX(' + value + ')');
                 });
-
-
         });
 })();
 

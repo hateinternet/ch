@@ -16,7 +16,7 @@
     user-select: none;
 }
 
-.page_transition_no main *
+.page_transition_no *
 {
     transition: none !important;
 }
