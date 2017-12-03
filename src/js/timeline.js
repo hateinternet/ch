@@ -11,6 +11,8 @@
             Page.$win.on('slider.horizontal', onHorizontalSliderChange);
             $scope.on('click', '.timeline__item', onItemClick);
 
+            updateTimeline(0);
+
             function prepareItems() {
                 var result = [];
 
@@ -59,8 +61,6 @@
             }
 
             function onItemClick() {
-                console.log($(this).data('index'));
-
                 Page.$html.trigger('timeline.click', {
                     id: id,
                     index: $(this).data('index')
@@ -72,13 +72,17 @@
                     return;
                 }
 
+                updateTimeline(data.index);
+            }
+
+            function updateTimeline(index) {
                 $items.removeClass('timeline__item_current timeline__item_prev');
 
-                var current = items[data.index];
+                var current = items[index];
 
                 setCurrent(current);
-                setPrev(data.index, current);
-                setNext(data.index, current);
+                setPrev(index, current);
+                setNext(index, current);
             }
 
             function setCurrent(item) {

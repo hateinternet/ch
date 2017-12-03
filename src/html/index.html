@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page page_index">
+<html class="page page_index page_transition_no">
     <head>
         <title>Chamovskikh</title>
 
@@ -116,6 +116,41 @@
             </div>
 
         </header>
+
+        <section class="loading">
+
+            <div class="loading__content">
+                <img draggable="false" src="img/decoration/common/lion.svg" alt="Chamovskikh Lion" class="loading__image">
+
+                <h1 class="loading__title">
+                    Chamovskikh<br>
+                    Jewellery House
+                </h1>
+
+                <p class="loading__text">
+                    Ювелирный дом Chamovskikh создает неповторимые украшения. И это не фигура речи. При изготовлении серёг,
+                    колец или ожерелий мы пытаемся узнать поближе их будущих владельцев, понять, о чем они мечтают и что
+                    чувствуют. Стиль жизни, характер, отношение к себе и к миру - все это позволяет наделять украшения
+                    уникальным смыслом и вдыхать в них совершенно особую жизнь.
+                </p>
+
+                <div class="loading__progress">
+                    <div class="loading__progress-bar"></div>
+
+                    <button class="button loading__button">
+                        <div class="button__text">Познакомиться поближе</div>
+                        <div class="button__icon"></div>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <script>
+            if (document.cookie.indexOf('loaded=1') > -1) {
+                document.querySelector('.loading').remove();
+            }
+        </script>
 
         <main class="vertical-slider">
             <section class="philosophy vertical-slide" data-id="philosophy" data-type="dark">
@@ -663,30 +698,6 @@
                 <!--<button class="gallery__button gallery__button&#45;&#45;next"> </button>-->
             <!--</div>-->
         <!--</div>-->
-
-        <!--<section class="loading">-->
-
-            <!--<div class="loading__content">-->
-                <!--<img src="" alt="Chamovskikh Lion" class="loading__image">-->
-
-                <!--<h1 class="loading__title">-->
-                    <!--Chamovskikh Jewellery House-->
-                <!--</h1>-->
-
-                <!--<p class="loading__text">-->
-                    <!--Ювелирный дом Chamovskikh создает неповторимые украшения. И это не фигура речи. При изготовлении серёг,-->
-                    <!--колец или ожерелий мы пытаемся узнать поближе их будущих владельцев, понять, о чем они мечтают и что-->
-                    <!--чувствуют. Стиль жизни, характер, отношение к себе и к миру - все это позволяет наделять украшения-->
-                    <!--уникальным смыслом и вдыхать в них совершенно особую жизнь.-->
-                <!--</p>-->
-
-                <!--<button class="button loading__link">-->
-                    <!--<div class="button__text">Познакомиться поближе</div>-->
-                    <!--<div class="button__icon"></div>-->
-                <!--</button>-->
-            <!--</div>-->
-
-        <!--</section>-->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="bundle.js"></script>

@@ -11,6 +11,10 @@
         event.preventDefault();
     };
 
+    setTimeout(function () {
+        Page.delState('transition', 'no');
+    }, 100);
+
     Page.$html
         .on('slider.vertical slider.horizontal', function (event, data) {
             Page

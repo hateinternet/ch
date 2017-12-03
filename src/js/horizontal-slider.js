@@ -98,7 +98,7 @@
             function setType() {
                 var type = $slides.eq(index).data('type');
 
-                $scope[type === 'dark' ? 'addClass' : 'removeClass']('horizontal-slider__type_dark');
+                $scope[type === 'dark' ? 'addClass' : 'removeClass']('horizontal-slider_type_dark');
             }
 
             function triggerEvent() {

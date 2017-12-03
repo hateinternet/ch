@@ -38,7 +38,7 @@
     background: #303030;
 }
 
-.horizontal-slide_current.history__slide:before
+.page .horizontal-slide_current.history__slide:before
 {
     transform: none;
 }
@@ -48,11 +48,6 @@
     width: 485px;
 
     transition: transform .5s ease-in-out;
-}
-
-.horizontal-slide_current + .history__slide .history__content
-{
-    transform: translateX(-20%);
 }
 
 .history__title
@@ -72,7 +67,7 @@
 
     height: 270px;
     margin: 0 60px 0 0;
-    padding: 0 20px 0 0;
+    padding: 0 20px 20px 0;
 
     font-size: 16px;
     line-height: 22px;
@@ -113,10 +108,8 @@
 .history__gallery
 {
     position: absolute;
-    top: 0;
+    top: -25px;
     right: 20px;
-
-    margin: -25px 0;
 }
 
 .history__slide_dark .radius-button
@@ -197,9 +190,15 @@
         padding: 0 20px;
     }
 
+    .horizontal-slide.history__slide:before
+    {
+        transform: translateX(-30px);
+    }
+
     .history__content
     {
-        margin: 25px 0 0;
+        width: 250px;
+        margin: 25px 0 0 -30px;
 
         order: 2;
     }
@@ -207,9 +206,16 @@
     .history__image-wrapper
     {
         width: 250px;
-        height: 188px;
+        height: 190px;
+        margin: 0 0 0 -30px;
 
         order: 1;
+    }
+
+    .horizontal-slide.history__slide:last-child .history__content,
+    .horizontal-slide.history__slide:last-child .history__image-wrapper
+    {
+        margin-left: 0;
     }
 
     .history__title
@@ -220,7 +226,7 @@
 
     .history__text
     {
-        width: auto;
+        width: 100%;
         max-height: 150px;
         margin: 0;
         padding: 0;
@@ -231,24 +237,27 @@
 
     .history .arrow-button
     {
-        width: 45px;
-        height: 45px;
-    }
+        width: 44px;
+        height: 44px;
 
-    .history .arrow-button_prev
-    {
-        display: none;
+        transition: background .5s linear;
     }
 
     .history .arrow-button_next
     {
-        right: 10px;
-        bottom: 65px;
+        right: 8px;
+        bottom: 60px;
 
         opacity: 1;
-        background-color: #f5f4f2;
+        background: #f5f4f2;
     }
 
+    .horizontal-slider_type_dark .arrow-button_next
+    {
+        background: #363636;
+    }
+
+    .history .arrow-button_prev,
     .history .timeline__text
     {
         display: none;

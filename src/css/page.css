@@ -16,6 +16,11 @@
     user-select: none;
 }
 
+.page_transition_no main *
+{
+    transition: none !important;
+}
+
 .page:not(.page_hoverable) a:focus,
 .page:not(.page_hoverable) button:focus
 {

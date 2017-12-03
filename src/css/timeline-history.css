@@ -18,3 +18,23 @@
 {
     left: 50%;
 }
+
+@media (max-width: 767px)
+{
+    .history .timeline__item
+    {
+        left: 32px;
+    }
+
+    .history .timeline__item_current
+    {
+        left: calc(50% - 15px);
+    }
+
+    .history .timeline__item_current + .timeline__item,
+    .history .timeline__item_current + .timeline__item:last-child,
+    .history .timeline__item_current + .timeline__item + .timeline__item
+    {
+        left: calc(100% - 50px);
+    }
+}

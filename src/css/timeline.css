@@ -108,7 +108,7 @@
     box-shadow: 0 0 0 3px #f7f6f5, 0 0 0 4px;
 }
 
-.horizontal-slider__type_dark .timeline__item_current:before
+.horizontal-slider_type_dark .timeline__item_current:before
 {
     box-shadow: 0 0 0 3px #303030, 0 0 0 4px;
 }
@@ -198,6 +198,8 @@
     .timeline__item
     {
         left: 50px;
+        width: 90px;
+        margin-left: -45px;
     }
 
     .timeline__item_current

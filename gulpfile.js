@@ -43,14 +43,16 @@ gulp.task('css', () => {
 gulp.task('js', () => {
     return gulp
         .src([
-            'src/js/wheel-indicator.js',
-            'src/js/hammer.js',
+            'src/js/wheel-indicator.min.js',
+            'src/js/hammer.min.js',
+            'src/js/imagesloaded.min.js',
 
             'src/js/page.js',
             'src/js/index.js',
 
             'src/js/header.js',
             'src/js/horizontal-slider.js',
+            'src/js/loading.js',
             'src/js/philosophy-slider.js',
             'src/js/timeline.js',
             'src/js/vertical-slider.js'
