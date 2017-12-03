@@ -19,6 +19,14 @@
                     };
                 });
 
+            function calcVH() {
+                var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                document.body.setAttribute("style", "height:" + vH + "px;");
+            }
+            calcVH();
+            window.addEventListener('onorientationchange', calcVH, true);
+            window.addEventListener('resize', calcVH, true);
+
             moveFromHash();
             bindToWin();
             bindToWheel();
@@ -43,11 +51,10 @@
                 moveTo(index, true);
             }
 
-            function onMenuClick(event, id) {
-                var jump = Page.hasState('menu');
-                var newIndex = findIndexById(id);
+            function onMenuClick(event, data) {
+                var newIndex = findIndexById(data.id);
 
-                moveTo(newIndex, jump);
+                moveTo(newIndex, data.jump);
             }
 
             function findIndexById(id) {

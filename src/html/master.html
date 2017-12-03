@@ -62,9 +62,6 @@
         </svg>
 
         <header class="header">
-            <button class="header__burger">
-                <div class="header__burger-icon"></div>
-            </button>
 
             <a href="index.html" class="header__logo-link">
                 <svg class="header__logo">
@@ -81,29 +78,41 @@
             </a>
 
             <nav class="nav">
-                <a class="nav__logo-link" href="index.html">
-                    <svg class="nav__logo">
+                <a href="index.html#philosophy" class="nav__link">Философия</a>
+                <a href="index.html#history" class="nav__link">История</a>
+                <a href="index.html#achievements" class="nav__link">Достижения</a>
+                <a href="index.html#collections" class="nav__link">Коллекции</a>
+            </nav>
+
+            <button class="menu__burger">
+                <div class="menu__burger-icon"></div>
+            </button>
+
+            <div class="menu">
+                <a class="menu__logo-link" href="index.html">
+                    <svg class="menu__logo">
                         <use xlink:href="#logo_small"></use>
                     </svg>
                 </a>
 
-                <div class="nav__link-wrapper">
-                    <a href="index.html#philosophy" class="nav__link">Философия</a>
+                <div class="menu__wrapper">
+                    <a href="index.html#philosophy" class="menu__link">Философия</a>
                 </div>
-                <div class="nav__link-wrapper">
-                    <a href="index.html#history" class="nav__link">История</a>
+                <div class="menu__wrapper">
+                    <a href="index.html#history" class="menu__link">История</a>
                 </div>
-                <div class="nav__link-wrapper">
-                    <a href="index.html#achievements" class="nav__link">Достижения</a>
+                <div class="menu__wrapper">
+                    <a href="index.html#achievements" class="menu__link">Достижения</a>
                 </div>
-                <div class="nav__link-wrapper">
-                    <a href="index.html#collections" class="nav__link">Коллекции</a>
+                <div class="menu__wrapper">
+                    <a href="index.html#collections" class="menu__link">Каталог</a>
                 </div>
 
-                <button class="header__close">
-                    <div class="header__close-icon"></div>
+                <button class="menu__close">
+                    <div class="menu__close-icon"></div>
                 </button>
-            </nav>
+            </div>
+
         </header>
 
         <main class="story">

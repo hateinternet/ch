@@ -49,8 +49,8 @@ gulp.task('js', () => {
             'src/js/page.js',
             'src/js/index.js',
 
+            'src/js/header.js',
             'src/js/horizontal-slider.js',
-            'src/js/menu.js',
             'src/js/philosophy-slider.js',
             'src/js/timeline.js',
             'src/js/vertical-slider.js'

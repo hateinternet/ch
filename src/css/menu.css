@@ -1,0 +1,163 @@
+.menu
+{
+    position: fixed;
+    z-index: 10001;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+
+    padding-top: 110px;
+
+    color: #fff;
+    background: #363636 url(img/decoration/common/pattern_dark.svg) 100% 100% / 300px auto;
+
+    transition: .3s transform ease-in-out;
+    transform: translateX(-100%);
+}
+
+.page_menu .menu
+{
+    transform: none;
+}
+
+.menu__logo-link,
+.menu__link
+{
+    display: inline-block;
+
+    color: inherit;
+}
+
+.menu__logo
+{
+    width: 110px;
+    height: 110px;
+    margin: 0 0 35px;
+}
+
+.menu__link
+{
+    padding: 10px;
+
+    text-decoration: none;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+
+    font: 15px IntroCaps, sans-serif;
+}
+
+.menu__link:focus
+{
+    outline: none;
+}
+
+.menu__burger,
+.menu__close
+{
+    position: absolute;
+    z-index: 10000;
+    top: 15px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    transform: translateZ(0);
+}
+
+.menu__burger
+{
+    left: 15px;
+
+    display: none;
+
+    color: #fff;
+    background: rgba(255, 255, 255, .15);
+
+    transition: all .5s linear;
+}
+
+.page_type_dark .menu__burger
+{
+    color: rgba(110, 110, 109, .7);
+    background: rgba(233, 232, 227, .9);
+}
+
+.menu__close
+{
+    right: 15px;
+
+    color: rgba(255, 255, 255, .25);
+    background: rgba(233, 232, 227, .08);
+}
+
+.menu__burger:focus,
+.menu__close:focus
+{
+    outline: none;
+}
+
+.menu__burger-icon,
+.menu__close-icon
+{
+    margin: 0 auto;
+}
+
+.menu__burger-icon,
+.menu__burger-icon:before,
+.menu__burger-icon:after,
+.menu__close-icon:before,
+.menu__close-icon:after
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    width: 17px;
+    height: 0;
+    margin: auto;
+
+    content: '';
+
+    border-top: 1px solid;
+}
+
+.menu__burger-icon:after
+{
+    top: auto;
+    bottom: 5px;
+}
+
+.menu__burger-icon:before
+{
+    top: 4px;
+    bottom: auto;
+}
+
+.menu__close-icon:before
+{
+    transform: rotate(45deg);
+}
+
+.menu__close-icon:after
+{
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 767px)
+{
+    .menu,
+    .menu__burger
+    {
+        display: block;
+    }
+}
