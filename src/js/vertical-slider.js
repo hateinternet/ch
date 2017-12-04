@@ -35,15 +35,12 @@
 
             function bindToWin() {
                 Page.$win
-                    .on('resize orientationchange', onResize)
+                    .on('resize', onResize)
                     .on('menu.click', onMenuClick);
             }
 
             function onResize(event) {
-                var windowHeight = Page.$win.height();
-
-                scrollStep = windowHeight;
-                Page.$body.height(windowHeight);
+                scrollStep = $slider.height();
 
                 moveTo(index, true);
             }

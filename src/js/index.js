@@ -17,7 +17,6 @@
 
     Page.$win
         .on('hashchange', function (event) {
-            console.log(event);
             event.preventDefault();
         });
 
