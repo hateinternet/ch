@@ -6,7 +6,7 @@
 
             var isScrolling = false;
             var scrollDuration = 500;
-            var scrollStep = $slider.height();
+            var scrollStep = null;
 
             var index = -1;
             var last = $slides.length - 1;
@@ -24,6 +24,8 @@
             bindToWheel();
             bindToSwipe();
 
+            onResize();
+
             function moveFromHash() {
                 var id = location.hash.slice(1);
                 var newIndex = findIndexById(id);
@@ -33,12 +35,15 @@
 
             function bindToWin() {
                 Page.$win
-                    .on('resize', onResize)
+                    .on('resize orientationchange', onResize)
                     .on('menu.click', onMenuClick);
             }
 
-            function onResize() {
-                scrollStep = $slider.height();
+            function onResize(event) {
+                var windowHeight = Page.$win.height();
+
+                scrollStep = windowHeight;
+                Page.$body.height(windowHeight);
 
                 moveTo(index, true);
             }

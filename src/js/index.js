@@ -1,19 +1,25 @@
 (function () {
-    if (!window.ontouchstart && !navigator.maxTouchPoints) {
+    (function checkIfHoverable() {
+        if ('ontouchstart' in window || navigator.maxTouchPoints) {
+            return;
+        }
+
         Page.setState('hoverable');
-    }
+    })();
 
     if (window.devicePixelRatio > 1.5) {
         Page.setState('hidpi');
     }
 
-    window.onhashchange = function (event) {
-        event.preventDefault();
-    };
-
     setTimeout(function () {
         Page.delState('transition', 'no');
     }, 100);
+
+    Page.$win
+        .on('hashchange', function (event) {
+            console.log(event);
+            event.preventDefault();
+        });
 
     Page.$html
         .on('slider.vertical slider.horizontal', function (event, data) {
@@ -21,15 +27,6 @@
                 .setState('slide', data.id)
                 .setState('type', data.type === 'dark' ? 'none' : 'dark')
                 .setState('logo', data.id === 'collections' ? 'no' : 'yes');
-        })
-        .on('menu', function (event) {
-            switch (event.namespace) {
-                case 'show':
-                    return Page.setState('menu');
-                case 'click':
-                case 'hide':
-                    return Page.delState('menu');
-            }
         })
         .on('dragstart', '[draggable="false"]', function (event) {
               event.preventDefault();
