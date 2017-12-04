@@ -1,3 +1,11 @@
+.page_index,
+.page_index body
+{
+    overflow: hidden;
+
+    height: 100%;
+}
+
 .page__svg-storage
 {
     display: none;
