@@ -50,6 +50,7 @@ gulp.task('js', () => {
             'src/js/page.js',
             'src/js/index.js',
 
+            'src/js/gallery.js',
             'src/js/header.js',
             'src/js/horizontal-slider.js',
             'src/js/loading.js',

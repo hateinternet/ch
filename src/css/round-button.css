@@ -1,0 +1,83 @@
+.round-button
+{
+    width: 50px;
+    height: 50px;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 50%;
+
+    transition: all .5s linear, opacity .2s linear;
+    transform: translateZ(0);
+}
+
+.round-button:focus
+{
+    outline: none;
+}
+
+.page_hoverable .round-button:hover
+{
+    opacity: .5;
+}
+
+.round-button_burger
+{
+    color: #fff;
+    background: rgba(255, 255, 255, .15);
+}
+
+.round-button_close
+{
+    color: rgba(255, 255, 255, .25);
+    background: rgba(233, 232, 227, .08);
+}
+
+.round-button .round-button__icon
+{
+    margin: 0 auto;
+}
+
+.round-button_burger .round-button__icon,
+.round-button .round-button__icon:before,
+.round-button .round-button__icon:after
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    width: 17px;
+    height: 0;
+    margin: auto;
+
+    content: '';
+
+    border-top: 1px solid;
+}
+
+.round-button_burger .round-button__icon:after
+{
+    top: auto;
+    bottom: 5px;
+}
+
+.round-button_burger .round-button__icon:before
+{
+    top: 4px;
+    bottom: auto;
+}
+
+.round-button_close .round-button__icon:before
+{
+    transform: rotate(45deg);
+}
+
+.round-button_close .round-button__icon:after
+{
+    transform: rotate(-45deg);
+}

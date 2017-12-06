@@ -105,13 +105,6 @@
     border-radius: 0;
 }
 
-.history__gallery
-{
-    position: absolute;
-    top: -25px;
-    right: 20px;
-}
-
 .history__slide_dark .radius-button
 {
     background-color: rgba(255, 255, 255, .2);

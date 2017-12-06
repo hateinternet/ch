@@ -25,6 +25,10 @@
             bindToSwipe();
 
             function bindToSwipe() {
+                if (Page.hasState('hoverable')) {
+                    return;
+                }
+
                 var hammertime = new Hammer($scope[0]);
 
                 hammertime

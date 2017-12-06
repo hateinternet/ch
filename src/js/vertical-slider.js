@@ -73,6 +73,10 @@
             }
 
             function bindToSwipe() {
+                if (Page.hasState('hoverable')) {
+                    return;
+                }
+
                 var hammertime = new Hammer($slider[0]);
 
                 hammertime

@@ -68,6 +68,11 @@
     color: rgba(54, 54, 54, .8);
 }
 
+.achievements figure
+{
+    margin: 0;
+}
+
 .achievements__sub-title
 {
     margin: 0 0 20px;
@@ -169,6 +174,7 @@
     .achievements figure
     {
         position: absolute;
+        left: 0;
 
         width: 100%;
     }

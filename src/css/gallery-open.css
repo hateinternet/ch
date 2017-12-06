@@ -1,0 +1,145 @@
+.gallery-open
+{
+    position: relative;
+
+    display: inline-block;
+
+    cursor: pointer;
+}
+
+.gallery-open:after,
+.gallery-open__image,
+.gallery-open__button,
+.gallery-open__icon
+{
+    transition: opacity .2s linear;
+}
+
+.gallery-open:after
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: -2px;
+
+    content: '';
+
+    opacity: 0;
+    background: rgba(247, 246, 245, .8);
+
+    transform: translateZ(0);
+}
+
+.history__slide_dark .gallery-open:after
+{
+    background: rgba(48, 48, 48, .8);
+}
+
+.page_hoverable .gallery-open:hover:after
+{
+    opacity: 1;
+}
+
+.page_hoverable .gallery-open:hover .gallery-open__image
+{
+    transform: translateZ(0);
+
+    filter: blur(2px);
+}
+
+.gallery-open__button
+{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    height: 42px;
+    margin: auto;
+    padding: 0 30px 0 40px;
+
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+
+    font: 12px IntroCaps, serif;
+    line-height: 42px;
+
+    opacity: 0;
+    color: #bd8f65;
+    border-radius: 42px;
+    background-color: rgba(255, 255, 255, .8);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .1);
+
+    transition: opacity .2s linear;
+    transform: translateX(-50%);
+}
+
+.history__slide_dark .gallery-open__button
+{
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.page_hoverable .gallery-open:hover .gallery-open__button
+{
+    opacity: 1;
+}
+
+.gallery-open__button:after
+{
+    display: inline-block;
+
+    width: 15px;
+    height: 12px;
+    margin: 0 0 0 15px;
+
+    content: '';
+    vertical-align: middle;
+
+    background: url(img/icons/arrow-brown.svg) 50% 50% / contain no-repeat;
+}
+
+.gallery-open__icon
+{
+    position: absolute;
+    z-index: 1;
+    top: -25px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    background: url(img/icons/gallery.svg) center / 27px auto no-repeat rgba(255, 255, 255, .8);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .1);
+}
+
+.history__slide_dark .gallery-open__icon
+{
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.page_hoverable .gallery-open:hover .gallery-open__icon
+{
+    opacity: 0;
+}
+
+@media (max-width: 767px)
+{
+    .gallery-open__icon
+    {
+        top: 5px;
+        right: -10px;
+
+        width: 42px;
+        height: 42px;
+
+        background-size: 24px auto;
+    }
+}
