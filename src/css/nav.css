@@ -23,7 +23,7 @@
     opacity: .7;
 }
 
-.nav__link_current
+.page .nav__link.nav__link_current
 {
     opacity: 1;
 }
