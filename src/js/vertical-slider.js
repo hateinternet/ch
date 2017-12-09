@@ -19,6 +19,8 @@
                     };
                 });
 
+            slides.push(slides[slides.length - 1]);
+
             moveFromHash();
             bindToWin();
             bindToWheel();
@@ -41,6 +43,10 @@
 
             function onResize(event) {
                 scrollStep = $slider.height();
+
+                if (index > last) {
+                    index = last;
+                }
 
                 moveTo(index, true);
             }
@@ -83,7 +89,7 @@
                     .get('swipe')
                     .set({ direction: Hammer.DIRECTION_VERTICAL });
 
-                hammertime.on('swipe', function(event) {
+                hammertime.on('swipe', function (event) {
                     switch (event.direction) {
                         case Hammer.DIRECTION_DOWN:
                             return move(-1);
@@ -106,6 +112,10 @@
             function getIndex(direction) {
                 var temp = index + direction;
 
+                if (temp > last && window.innerWidth < 768) {
+                    return temp;
+                }
+
                 return temp < 0 || temp > last ? index : temp;
             }
 
@@ -114,8 +124,8 @@
                     return;
                 }
 
-                index = newIndex;
                 isScrolling = true;
+                index = newIndex;
 
                 var position = index * scrollStep;
                 var duration = jump ? 0 : scrollDuration;

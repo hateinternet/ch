@@ -32,7 +32,7 @@
     background: #f7f6f5;
 
     transition: transform .3s ease-in-out;
-    transform: translateX(-130px);
+    transform: translate3d(-130px, 0, 0);
 }
 
 .horizontal-slide.history__slide_dark:before
