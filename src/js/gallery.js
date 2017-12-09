@@ -77,7 +77,7 @@
 
             function onResize() {
                 updateDimensions();
-                moveTo(index, true);
+                moveList(true);
             }
 
             function updateDimensions() {
@@ -100,7 +100,7 @@
                 updateCount();
                 updateDimensions();
 
-                moveTo(0, true);
+                moveTo(0);
             }
 
             function updateTitle(data) {
@@ -158,12 +158,12 @@
                 moveTo(newIndex);
             }
 
-            function moveTo(newIndex, jump) {
+            function moveTo(newIndex) {
                 index = newIndex;
 
                 setCurrent();
                 updateCount();
-                moveList(jump);
+                moveList();
             }
 
             function setCurrent() {

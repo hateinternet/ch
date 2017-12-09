@@ -7,9 +7,9 @@
     bottom: 0;
     left: 0;
 
-    display: none;
+    overflow: auto;
 
-    padding-top: 90px;
+    padding: 80px 0 20px;
 
     color: #fff;
     background: #363636 url(img/decoration/common/pattern_dark.svg) 100% 100% / 300px auto;
@@ -56,7 +56,7 @@
 
 .menu__close
 {
-    position: absolute;
+    position: fixed;
     top: 15px;
     right: 15px;
 }
@@ -67,8 +67,6 @@
     z-index: 10000;
     top: 15px;
     left: 15px;
-
-    display: none;
 }
 
 .page_type_dark .menu__burger
@@ -77,11 +75,11 @@
     background: rgba(233, 232, 227, .9);
 }
 
-@media (max-width: 767px)
+@media (min-width: 768px)
 {
     .menu,
     .menu__burger
     {
-        display: block;
+        display: none;
     }
 }
