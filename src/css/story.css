@@ -5,13 +5,54 @@
     background: #eeede9 url(img/decoration/common/pattern.svg) 0 / 300px auto;
 }
 
-.story__image
+.story__image-wrapper
 {
+    position: relative;
+
     width: 100%;
     height: 75vh;
+}
+
+.story__image-wrapper:before,
+.story__image
+{
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    margin: auto;
 
     background-position: 50% 50%;
     background-size: cover;
+}
+
+.story__image-wrapper:before
+{
+    position: absolute;
+    top: calc(50% - 100px);
+
+    width: 50px;
+    height: 50px;
+
+    content: '';
+
+    background: url(img/decoration/common/spinner.svg) 50% 50% / cover;
+
+    animation: spin 4s infinite linear;
+}
+
+.story__image
+{
+    top: 0;
+    bottom: 0;
+}
+
+@keyframes spin
+{
+    100%
+    {
+        transform: rotate(360deg);
+    }
 }
 
 .story__wrapper
@@ -127,9 +168,14 @@
 
 @media (max-width: 767px)
 {
-    .story__image
+    .story__image-wrapper
     {
         height: 100vh;
+    }
+
+    .story__image-wrapper:before
+    {
+        top: calc(50% - 125px);
     }
 
     .story__content

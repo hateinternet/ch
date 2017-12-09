@@ -16,39 +16,64 @@
 
             var index = 0;
             var stepWidth = 0;
-            var hidpi = Page.hasState('hidpi');
 
-            Page.$win
-                .on('resize orientationchange', onResize)
-                .on('keydown', function (event) {
-                    event.which === 27 && Page.delState('gallery');
+            bindCommonEvents();
+            bindToSwipe();
+
+            function bindCommonEvents() {
+                Page.$win
+                    .on('resize orientationchange', onResize)
+                    .on('keydown', function (event) {
+                        event.which === 27 && Page.delState('gallery');
+                    });
+
+                Page.$body.on('click', '.gallery-open', function () {
+                    var data = $(this).data('gallery');
+
+                    if (!data) {
+                        return;
+                    }
+
+                    updateGallery(data);
+                    Page.setState('gallery');
                 });
 
-            Page.$body.on('click', '.gallery-open', function () {
-                var data = $(this).data('gallery');
+                $gallery
+                    .on('click', '.gallery__close', function () {
+                        Page.delState('gallery');
+                    })
+                    .on('click', '.gallery__item', function () {
+                        var newIndex = $(this).index();
 
-                if (!data) {
+                        moveTo(newIndex);
+                    })
+                    .on('click', '.arrow-button', function () {
+                        var direction = $(this).hasClass('arrow-button_next') ? 1 : -1;
+
+                        move(direction);
+                    });
+            }
+
+            function bindToSwipe() {
+                if (Page.hasState('hoverable')) {
                     return;
                 }
 
-                updateGallery(data);
-                Page.setState('gallery');
-            });
+                var hammertime = new Hammer($gallery[0]);
 
-            $gallery
-                .on('click', '.gallery__close', function () {
-                    Page.delState('gallery');
-                })
-                .on('click', '.gallery__item', function () {
-                    var newIndex = $(this).index();
+                hammertime
+                    .get('swipe')
+                    .set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
-                    moveTo(newIndex);
-                })
-                .on('click', '.arrow-button', function () {
-                    var direction = $(this).hasClass('arrow-button_next') ? 1 : -1;
-
-                    move(direction);
+                hammertime.on('swipe', function (event) {
+                    switch (event.direction) {
+                        case Hammer.DIRECTION_RIGHT:
+                            return move(-1);
+                        case Hammer.DIRECTION_LEFT:
+                            return move(1);
+                    }
                 });
+            }
 
             function onResize() {
                 updateDimensions();
@@ -115,8 +140,8 @@
                     '<img ' +
                         'class="gallery__item-image" ' +
                         'alt="' + item.title + '" ' +
-                        'src="' +  item.image + '" '+
-                        'srcset="' +  item.image.replace(/\.[^\.]*$/, '_2x$&') + ' 2x" '  +
+                        'src="' + item.image + '" ' +
+                        'srcset="' + item.image.replace(/\.[^\.]*$/, '_2x$&') + ' 2x" ' +
                     '/>'
             }
 
