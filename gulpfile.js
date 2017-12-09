@@ -53,6 +53,7 @@ gulp.task('js', () => {
             'src/js/achievements.js',
             'src/js/gallery.js',
             'src/js/header.js',
+            'src/js/history.js',
             'src/js/horizontal-slider.js',
             'src/js/loading.js',
             'src/js/philosophy-slider.js',
