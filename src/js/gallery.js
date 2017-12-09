@@ -76,6 +76,10 @@
             }
 
             function onResize() {
+                if (!$items) {
+                    return;
+                }
+
                 updateDimensions();
                 moveList(true);
             }
@@ -100,7 +104,7 @@
                 updateCount();
                 updateDimensions();
 
-                moveTo(0);
+                moveTo(0, true);
             }
 
             function updateTitle(data) {
@@ -158,12 +162,12 @@
                 moveTo(newIndex);
             }
 
-            function moveTo(newIndex) {
+            function moveTo(newIndex, jump) {
                 index = newIndex;
 
                 setCurrent();
                 updateCount();
-                moveList();
+                moveList(jump);
             }
 
             function setCurrent() {

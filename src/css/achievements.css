@@ -213,11 +213,14 @@
     .achievements__diploma
     {
         position: absolute;
+        top: 0;
+        bottom: 0;
 
         width: 100%;
         max-width: 310px;
         height: 100%;
         max-height: 210px;
+        margin: auto;
         padding: 0;
 
         text-align: center;

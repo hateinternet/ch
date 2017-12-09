@@ -57,6 +57,10 @@
             }
 
             function currentDiplomaText(index, count) {
+                if (count === 1) {
+                    return '1 диплом';
+                }
+
                 return (index + 1) + '/' + count + ' дипломов';
             }
 

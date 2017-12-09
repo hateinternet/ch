@@ -16,12 +16,13 @@
 
             moveTo(0);
 
-            $btns.on('click', onArrowClick);
-
-            bindToWin();
+            bindCommonEvents();
             bindToSwipe();
 
-            function bindToWin() {
+            function bindCommonEvents() {
+                $btns
+                    .on('click', onArrowClick);
+
                 Page.$win
                     .on('resize', onResize)
                     .on('slider.vertical', onVerticalSliderChange)

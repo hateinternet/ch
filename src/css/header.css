@@ -37,13 +37,17 @@
 
 .header__logo-link
 {
-    opacity: .8;
     color: inherit;
 
     transition: .15s opacity linear;
 }
 
-.page_type_dark .header__logo-link
+.page_hoverable .header__logo-link
+{
+    opacity: .8;
+}
+
+.page_hoverable.page_type_dark .header__logo-link
 {
     opacity: .65;
 }
