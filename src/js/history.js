@@ -10,7 +10,7 @@
             var imageHeight = $scope.find('.history__image-wrapper').eq(0).height();
 
             Page.$win.on('resize', function () {
-                if (this.innerWidth > 768) {
+                if (this.innerWidth > 767) {
                     $texts.attr('style', '');
 
                     return;

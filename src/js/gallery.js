@@ -59,7 +59,8 @@
                     return;
                 }
 
-                var hammertime = new Hammer($gallery[0]);
+                var wrapper = $gallery.find('.gallery__wrapper')[0];
+                var hammertime = new Hammer(wrapper);
 
                 hammertime
                     .get('swipe')
@@ -104,7 +105,7 @@
                 updateCount();
                 updateDimensions();
 
-                moveTo(0, true);
+                moveTo(0);
             }
 
             function updateTitle(data) {
@@ -162,12 +163,12 @@
                 moveTo(newIndex);
             }
 
-            function moveTo(newIndex, jump) {
+            function moveTo(newIndex) {
                 index = newIndex;
 
                 setCurrent();
                 updateCount();
-                moveList(jump);
+                moveList();
             }
 
             function setCurrent() {

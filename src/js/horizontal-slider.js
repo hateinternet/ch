@@ -40,6 +40,7 @@
                     .get('swipe')
                     .set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
+
                 hammertime.on('swipe', function(event) {
                     switch (event.direction) {
                         case Hammer.DIRECTION_RIGHT:
