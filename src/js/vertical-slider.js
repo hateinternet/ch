@@ -38,7 +38,8 @@
             function bindToWin() {
                 Page.$win
                     .on('resize', onResize)
-                    .on('menu.click', onMenuClick);
+                    .on('menu.click', onMenuClick)
+                    .on('scrollbar.swipe', onScrollbarSwipe);
             }
 
             function onResize(event) {
@@ -72,6 +73,11 @@
                     elem: $slider[0],
                     callback: function (event) {
                         var direction = event.direction === 'up' ? -1 : 1;
+                        var $text = $(event.target).closest('.history__text');
+
+                        if ($text.length) {
+                            return;
+                        }
 
                         move(direction);
                     }
@@ -83,7 +89,7 @@
                     return;
                 }
 
-                var hammertime = new Hammer($slider[0], { touchAction: 'auto' });
+                var hammertime = new Hammer($slider[0]);
 
                 hammertime
                     .get('swipe')
@@ -97,6 +103,10 @@
                             return move(1);
                     }
                 });
+            }
+
+            function onScrollbarSwipe(event, direction) {
+                move(direction);
             }
 
             function move(direction) {

@@ -43,9 +43,10 @@ gulp.task('css', () => {
 gulp.task('js', () => {
     return gulp
         .src([
-            'src/js/wheel-indicator.min.js',
+            'src/js/custom-scrollbar.min.js',
             'src/js/hammer.min.js',
             'src/js/imagesloaded.min.js',
+            'src/js/wheel-indicator.min.js',
 
             'src/js/page.js',
             'src/js/index.js',

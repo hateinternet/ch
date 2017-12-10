@@ -7,26 +7,48 @@
             var $texts = $scope.find('.history__text');
 
             var padding = 160;
-            var imageHeight = $scope.find('.history__image-wrapper').eq(0).height();
 
-            Page.$win.on('resize', function () {
-                if (this.innerWidth > 767) {
-                    $texts.attr('style', '');
+            initScrollBars();
+            bindToWin();
 
-                    return;
-                }
-
-                var windowHeight = this.innerHeight;
-
-                $texts.each(function (index) {
-                    var $text = $(this);
-
-                    var titleHeight = $titles.eq(index).height();
-                    var height = windowHeight - imageHeight - titleHeight - padding;
-
-                    $text.height(height);
+            function initScrollBars() {
+                $texts.mCustomScrollbar({
+                    theme: 'minimal',
+                    scrollInertia: 500,
+                    callbacks: {
+                        onScroll: function () {
+                            this.dataset.state = {
+                                0: 'start',
+                                100: 'end'
+                            }[this.mcs.topPct];
+                        }
+                    }
                 });
-            }).resize();
+            }
+
+            function bindToWin() {
+                Page.$win.on('resize', function () {
+                    if (this.innerWidth > 767) {
+                        $texts.attr('style', '');
+
+                        return;
+                    }
+
+                    var imageHeight = $scope.find('.history__image-wrapper').eq(0).height();
+                    var windowHeight = this.innerHeight;
+
+                    $texts.each(function (index) {
+                        var $text = $(this);
+
+                        var titleHeight = $titles.eq(index).height();
+                        var height = windowHeight - imageHeight - titleHeight - padding;
+
+                        $text
+                            .height(height)
+                            .mCustomScrollbar('update');
+                    });
+                }).resize();
+            }
         });
 })();
 
