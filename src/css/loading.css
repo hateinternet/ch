@@ -1,7 +1,7 @@
 .loading,
 .loading:before
 {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -173,16 +173,16 @@
     {
         margin: 0 0 15px;
 
-        font-size: 30px;
+        font-size: 22px;
     }
 
     .loading__text
     {
         width: 100%;
         max-width: 480px;
-        margin: 0 0 30px;
+        margin: 0 0 20px;
         padding: 0 10px;
 
-        font-size: 15px;
+        font-size: 13px;
     }
 }
