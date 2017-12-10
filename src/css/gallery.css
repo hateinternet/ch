@@ -1,6 +1,6 @@
 .gallery
 {
-    position: absolute;
+    position: fixed;
     z-index: 10000;
     top: 0;
     left: -9999px;

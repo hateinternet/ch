@@ -67,7 +67,7 @@
 {
     position: relative;
 
-    overflow-y: auto;
+    overflow-y: scroll;
 
     height: 300px;
 

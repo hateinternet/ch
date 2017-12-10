@@ -83,7 +83,7 @@
                     return;
                 }
 
-                var hammertime = new Hammer($slider[0]);
+                var hammertime = new Hammer($slider[0], { touchAction: 'auto' });
 
                 hammertime
                     .get('swipe')
