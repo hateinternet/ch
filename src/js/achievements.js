@@ -1,37 +1,46 @@
 (function () {
+    var BREAKPOINT = 520;
+    var PADDING = 160;
+
     $('.achievements')
         .each(function () {
             var $scope = $(this);
-
-            var padding = 160;
 
             var $contents = $scope.find('.achievements__content');
             var $titles = $scope.find('.achievements__title-wrapper');
             var $images = $scope.find('.achievements__jewellery-image');
             var $diplomas = $scope.find('.achievements__diploma');
 
-            Page.$win.on('resize', function () {
-                if (this.innerHeight > 520) {
-                    $contents.attr('style', '');
-                    $diplomas.attr('style', '');
+            Page.$win
+                .on('resize orientationchange', onResize)
+                .resize();
 
-                    return;
+            function onResize() {
+                if (window.innerHeight > BREAKPOINT) {
+                    return clearStyles();
                 }
 
-                var scopeHeight = $scope.height();
+                $contents.forEach(styleContent);
+            }
 
+            function styleContent() {
                 $contents.each(function (index) {
                     var $content = $(this);
 
                     var titleHeight = $titles.eq(index).height();
                     var imageHeight = $images.eq(index).height();
 
-                    var height = scopeHeight - padding - titleHeight - imageHeight;
+                    var height = window.innerHeight - titleHeight - imageHeight - PADDING;
 
                     $content.height(height);
                     $diplomas.eq(index).height(height);
                 });
-            }).resize();
+            }
+
+            function clearStyles() {
+                $contents.attr('style', '');
+                $diplomas.attr('style', '');
+            }
         });
 })();
 

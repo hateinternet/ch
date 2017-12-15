@@ -1,12 +1,12 @@
 (function () {
+    var PADDING = 160;
+
     $('.history')
         .each(function () {
             var $scope = $(this);
 
             var $titles = $scope.find('.history__title');
             var $texts = $scope.find('.history__text');
-
-            var padding = 160;
 
             initScrollBars();
             bindToWin();
@@ -41,7 +41,7 @@
                         var $text = $(this);
 
                         var titleHeight = $titles.eq(index).height();
-                        var height = windowHeight - imageHeight - titleHeight - padding;
+                        var height = windowHeight - imageHeight - titleHeight - PADDING;
 
                         $text
                             .height(height)

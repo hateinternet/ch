@@ -9,7 +9,7 @@
     user-select: none;
 
     color: #fff;
-    border: 1px solid;
+    border: 2px solid;
     border-radius: 50%;
     background: none;
 
@@ -106,7 +106,7 @@
 
 .arrow-button_grey
 {
-    color: rgba(110, 110, 109, .6);
+    color: #6e6e6d;
 }
 
 .arrow-button_grey:before
@@ -122,7 +122,7 @@
 .arrow-button__text
 {
     position: absolute;
-    top: 12px;
+    top: 10px;
 
     padding: 0 10px;
 

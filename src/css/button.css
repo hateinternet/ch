@@ -11,6 +11,7 @@
     text-decoration: none;
 
     line-height: 65px;
+    height: 65px;
 
     color: rgba(255, 255, 255, .9);
     border: none;
@@ -25,11 +26,12 @@
     padding: 0 72px 0 0;
 
     line-height: 72px;
+    height: 72px;
 }
 
 .button_reverse
 {
-    padding: 0 0 0 65px;
+    padding: 0 50px;
 }
 
 .button__text
@@ -50,15 +52,25 @@
     padding: 0 60px;
 }
 
+.button_reverse .button__text
+{
+    width: auto;
+    padding: 0;
+}
+
 .button__icon
 {
     position: absolute;
+    display: inline-block;
     top: 0;
     right: 0;
     bottom: 0;
 
     width: 65px;
+}
 
+.button_border .button__icon
+{
     border-left: 1px solid rgba(255, 255, 255, .3);
 }
 
@@ -69,8 +81,12 @@
 
 .button_reverse .button__icon
 {
-    right: auto;
-    left: 0;
+    position: relative;
+    height: 100%;
+    width: 20px;
+    transform: scaleY(.8);
+    margin: 0 20px 0 0;
+    vertical-align: bottom;
 
     border: none;
 }
@@ -119,12 +135,12 @@
 .page_hoverable .button_shadow.button_big:hover,
 .page_hoverable .button_shadow.button_big:focus
 {
-    box-shadow: 10px 16px 44px 0 rgba(174, 129, 89, .7);
+    box-shadow: 10px 15px 44px 0 rgba(174, 129, 89, .6);
 }
 
 .page_hoverable .button_shadow.button_big:active
 {
-    box-shadow: 10px 16px 44px 0 rgba(174, 129, 89, .8);
+    box-shadow: 10px 15px 44px 0 rgba(174, 129, 89, .7);
 }
 
 @media (max-width: 1024px)

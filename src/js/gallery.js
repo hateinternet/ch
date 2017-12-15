@@ -1,12 +1,14 @@
 (function () {
+    var SCROLL_DURATION = 700;
+
     $('.gallery')
         .each(function () {
             var $gallery = $(this);
 
-            var $title = $gallery.find('.gallery__title');
             var $year = $gallery.find('.gallery__year');
+            var $title = $gallery.find('.gallery__title');
 
-            var $index = $gallery.find('.gallery__count-current');
+            var $current = $gallery.find('.gallery__count-current');
             var $total = $gallery.find('.gallery__count-total');
 
             var $list = $gallery.find('.gallery__list');
@@ -19,26 +21,20 @@
 
             bindCommonEvents();
             bindToSwipe();
+            bindToWin();
 
             function bindCommonEvents() {
-                Page.$win
-                    .on('resize orientationchange', onResize)
-                    .on('keydown', function (event) {
-                        event.which === 27 && Page.delState('gallery');
-                    });
+                Page.$body
+                    .on('click', '.gallery-open', function () {
+                        var data = $(this).data('gallery');
 
-                Page.$body.on('click', '.gallery-open', function () {
-                    var data = $(this).data('gallery');
+                        if (!data) {
+                            return;
+                        }
 
-                    if (!data) {
-                        return;
-                    }
-
-                    updateGallery(data);
-                    Page.setState('gallery');
-                });
-
-                $gallery
+                        updateGallery(data);
+                        Page.setState('gallery');
+                    })
                     .on('click', '.gallery__close', function () {
                         Page.delState('gallery');
                     })
@@ -47,7 +43,7 @@
 
                         moveTo(newIndex);
                     })
-                    .on('click', '.arrow-button', function () {
+                    .on('click', '.gallery .arrow-button', function () {
                         var direction = $(this).hasClass('arrow-button_next') ? 1 : -1;
 
                         move(direction);
@@ -59,8 +55,7 @@
                     return;
                 }
 
-                var wrapper = $gallery.find('.gallery__wrapper')[0];
-                var hammertime = new Hammer(wrapper);
+                var hammertime = new Hammer($gallery[0]);
 
                 hammertime
                     .get('swipe')
@@ -76,13 +71,22 @@
                 });
             }
 
-            function onResize() {
-                if (!$items) {
-                    return;
-                }
+            function bindToWin() {
+                Page.$win
+                    .on('resize orientationchange', function () {
+                            if (!$items) {
+                                return;
+                            }
 
-                updateDimensions();
-                moveList(true);
+                            updateDimensions();
+                            moveList(true);
+                        }
+                    )
+                    .on('keydown', function (event) {
+                        if (Page.hasState('gallery') && event.which === 27) {
+                            Page.delState('gallery');
+                        }
+                    });
             }
 
             function updateDimensions() {
@@ -100,44 +104,42 @@
             function updateGallery(data) {
                 index = 0;
 
-                updateTitle(data);
+                updateInfo(data);
                 updateList(data.list);
-                updateCount();
+
                 updateDimensions();
 
                 moveTo(0, true);
             }
 
-            function updateTitle(data) {
-                $title.text(data.title);
+            function updateInfo(data) {
+                $total
+                    .text(data.list.length);
+
+                $title
+                    .text(data.title);
+
                 $year
                     .text(data.year)
                     [data.year ? 'show' : 'hide']();
             }
 
-            function updateCount() {
-                $index.text(index + 1);
-                $total.text($items.length);
-            }
-
             function updateList(list) {
-                var html = '';
+                $list.html(list.reduce(function (html, item) {
+                    return html + itemHtml(item);
+                }, ''));
 
-                list.forEach(function (item) {
-                    html += '' +
-                        '<figure class="gallery__item">' +
-                            imgHtml(item) +
-                            '<figcaption class="gallery__item-info">' +
-                                '<div class="gallery__item-title">' + item.title + '</div>' +
-                                (item.text ? '<div class="gallery__item-text">' + item.text + '</div>' : '') +
-                            '</figcaption>' +
-                        '</figure>';
-                });
-
-                $list.html(html);
                 $items = $list.children();
                 $images = $list.find('.gallery__item-image');
                 $infos = $list.find('.gallery__item-info');
+            }
+
+            function itemHtml(item) {
+                return '' +
+                    '<figure class="gallery__item">' +
+                        imgHtml(item) +
+                        captionHtml(item) +
+                    '</figure>';
             }
 
             function imgHtml(item) {
@@ -148,6 +150,14 @@
                         'src="' + item.image + '" ' +
                         'srcset="' + item.image.replace(/\.[^\.]*$/, '_2x$&') + ' 2x" ' +
                     '/>'
+            }
+
+            function captionHtml(item) {
+                return '' +
+                    '<figcaption class="gallery__item-info">' +
+                        '<div class="gallery__item-title">' + item.title + '</div>' +
+                        (item.text ? '<div class="gallery__item-text">' + item.text + '</div>' : '') +
+                    '</figcaption>';
             }
 
             function move(direction) {
@@ -167,11 +177,13 @@
                 index = newIndex;
 
                 setCurrent();
-                updateCount();
                 moveList(jump);
             }
 
             function setCurrent() {
+                $current
+                    .text(index + 1);
+
                 $items
                     .removeClass('gallery__item_current')
                     .eq(index).addClass('gallery__item_current');
@@ -179,7 +191,7 @@
 
             function moveList(jump) {
                 var scrolLeft = stepWidth * index + stepWidth / 2;
-                var duration = jump ? 0 : 500;
+                var duration = jump ? 0 : SCROLL_DURATION;
 
                 $list
                     .stop()

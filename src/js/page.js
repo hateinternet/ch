@@ -1,6 +1,5 @@
 var Page = {
     $win: $(window),
-    $doc: $(document),
     $html: $('html'),
     $body: $('body'),
 
@@ -11,7 +10,7 @@ var Page = {
 };
 
 function _setState(name, value) {
-    var newClass = _buildClass(name, value);
+    var newClass = _buildStateClass(name, value);
     var oldClass = Page.$html
         .attr('class')
         .split(/\s+/)
@@ -32,7 +31,7 @@ function _setState(name, value) {
 }
 
 function _toggleState(name, value) {
-    var className = _buildClass(name, value);
+    var className = _buildStateClass(name, value);
 
     Page.$html.toggleClass(className);
 
@@ -40,7 +39,7 @@ function _toggleState(name, value) {
 }
 
 function _delState(name, value) {
-    var className = _buildClass(name, value);
+    var className = _buildStateClass(name, value);
 
     Page.$html.removeClass(className);
 
@@ -48,12 +47,12 @@ function _delState(name, value) {
 }
 
 function _hasState(name, value) {
-    var className = _buildClass(name, value);
+    var className = _buildStateClass(name, value);
 
     return Page.$html.hasClass(className);
 }
 
-function _buildClass(name, value) {
+function _buildStateClass(name, value) {
     return ['page', name, value]
         .filter(Boolean)
         .join('_');

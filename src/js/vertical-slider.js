@@ -1,11 +1,12 @@
 (function () {
+    var SCROLL_DURATION = 1000;
+
     $('.vertical-slider')
         .each(function () {
             var $slider = $(this);
             var $slides = $slider.find('.vertical-slide');
 
             var isScrolling = false;
-            var scrollDuration = 500;
             var scrollStep = null;
 
             var index = -1;
@@ -38,8 +39,7 @@
             function bindToWin() {
                 Page.$win
                     .on('resize', onResize)
-                    .on('menu.click', onMenuClick)
-                    .on('scrollbar.swipe', onScrollbarSwipe);
+                    .on('menu.click', onMenuClick);
             }
 
             function onResize(event) {
@@ -138,7 +138,7 @@
                 index = newIndex;
 
                 var position = index * scrollStep;
-                var duration = jump ? 0 : scrollDuration;
+                var duration = jump ? 0 : SCROLL_DURATION;
 
                 $slider.animate({ scrollTop: position }, duration, function () {
                     isScrolling = false;

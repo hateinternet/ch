@@ -88,12 +88,17 @@
 {
     margin: 20px 0 40px;
 
-    font: bold 48px / .8 PFRegal, serif;
+    font: bold 48px / .87 PFRegal, serif;
 }
 
 .philosophy__link
 {
     width: 320px;
+}
+
+.philosophy__link .button
+{
+    width: 100%;
 }
 
 .philosophy__image
@@ -268,8 +273,7 @@
         display: none;
     }
 
-    .philosophy__link,
-    .philosophy__link .button
+    .philosophy__link
     {
         display: block;
 

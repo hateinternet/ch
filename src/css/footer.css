@@ -26,7 +26,7 @@
     opacity: .35;
     color: inherit;
 
-    transition: .15s opacity linear;
+    transition: .25s opacity linear;
 }
 
 .page_hoverable .footer a:hover,

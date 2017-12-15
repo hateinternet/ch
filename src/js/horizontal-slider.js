@@ -1,4 +1,6 @@
 (function () {
+    var SCROLL_DURATION = 1000;
+
     $('.achievements, .history')
         .each(function () {
             var $scope = $(this);
@@ -6,7 +8,6 @@
             var $slides = $wrapper.find('.horizontal-slide');
             var $btns = $scope.find('.arrow-button');
 
-            var scrollDuration = 500;
             var scrollStep = $slides.eq(0).innerWidth();
 
             var last = $slides.length - 1;
@@ -82,7 +83,7 @@
                 index = newIndex;
 
                 var position = index * scrollStep;
-                var duration = jump ? 0 : scrollDuration;
+                var duration = jump ? 0 : SCROLL_DURATION;
 
                 $wrapper
                     .stop()
