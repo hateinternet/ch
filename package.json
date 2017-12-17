@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "npm run dev && gulp build",
-    "csscomb": "csscomb src/css",
+    "csscomb": "csscomb src/css/",
     "dev": "npm run csscomb && gulp dev",
     "init": "(gulp -v || npm install --global gulp-cli) && npm i",
     "watch": "npm run dev && gulp watch"
