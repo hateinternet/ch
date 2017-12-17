@@ -80,6 +80,7 @@
 
                         if (
                             !$text.length ||
+                            $text.hasClass('mCS_no_scrollbar') ||
                             $text.data('state') === 'end' && direction === 1 ||
                             $text.data('state') === 'start' && direction === -1
                         ) {

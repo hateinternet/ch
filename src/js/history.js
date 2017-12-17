@@ -1,5 +1,5 @@
 (function () {
-    var PADDING = 160;
+    var PADDING = 140;
 
     $('.history')
         .each(function () {
@@ -23,10 +23,18 @@
                                     100: 'end'
                                 }[this.mcs.topPct]);
                             }.bind(this), 250);
+                        },
+
+                        onScrollStart: function () {
+                            console.log('sfsdff');
                         }
                     }
                 });
             }
+
+            $texts.on('touchstart', function () {
+                console.log('sdfsf');
+            });
 
             function bindToWin() {
                 Page.$win.on('resize', function () {

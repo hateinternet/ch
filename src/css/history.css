@@ -93,8 +93,6 @@
 {
     position: relative;
 
-    overflow-y: auto;
-
     height: 300px;
     padding: 0 20px 0 0;
 
@@ -227,7 +225,7 @@
 
     .history__text
     {
-        height: 200px;
+        height: 30vh;
     }
 
     .history__image-wrapper
@@ -259,8 +257,8 @@
 
     .history__image-wrapper
     {
-        width: 210px;
-        height: 160px;
+        width: 250px;
+        height: 190px;
         margin: 15px 0;
     }
 
@@ -272,8 +270,6 @@
 
     .history__text
     {
-        max-height: 25vh;
-
         font-size: 13px;
         line-height: 15px;
     }

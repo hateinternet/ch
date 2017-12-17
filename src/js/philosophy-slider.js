@@ -26,7 +26,8 @@
             var direction = null;
 
             $scope.on('click', '.arrow-button', onArrowClick);
-            $(window).on('resize', onResize);
+            Page.$win.on('resize', onResize);
+            Page.$html.on('slider.vertical', triggerEvent);
             bindToSwipe();
 
             move(1);
@@ -97,14 +98,18 @@
 
                 $wrapper.animate({ scrollLeft: position }, duration);
 
+                triggerEvent();
+
+                direction = null;
+            }
+
+            function triggerEvent() {
                 Page.$html.trigger('slider.horizontal', {
                     id: 'philosophy',
                     index: index,
                     type: 'dark',
                     direction: direction
                 });
-
-                direction = null;
             }
 
             function removeCurrent() {
@@ -120,8 +125,8 @@
             }
 
             function resetAutochangeTimeout() {
-                // clearTimeout(timeout);
-                // timeout = setTimeout(move.bind(null, 1), AUTOCHANGE_DURATION);
+                clearTimeout(timeout);
+                timeout = setTimeout(move.bind(null, 1), AUTOCHANGE_DURATION);
             }
         });
 })();

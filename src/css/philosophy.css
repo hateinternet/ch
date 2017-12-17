@@ -57,6 +57,11 @@
     transform-origin: 0 0;
 }
 
+.page_transition_no .philosophy__slide .philosophy__content
+{
+    opacity: 0;
+}
+
 .horizontal-slide_current .philosophy__content:after,
 .philosophy__content_current:after
 {

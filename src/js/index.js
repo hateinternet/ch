@@ -7,10 +7,17 @@
         .on('hashchange', preventDefault);
 
     Page.$html
-        .on('slider.vertical slider.horizontal', function (event, data) {
+        .on('slider.horizontal', function (event, data) {
+            if (Page.slide !== data.id) {
+                return;
+            }
+
+            Page.setState('type', data.type === 'dark' ? 'none' : 'dark');
+        })
+        .on('slider.vertical', function (event, data) {
             Page
-                .setState('slide', data.id)
                 .setState('type', data.type === 'dark' ? 'none' : 'dark')
+                .setState('slide', data.id)
                 .delState('menu');
         })
         .on('dragstart', '[draggable="false"]', preventDefault);
