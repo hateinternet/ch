@@ -16,6 +16,7 @@
             var $first = $slides.eq(0).clone();
 
             var timeout = null;
+            var blockTimeout = true;
 
             $wrapper.find('.horizontal-slider__list').append($first);
 
@@ -25,12 +26,28 @@
             var index = -1;
             var direction = null;
 
-            $scope.on('click', '.arrow-button', onArrowClick);
-            Page.$win.on('resize', onResize);
-            Page.$html.on('slider.vertical', triggerEvent);
+            bindCommonEvents();
             bindToSwipe();
 
             move(1);
+
+            function bindCommonEvents() {
+                $scope.on('click', '.arrow-button', onArrowClick);
+                Page.$win.on('resize', onResize);
+                Page.$html
+                    .on('slider.vertical', triggerEvent)
+                    .on('loading.done', function () {
+                        blockTimeout = false;
+                        resetAutochangeTimeout();
+                    });
+
+
+                if ($('.loading').length) {
+                    return;
+                }
+
+                Page.$html.trigger('loading.done');
+            }
 
             function bindToSwipe() {
                 if (Page.hasState('hoverable')) {
@@ -43,7 +60,7 @@
                     .get('swipe')
                     .set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
-                hammertime.on('swipe', function(event) {
+                hammertime.on('swipe', function (event) {
                     switch (event.direction) {
                         case Hammer.DIRECTION_RIGHT:
                             return move(-1);
@@ -125,6 +142,11 @@
             }
 
             function resetAutochangeTimeout() {
+                if (blockTimeout) {
+                    return;
+                }
+
+                $scope.addClass('philosophy_timer');
                 clearTimeout(timeout);
                 timeout = setTimeout(move.bind(null, 1), AUTOCHANGE_DURATION);
             }

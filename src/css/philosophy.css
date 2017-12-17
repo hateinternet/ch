@@ -62,8 +62,8 @@
     opacity: 0;
 }
 
-.horizontal-slide_current .philosophy__content:after,
-.philosophy__content_current:after
+.philosophy_timer .horizontal-slide_current .philosophy__content:after,
+.philosophy_timer .philosophy__content_current:after
 {
     transition: transform 8s linear;
     transform: scaleX(1);

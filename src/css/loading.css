@@ -105,7 +105,7 @@
 
     background: #bd8f65;
 
-    transition: transform .1s ease-in;
+    transition: transform .5s ease-in;
     transform: scaleX(0);
     transform-origin: 0 0;
 }

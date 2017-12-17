@@ -1,6 +1,6 @@
 (function () {
     var POPUP_TRANSITION_DURATION = 500;
-    var BAR_TRANSITION_DURATION = 100;
+    var BAR_TRANSITION_DURATION = 500;
     var FULL_ANIMATION_DURATION = 2500;
 
     var startTime = Date.now();
@@ -17,10 +17,12 @@
                     $popup.remove.bind($popup),
                     POPUP_TRANSITION_DURATION
                 );
+
+                Page.$html.trigger('loading.done');
             });
 
             Page.$body
-                .imagesLoaded()
+                .imagesLoaded({ background: true })
                 .always(function () {
                     var delta = Date.now() - startTime;
                     var duration = delta <= FULL_ANIMATION_DURATION ?

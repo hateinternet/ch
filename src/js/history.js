@@ -7,6 +7,7 @@
 
             var $titles = $scope.find('.history__title');
             var $texts = $scope.find('.history__text');
+            $texts.data('state', 'start');
 
             initScrollBars();
             bindToWin();
@@ -21,20 +22,12 @@
                                 $(this).data('state', {
                                     0: 'start',
                                     100: 'end'
-                                }[this.mcs.topPct]);
+                                }[this.mcs.topPct] || '');
                             }.bind(this), 250);
-                        },
-
-                        onScrollStart: function () {
-                            console.log('sfsdff');
                         }
                     }
                 });
             }
-
-            $texts.on('touchstart', function () {
-                console.log('sdfsf');
-            });
 
             function bindToWin() {
                 Page.$win.on('resize', function () {
