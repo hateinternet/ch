@@ -43,23 +43,26 @@ gulp.task('css', () => {
 gulp.task('js', () => {
     return gulp
         .src([
-            'src/js/custom-scrollbar.min.js',
             'src/js/hammer.min.js',
             'src/js/imagesloaded.min.js',
             'src/js/wheel-indicator.min.js',
+            'src/js/custom-scrollbar.min.js',
 
             'src/js/page.js',
             'src/js/index.js',
 
-            'src/js/achievements.js',
-            'src/js/gallery.js',
+            'src/js/timeline.js',
+            'src/js/horizontal-slider.js',
+            'src/js/philosophy-slider.js',
+            'src/js/philosophy-mobile.js',
+            'src/js/vertical-slider.js',
+
             'src/js/header.js',
             'src/js/history.js',
-            'src/js/horizontal-slider.js',
+            'src/js/achievements.js',
+            'src/js/gallery.js',
+
             'src/js/loading.js',
-            'src/js/philosophy-slider.js',
-            'src/js/timeline.js',
-            'src/js/vertical-slider.js',
         ])
         .pipe(concat('bundle.js'))
         .pipe(dev());

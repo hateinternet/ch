@@ -52,17 +52,15 @@
     opacity: .65;
 }
 
-.page.page_logo_no .header__logo-link
-{
-    pointer-events: none;
-
-    opacity: 0;
-}
-
 .page_hoverable .header .header__logo-link:hover,
 .page_hoverable .header .header__logo-link:focus
 {
     opacity: 1;
+}
+
+.page.page_slide_collections .header__logo-link
+{
+    opacity: 0;
 }
 
 .header__logo_tablet,
@@ -102,6 +100,12 @@
 
 @media (max-width: 767px)
 {
+    .page_slide_history .header__logo-link,
+    .page_slide_achievements .header__logo-link
+    {
+        opacity: 0;
+    }
+
     .header__logo_mobile,
     .header__burger,
     .header__close

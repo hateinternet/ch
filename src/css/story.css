@@ -170,7 +170,7 @@
 {
     .story__image-wrapper
     {
-        height: 100vh;
+        height: 85vh;
     }
 
     .story__image-wrapper:before
@@ -181,10 +181,10 @@
     .story__content
     {
         margin: -200px 0 25px;
-        padding: 45px 35px 50px;
+        padding: 40px 35px;
     }
 
-    .story__content::before
+    .story__content:before
     {
         top: 15px;
         right: 15px;
@@ -194,7 +194,7 @@
 
     .story__title
     {
-        margin: 0 0 30px;
+        margin: 0 0 20px;
 
         font-size: 22px;
         line-height: 22px;

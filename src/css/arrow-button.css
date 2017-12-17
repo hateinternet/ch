@@ -106,6 +106,7 @@
 
 .arrow-button_grey
 {
+    opacity: .5;
     color: #6e6e6d;
 }
 

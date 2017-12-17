@@ -21,7 +21,7 @@
 .achievements__diploma
 {
     width: 50%;
-    padding: 0 5% 0 0;
+    padding: 0 2.5% 0 0;
 
     text-align: right;
 }
@@ -54,6 +54,7 @@
 .achievements__content
 {
     width: 50%;
+    padding: 0 0 0 2.5%;
 
     font-family: IntroCaps, sans-serif;
 }
@@ -70,6 +71,9 @@
 
 .achievements figure
 {
+    display: inline-block;
+
+    width: auto;
     margin: 0;
 }
 
@@ -124,6 +128,23 @@
     right: 120px;
 }
 
+@media (min-width: 1280px)
+{
+    .achievements .gallery-open__button
+    {
+        transform: translate(-50%, -30px);
+    }
+}
+
+@media (min-width: 768px)
+{
+    .achievements .gallery-open__button
+    {
+        transform: translate(-50%, -15px);
+    }
+}
+
+
 @media (max-width: 1280px)
 {
     .achievements__slide
@@ -166,6 +187,7 @@
 
         width: 310px;
         height: 200px;
+        padding: 0;
 
         text-align: center;
     }
@@ -186,7 +208,10 @@
 
     .achievements__title
     {
+        padding: 0 40px;
+
         font-size: 16px;
+        line-height: 1.2;
     }
 
     .achievements__sub-title
@@ -224,6 +249,12 @@
         padding: 0;
 
         text-align: center;
+    }
+
+    .achievements .gallery-open
+    {
+        width: 100%;
+        height: 100%;
     }
 
     .achievements__diploma-image

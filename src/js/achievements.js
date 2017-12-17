@@ -1,6 +1,6 @@
 (function () {
     var BREAKPOINT = 520;
-    var PADDING = 160;
+    var PADDING = 120;
 
     $('.achievements')
         .each(function () {
@@ -15,12 +15,15 @@
                 .on('resize orientationchange', onResize)
                 .resize();
 
+            $('.page_hoverable')
+                .on('mouseenter mouseleave', '.gallery-open', onHover);
+
             function onResize() {
                 if (window.innerHeight > BREAKPOINT) {
                     return clearStyles();
                 }
 
-                $contents.forEach(styleContent);
+                $contents.each(styleContent);
             }
 
             function styleContent() {
@@ -40,6 +43,13 @@
             function clearStyles() {
                 $contents.attr('style', '');
                 $diplomas.attr('style', '');
+            }
+
+            function onHover(event) {
+                var $scope = $(this).closest('.achievements__slide');
+                var needClass = event.type === 'mouseenter';
+
+                $scope.toggleClass('gallery-open_hovered', needClass);
             }
         });
 })();

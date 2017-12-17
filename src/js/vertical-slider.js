@@ -8,6 +8,7 @@
 
             var isScrolling = false;
             var scrollStep = null;
+            var maxPosition = null;
 
             var index = -1;
             var last = $slides.length - 1;
@@ -44,6 +45,7 @@
 
             function onResize(event) {
                 scrollStep = $slider.height();
+                maxPosition = $slider[0].scrollHeight - $slider[0].clientHeight;
 
                 if (index > last) {
                     index = last;
@@ -71,15 +73,18 @@
             function bindToWheel() {
                 new WheelIndicator({
                     elem: $slider[0],
+                    preventMouse: false,
                     callback: function (event) {
                         var direction = event.direction === 'up' ? -1 : 1;
                         var $text = $(event.target).closest('.history__text');
 
-                        if ($text.length) {
-                            return;
+                        if (
+                            !$text.length ||
+                            $text.data('state') === 'end' && direction === 1 ||
+                            $text.data('state') === 'start' && direction === -1
+                        ) {
+                            move(direction);
                         }
-
-                        move(direction);
                     }
                 });
             }
@@ -112,7 +117,7 @@
             function move(direction) {
                 var tempIndex = getIndex(direction);
 
-                if (index !== tempIndex) {
+                if (index !== tempIndex && !isScrolling) {
                     index = tempIndex;
 
                     moveTo(index);
@@ -139,6 +144,8 @@
 
                 var position = index * scrollStep;
                 var duration = jump ? 0 : SCROLL_DURATION;
+
+                position = position > maxPosition ? maxPosition : position;
 
                 $slider.animate({ scrollTop: position }, duration, function () {
                     isScrolling = false;

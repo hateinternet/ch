@@ -11,11 +11,9 @@
             Page
                 .setState('slide', data.id)
                 .setState('type', data.type === 'dark' ? 'none' : 'dark')
-                .setState('logo', data.id === 'collections' ? 'no' : 'yes');
+                .delState('menu');
         })
         .on('dragstart', '[draggable="false"]', preventDefault);
-
-
 
     function preventDefault(event) {
         event.preventDefault();

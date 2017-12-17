@@ -21,7 +21,7 @@
             function onLinkClick() {
                 Page.$win.trigger('menu.click', {
                     id: this.href.split('#')[1],
-                    jump: $(this).hasClass('.menu__link')
+                    jump: $(this).hasClass('menu__link')
                 });
             }
 

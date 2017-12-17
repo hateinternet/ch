@@ -14,13 +14,15 @@
             function initScrollBars() {
                 $texts.mCustomScrollbar({
                     theme: 'minimal',
-                    scrollInertia: 500,
+                    scrollInertia: 0,
                     callbacks: {
                         onScroll: function () {
-                            this.dataset.state = {
-                                0: 'start',
-                                100: 'end'
-                            }[this.mcs.topPct];
+                            setTimeout(function () {
+                                $(this).data('state', {
+                                    0: 'start',
+                                    100: 'end'
+                                }[this.mcs.topPct]);
+                            }.bind(this), 250);
                         }
                     }
                 });

@@ -11,11 +11,11 @@
             var scrollStep = $slides.eq(0).innerWidth();
 
             var last = $slides.length - 1;
-            var index = -1;
+            var index = $slides.filter('.horizontal-slide_current').index();
 
             var id = $scope.data('id');
 
-            moveTo(0);
+            moveTo(index > -1 ? index : 0, true);
 
             bindCommonEvents();
             bindToSwipe();
@@ -40,7 +40,6 @@
                 hammertime
                     .get('swipe')
                     .set({ direction: Hammer.DIRECTION_HORIZONTAL });
-
 
                 hammertime.on('swipe', function(event) {
                     switch (event.direction) {

@@ -1,4 +1,7 @@
 (function () {
+    var SCROLL_DURATION = 1000;
+    var AUTOCHANGE_DURATION = 8000;
+
     $('.philosophy .horizontal-slider')
         .each(function () {
             var $scope = $(this);
@@ -12,17 +15,21 @@
                 });
             var $first = $slides.eq(0).clone();
 
+            var timeout = null;
+
             $wrapper.find('.horizontal-slider__list').append($first);
 
-            var scrollDuration = 500;
             var scrollStep = $wrapper.eq(0).width();
 
             var last = $slides.length;
-            var index = 0;
+            var index = -1;
+            var direction = null;
 
             $scope.on('click', '.arrow-button', onArrowClick);
             $(window).on('resize', onResize);
             bindToSwipe();
+
+            move(1);
 
             function bindToSwipe() {
                 if (Page.hasState('hoverable')) {
@@ -50,9 +57,9 @@
                     return;
                 }
 
-                var direction = $(event.target).hasClass('arrow-button_next') ? 1 : -1;
+                var newDirection = $(event.target).hasClass('arrow-button_next') ? 1 : -1;
 
-                move(direction);
+                move(newDirection);
             }
 
             function onResize() {
@@ -61,7 +68,9 @@
                 moveTo(index, true);
             }
 
-            function move(direction) {
+            function move(newDirection) {
+                direction = newDirection;
+
                 var temp = index + direction;
 
                 if (temp > last) {
@@ -78,14 +87,24 @@
 
                 moveTo(index);
                 removeCurrent();
+                resetAutochangeTimeout();
                 setCurrent(index === last ? 0 : index);
             }
 
             function moveTo(index, jump) {
                 var position = index * scrollStep;
-                var duration = jump ? 0 : scrollDuration;
+                var duration = jump ? 0 : SCROLL_DURATION;
 
                 $wrapper.animate({ scrollLeft: position }, duration);
+
+                Page.$html.trigger('slider.horizontal', {
+                    id: 'philosophy',
+                    index: index,
+                    type: 'dark',
+                    direction: direction
+                });
+
+                direction = null;
             }
 
             function removeCurrent() {
@@ -98,6 +117,11 @@
                 $wrapper
                     .find('.horizontal-slide[data-id=' + index + ']')
                     .addClass('horizontal-slide_current');
+            }
+
+            function resetAutochangeTimeout() {
+                // clearTimeout(timeout);
+                // timeout = setTimeout(move.bind(null, 1), AUTOCHANGE_DURATION);
             }
         });
 })();

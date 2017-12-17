@@ -37,11 +37,6 @@
     cursor: pointer;
 }
 
-.timeline__item_inactive
-{
-    pointer-events: none;
-}
-
 .timeline__inner:before,
 .timeline__item:before
 {
@@ -55,7 +50,7 @@
     border-radius: 50%;
     background: currentColor;
 
-    transition: box-shadow .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out, transform .2s ease-in;
 }
 
 .timeline__inner:before
@@ -83,6 +78,11 @@
 .timeline__item_current
 {
     left: 50%;
+}
+
+.timeline__item:not(.timeline__item_current):hover:before
+{
+    transform: scale(1.5);
 }
 
 .timeline__item_current ~ .timeline__item,

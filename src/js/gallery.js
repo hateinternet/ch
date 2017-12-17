@@ -26,7 +26,8 @@
             function bindCommonEvents() {
                 Page.$body
                     .on('click', '.gallery-open', function () {
-                        var data = $(this).data('gallery');
+                        var $data = $(this).closest('[data-gallery]');
+                        var data = $data.data('gallery');
 
                         if (!data) {
                             return;

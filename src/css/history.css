@@ -31,7 +31,7 @@
 
     background: #f7f6f5;
 
-    transition: transform .3s ease-in-out;
+    transition: transform 1s ease-in-out;
     transform: translate3d(-130px, 0, 0);
 }
 
@@ -93,7 +93,7 @@
 {
     position: relative;
 
-    overflow-y: scroll;
+    overflow-y: auto;
 
     height: 300px;
     padding: 0 20px 0 0;
@@ -165,7 +165,7 @@
 
     .history__text
     {
-        height: 250px;
+        height: 300px;
     }
 
     .history__image-wrapper
@@ -190,6 +190,12 @@
     .horizontal-slide.history__slide:before
     {
         transform: translateX(-100px);
+    }
+
+    .history__content
+    {
+        width: calc(50% - 30px);
+        margin: 0 30px 0 0;
     }
 
     .history .arrow-button_prev

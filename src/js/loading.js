@@ -1,27 +1,35 @@
 (function () {
+    var POPUP_TRANSITION_DURATION = 500;
+    var BAR_TRANSITION_DURATION = 100;
+    var FULL_ANIMATION_DURATION = 2500;
+
+    var startTime = Date.now();
+
     $('.loading')
         .each(function () {
-            var scopeTransitionDuration = 500;
-            var progressBarTransitionDuration = 200;
+            var $popup = $(this);
+            var $bar = $popup.find('.loading__progress-bar');
 
-            var $scope = $(this);
-            var $progressBar = $scope.find('.loading__progress-bar');
-
-            $scope.on('click', '.button', function () {
-                $scope.addClass('loading_closed');
+            $popup.on('click', '.button', function () {
+                $popup.addClass('loading_closed');
 
                 setTimeout(
-                    $scope.remove.bind($scope),
-                    scopeTransitionDuration
+                    $popup.remove.bind($popup),
+                    POPUP_TRANSITION_DURATION
                 );
             });
 
             Page.$body
                 .imagesLoaded()
                 .always(function () {
+                    var delta = Date.now() - startTime;
+                    var duration = delta <= FULL_ANIMATION_DURATION ?
+                        FULL_ANIMATION_DURATION - delta :
+                        BAR_TRANSITION_DURATION;
+
                     setTimeout(
-                        $scope.addClass.bind($scope, 'loading_finished'),
-                        progressBarTransitionDuration
+                        $popup.addClass.bind($popup, 'loading_finished'),
+                        duration
                     );
 
                     document.cookie = [
@@ -31,9 +39,9 @@
                     ].join(';');
                 })
                 .progress(function (event) {
-                    var value = event.progressedCount / event.images.length;
+                    var value = event.progressedCount / event.images.length * .9;
 
-                    $progressBar.css('transform', 'scaleX(' + value + ')');
+                    $bar.css('transform', 'scaleX(' + value + ')');
                 });
         });
 })();
