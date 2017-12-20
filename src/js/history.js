@@ -10,7 +10,7 @@
             $texts.data('state', 'start');
 
             Page.hasState('hoverable') && initScrollBars();
-            bindToWin();
+            // bindToWin();
 
             function initScrollBars() {
                 $texts.mCustomScrollbar({

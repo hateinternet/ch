@@ -1,6 +1,6 @@
 (function () {
     var BREAKPOINT = 520;
-    var PADDING = 140;
+    var PADDING = 130;
 
     $('.achievements')
         .each(function () {
@@ -27,6 +27,8 @@
             }
 
             function styleContent() {
+                console.log('sdfsdf');
+
                 $contents.each(function (index) {
                     var $content = $(this);
 
