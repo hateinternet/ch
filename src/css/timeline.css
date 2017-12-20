@@ -198,7 +198,7 @@
 {
     .timeline
     {
-        bottom: 28px;
+        bottom: 18px;
     }
 
     .timeline__inner
@@ -248,20 +248,6 @@
 
     .timeline__text
     {
-        margin-top: 7px;
-    }
-
-    .timeline__text,
-    .timeline__item_prev .timeline__text,
-    .timeline__item_current + .timeline__item .timeline__text
-    {
-        opacity: 0;
-    }
-
-    .timeline__item_current .timeline__text
-    {
-        opacity: 1;
-
-        transition: opacity 1s linear;
+        display: none;
     }
 }

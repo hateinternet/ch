@@ -9,7 +9,7 @@
             var $texts = $scope.find('.history__text');
             $texts.data('state', 'start');
 
-            initScrollBars();
+            Page.hasState('hoverable') && initScrollBars();
             bindToWin();
 
             function initScrollBars() {
@@ -29,29 +29,27 @@
                 });
             }
 
-            function bindToWin() {
-                Page.$win.on('resize', function () {
-                    if (this.innerWidth > 767) {
-                        $texts.attr('style', '');
-
-                        return;
-                    }
-
-                    var imageHeight = $scope.find('.history__image-wrapper').eq(0).height();
-                    var windowHeight = this.innerHeight;
-
-                    $texts.each(function (index) {
-                        var $text = $(this);
-
-                        var titleHeight = $titles.eq(index).height();
-                        var height = windowHeight - imageHeight - titleHeight - PADDING;
-
-                        $text
-                            .height(height)
-                            .mCustomScrollbar('update');
-                    });
-                }).resize();
-            }
+            // function bindToWin() {
+            //     Page.$win.on('resize', function () {
+            //         if (this.innerWidth > 767) {
+            //             $texts.attr('style', '');
+            //
+            //             return;
+            //         }
+            //
+            //         var imageHeight = $scope.find('.history__image-wrapper').eq(0).height();
+            //         var windowHeight = this.innerHeight;
+            //
+            //         $texts.each(function (index) {
+            //             var $text = $(this);
+            //
+            //             var titleHeight = $titles.eq(index).height();
+            //             var height = windowHeight - imageHeight - titleHeight - PADDING;
+            //
+            //             $text.height(height);
+            //         });
+            //     }).resize();
+            // }
         });
 })();
 

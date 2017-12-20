@@ -166,3 +166,12 @@
         font-size: 8px;
     }
 }
+
+@media (min-width: 1600px)
+{
+    .footer__content
+    {
+        width: 1500px;
+        padding: 0;
+    }
+}

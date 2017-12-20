@@ -6,7 +6,10 @@ const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
 const csso = require('gulp-csso');
 const htmlmin = require('gulp-htmlmin');
+const template = require('gulp-template');
 const uglify = require('gulp-uglify');
+
+const data = require('./data');
 
 const dev = gulp.dest.bind(gulp, 'dev');
 const build = gulp.dest.bind(gulp, 'build');
@@ -16,13 +19,14 @@ gulp.task('watch', () => {
 });
 
 gulp.task('dev', [
-    'html', 'css', 'js',
+    'html-index', 'html-stories', 'css', 'js',
     'move-fonts', 'move-img', 'move-meta',
 ]);
 
-gulp.task('html', () => {
+gulp.task('html-index', () => {
     return gulp
-        .src('src/html/*.html')
+        .src('src/html/index.html')
+        .pipe(template({ data }))
         .pipe(htmlmin({
             collapseInlineTagWhitespace: true,
             collapseWhitespace: true,
@@ -30,6 +34,21 @@ gulp.task('html', () => {
             removeComments: true
         }))
         .pipe(dev());
+});
+
+gulp.task('html-stories', () => {
+    return data.stories.map(story => gulp
+        .src('src/html/story.html')
+        .pipe(template({ story, data }))
+        .pipe(htmlmin({
+            collapseInlineTagWhitespace: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true,
+            removeComments: true
+        }))
+        .pipe(concat(`${story.name}.html`))
+        .pipe(dev())
+    );
 });
 
 gulp.task('css', () => {

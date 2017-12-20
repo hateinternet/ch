@@ -48,3 +48,11 @@
         opacity: 0;
     }
 }
+
+@media (min-width: 1600px)
+{
+    .nav__link
+    {
+        margin: 0 15px;
+    }
+}

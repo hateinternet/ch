@@ -61,6 +61,8 @@
 .page.page_slide_collections .header__logo-link
 {
     opacity: 0;
+    visibility: hidden;
+    transition: .15s opacity linear, 0s .15s visibility linear;
 }
 
 .header__logo_tablet,
@@ -100,10 +102,17 @@
 
 @media (max-width: 767px)
 {
+    .header
+    {
+        padding: 0;
+    }
+
     .page_slide_history .header__logo-link,
     .page_slide_achievements .header__logo-link
     {
         opacity: 0;
+        visibility: hidden;
+        transition: .15s opacity linear, 0s .15s visibility linear;
     }
 
     .header__logo_mobile,
@@ -128,5 +137,13 @@
         width: 150px;
         height: 30px;
         margin: 0 auto;
+    }
+}
+
+@media (min-width: 1600px)
+{
+    .header__logo
+    {
+        left: 70px;
     }
 }

@@ -300,9 +300,12 @@
     {
         right: 10px;
     }
+}
 
-    .achievements .timeline
+@media (min-width: 1600px)
+{
+    .horizontal-slide.achievements__slide
     {
-        bottom: 40px;
+        transform: translateZ(0) scale(1.2);
     }
 }

@@ -1,5 +1,6 @@
 (function () {
     var SCROLL_DURATION = 700;
+    var EXTRA_ITEMS = 2;
 
     $('.gallery')
         .each(function () {
@@ -8,15 +9,15 @@
             var $year = $gallery.find('.gallery__year');
             var $title = $gallery.find('.gallery__title');
 
-            var $current = $gallery.find('.gallery__count-current');
-            var $total = $gallery.find('.gallery__count-total');
+            var $currentCount = $gallery.find('.gallery__count-current');
+            var $totalCount = $gallery.find('.gallery__count-total');
 
             var $list = $gallery.find('.gallery__list');
             var $items = null;
             var $images = null;
             var $infos = null;
 
-            var index = 0;
+            var index = null;
             var stepWidth = 0;
 
             bindCommonEvents();
@@ -40,9 +41,9 @@
                         Page.delState('gallery');
                     })
                     .on('click', '.gallery__item', function () {
-                        var newIndex = $(this).index();
+                        var isNext = $(this).index() > index;
 
-                        moveTo(newIndex);
+                        move(isNext ? 1 : -1);
                     })
                     .on('click', '.gallery .arrow-button', function () {
                         var direction = $(this).hasClass('arrow-button_next') ? 1 : -1;
@@ -103,18 +104,16 @@
             }
 
             function updateGallery(data) {
-                index = 0;
-
                 updateInfo(data);
                 updateList(data.list);
 
                 updateDimensions();
 
-                moveTo(0, true);
+                moveTo(EXTRA_ITEMS, true);
             }
 
             function updateInfo(data) {
-                $total
+                $totalCount
                     .text(data.list.length);
 
                 $title
@@ -126,18 +125,17 @@
             }
 
             function updateList(list) {
-                $list.html(list.reduce(function (html, item) {
-                    return html + itemHtml(item);
+                $list.html(list.reduce(function (html, item, index) {
+                    return html + itemHtml(item, index);
                 }, ''));
 
-                $items = $list.children();
-                $images = $list.find('.gallery__item-image');
-                $infos = $list.find('.gallery__item-info');
+                addFakes();
+                cacheElems();
             }
 
-            function itemHtml(item) {
+            function itemHtml(item, index) {
                 return '' +
-                    '<figure class="gallery__item">' +
+                    '<figure class="gallery__item" data-id="' + index + '">' +
                         imgHtml(item) +
                         captionHtml(item) +
                     '</figure>';
@@ -161,20 +159,54 @@
                     '</figcaption>';
             }
 
+            function addFakes() {
+                var $children = $list.children();
+
+                for (var i = 0; i < EXTRA_ITEMS; i += 1) {
+                    $list
+                        .append(
+                            $children
+                                .eq(i)
+                                .clone()
+                                .addClass('.gallery__item_fake')
+                        )
+                        .prepend(
+                            $children
+                                .eq(-(i + 1))
+                                .clone()
+                                .addClass('.gallery__item_fake')
+                        );
+                }
+            }
+
+            function cacheElems() {
+                $items = $list.children();
+                $images = $list.find('.gallery__item-image');
+                $infos = $list.find('.gallery__item-info');
+            }
+
             function move(direction) {
                 var newIndex = index + direction;
-                var last = $items.length - 1;
+                var realLast = $items.length - EXTRA_ITEMS - 1;
 
-                if (newIndex < 0) {
-                    newIndex = last
-                } else if (newIndex > last) {
-                    newIndex = 0;
+                if (newIndex < EXTRA_ITEMS) {
+                    moveTo(realLast + 1, true);
+
+                    newIndex = realLast;
+                } else if (newIndex > realLast) {
+                    moveTo(EXTRA_ITEMS - 1, true);
+
+                    newIndex = EXTRA_ITEMS;
                 }
 
                 moveTo(newIndex);
             }
 
             function moveTo(newIndex, jump) {
+                if ($list.is(':animated')) {
+                    return;
+                }
+
                 index = newIndex;
 
                 setCurrent();
@@ -182,21 +214,20 @@
             }
 
             function setCurrent() {
-                $current
-                    .text(index + 1);
+                $currentCount
+                    .text(index - EXTRA_ITEMS + 1);
 
                 $items
                     .removeClass('gallery__item_current')
-                    .eq(index).addClass('gallery__item_current');
+                    .filter('[data-id=' + $items.eq(index).data('id') + ']')
+                    .addClass('gallery__item_current');
             }
 
             function moveList(jump) {
                 var scrolLeft = stepWidth * index + stepWidth / 2;
                 var duration = jump ? 0 : SCROLL_DURATION;
 
-                $list
-                    .stop()
-                    .animate({ scrollLeft: scrolLeft }, duration);
+                $list.animate({ scrollLeft: scrolLeft }, duration);
             }
         });
 })();

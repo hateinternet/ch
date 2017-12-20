@@ -208,7 +208,7 @@
 .collections__button,
 .collections__text
 {
-    transition: transform 1.8s;
+    transition: transform 1s;
     transform: translateZ(0);
 }
 
@@ -236,10 +236,18 @@
 .page_slide_collections .collections__image,
 .page_slide_collections .collections__button
 {
-    transition: transform 1.2s .6s cubic-bezier(.190, 1.000, .220, 1.000);
+    transition: transform .6s .6s cubic-bezier(.02, .01, .47, 1);
     transform: none;
 }
 .page_slide_collections .collections__image_top
 {
     transform: rotate(90deg);
+}
+
+@media (min-width: 1600px)
+{
+    .collections__content
+    {
+        transform: scale(1.2);
+    }
 }
