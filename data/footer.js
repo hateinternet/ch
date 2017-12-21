@@ -3,15 +3,15 @@ module.exports = {
     socials: [
         {
             name: 'instagram',
-            href: ''
+            href: '//instagram.com/chamovskikhjh/'
         },
         {
             name: 'facebook',
-            href: ''
+            href: '//facebook.com/chamovskikh/'
         },
         {
             name: 'youtube',
-            href: ''
+            href: '//youtube.com/channel/UCz0v55-57Air7YGeWhr046g'
         }
     ]
 };

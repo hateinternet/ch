@@ -33,6 +33,6 @@ module.exports = [
             jewelry2x: 'img/decoration/philosophy/jewelry_king_2x.png'
         },
         link: 'king.html',
-        text: '«Князь остался доволен, мы же были истощены, но счастливы»'
+        text: '«История рождается там, где мечта встречается с мастерством»'
     }
 ];

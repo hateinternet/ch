@@ -1,83 +1,187 @@
 module.exports = [
     {
-        year: 2000,
+        year: 2009,
         diploma: {
-            title: 'XIV Конкурс-выставка<br>\"Junvex новый русский стиль\'14\"',
-            subtitle: 'Номинация \"Модные тенденции\"',
+            title: 'Конкурс «Признание Петербурга»<br>в рамках XVII международного форума ювелирной индустрии',
+            subtitle: 'I место в номинации<br>\"Эксклюзивные изделия с бриллиантами\"',
             image: 'img/content/diploma_horiz.png',
             image2x: 'img/content/diploma_horiz_2x.png',
         },
         jewelry: {
-            title: 'Парюра \"Сингапур\"',
-            subtitle: 'Белое золото 750˚, бриллианты, морганиты',
+            title: 'Коллекции украшений \"Принцесса\" и \"Королевская\"',
+            subtitle: 'Золото, бриллианты',
             image: 'img/content/purara_group.png',
             image2x: 'img/content/purara_group_2x.png'
         },
         gallery: {
-            year: 2010,
-            title: 'Путешествие за сокровищами',
+            year: 2009,
+            title: 'Конкурс «Признание Петербурга»',
             list: [
                 {
-                    title: 'Добыча алмазов',
-                    text: 'Шри-Ланка, 2010',
+                    title: 'Диплом победителя',
+                    text: 'I место в номинации<br>\"Эксклюзивные изделия с бриллиантами\"',
                     image: 'img/content/diploma_horiz.png'
                 },
                 {
-                    title: 'Добыча алмазов',
-                    text: 'Шри-Ланка, 2010',
-                    image: 'img/content/diploma_vert.png'
+                    title: 'Диплом победителя',
+                    text: 'I место в номинации<br>\"Эксклюзивные изделия с бриллиантами\"',
+                    image: 'img/content/diploma_horiz.png'
                 },
                 {
-                    title: 'Добыча алмазов',
-                    text: 'Шри-Ланка, 2010',
+                    title: 'Коллекция украшений',
+                    text: '\"Королевская\"',
                     image: 'img/content/history_jewellery.png'
                 },
                 {
-                    title: 'Добыча алмазов',
-                    text: 'Шри-Ланка, 2010',
-                    image: 'img/content/purara_group.png'
+                    title: 'Коллекция украшений',
+                    text: '\"Принцесса\"',
+                    image: 'img/content/diploma_vert.png'
                 }
             ]
         }
     },
     {
-        current: true,
-        year: 2000,
+        year: 2011,
         diploma: {
-            title: 'XXII Конкурс-выставка<br>\"Призвание Петербурга\"',
-            subtitle: 'Номинация \"Классика 20 столетия\"',
-            image: 'img/content/diploma_vert.png',
-            image2x: 'img/content/diploma_vert_2x.png',
+            title: 'Конкурс в рамках выставки<br>JUNWEX Санкт-Петербург-2011',
+            subtitle: 'I место в номинации<br>\"Ювелирный эксперимент\"',
+            image: 'img/content/diploma_horiz.png',
+            image2x: 'img/content/diploma_horiz_2x.png',
         },
         jewelry: {
-            title: 'Парюра \"Сингапур\"',
-            subtitle: 'Белое золото 750˚, бриллианты, морганиты',
+            title: 'Кулон \"Большой взрыв – рождение эмоций\"',
+            subtitle: 'Золото, бриллианты',
             image: 'img/content/purara_group.png',
             image2x: 'img/content/purara_group_2x.png'
         },
         gallery: {
-            year: 2010,
-            title: 'Путешествие за сокровищами',
+            year: 2011,
+            title: 'Конкурс в рамках выставки JUNWEX Санкт-Петербург-2011',
             list: [
                 {
-                    title: 'Добыча алмазов',
-                    text: 'Шри-Ланка, 2010',
+                    title: 'Диплом победителя',
+                    text: 'I место в номинации<br>\"Ювелирный эксперимент\"',
                     image: 'img/content/diploma_horiz.png'
                 },
                 {
-                    title: 'Добыча алмазов',
-                    text: 'Шри-Ланка, 2010',
-                    image: 'img/content/diploma_vert.png'
+                    title: 'Диплом победителя',
+                    text: 'I место в номинации<br>\"Ювелирный эксперимент\"',
+                    image: 'img/content/diploma_horiz.png'
                 },
                 {
-                    title: 'Добыча алмазов',
-                    text: 'Шри-Ланка, 2010',
+                    title: 'Кулон',
+                    text: '\"Большой взрыв – рождение эмоций\"',
                     image: 'img/content/history_jewellery.png'
+                }
+            ]
+        }
+    },
+    {
+        year: 2011,
+        diploma: {
+            title: 'Конкурс в рамках выставки<br>\"JUNWEX-Новый русский стиль\"',
+            subtitle: 'Номинация \"Модные тенденции\"',
+            image: 'img/content/diploma_vert.png',
+            image2x: 'img/content/diploma_vert_2x.png',
+        },
+        jewelry: {
+            title: 'Гарнитур \"Каменный век\"',
+            subtitle: 'Золото, бриллианты',
+            image: 'img/content/purara_group.png',
+            image2x: 'img/content/purara_group_2x.png'
+        },
+        gallery: {
+            year: 2011,
+            title: 'Конкурс в рамках выставки \"JUNWEX-Новый русский стиль\"',
+            list: [
+                {
+                    title: 'Диплом победителя',
+                    text: 'I место в номинации<br>\"Ювелирный эксперимент\"',
+                    image: 'img/content/diploma_horiz.png'
                 },
                 {
-                    title: 'Добыча алмазов',
-                    text: 'Шри-Ланка, 2010',
-                    image: 'img/content/purara_group.png'
+                    title: 'Диплом победителя',
+                    text: 'I место в номинации<br>\"Ювелирный эксперимент\"',
+                    image: 'img/content/diploma_horiz.png'
+                },
+                {
+                    title: 'Гарнитур',
+                    text: '\"Каменный век\"',
+                    image: 'img/content/history_jewellery.png'
+                }
+            ]
+        }
+    },
+
+    {
+        current: true,
+        year: 2012,
+        diploma: {
+            title: 'Конкурс в рамках выставки<br>JUNWEX Москва',
+            subtitle: 'I место в номинации<br>\"Бриллиантовый стиль\"',
+            image: 'img/content/diploma_horiz.png',
+            image2x: 'img/content/diploma_horiz_2x.png',
+        },
+        jewelry: {
+            title: 'Коллекция \"Royal Blue\"',
+            subtitle: 'Золото, бриллианты',
+            image: 'img/content/purara_group.png',
+            image2x: 'img/content/purara_group_2x.png'
+        },
+        gallery: {
+            year: 2012,
+            title: 'Конкурс в рамках выставки<br>JUNWEX Москва',
+            list: [
+                {
+                    title: 'Диплом победителя',
+                    text: 'I место в номинации<br>\"Бриллиантовый стиль\"',
+                    image: 'img/content/diploma_horiz.png'
+                },
+                {
+                    title: 'Диплом победителя',
+                    text: 'I место в номинации<br>\"Бриллиантовый стиль\"',
+                    image: 'img/content/diploma_horiz.png'
+                },
+                {
+                    title: 'Коллекция',
+                    text: '\"Royal Blue\"',
+                    image: 'img/content/history_jewellery.png'
+                }
+            ]
+        }
+    },
+    {
+        year: 2012,
+        diploma: {
+            title: 'Конкурс ювелирных украшений \"Алтын Барс\"<br>в рамках выставки\"КазаньЭКСПО-2012\"',
+            subtitle: 'Гран-при',
+            image: 'img/content/diploma_vert.png',
+            image2x: 'img/content/diploma_vert_2x.png',
+        },
+        jewelry: {
+            title: 'Гарнитур \"Сердце океана\"',
+            subtitle: 'Золото, бриллианты',
+            image: 'img/content/purara_group.png',
+            image2x: 'img/content/purara_group_2x.png'
+        },
+        gallery: {
+            year: 2012,
+            title: 'Конкурс ювелирных украшений \"Алтын Барс\"',
+            list: [
+                {
+                    title: 'Диплом победителя',
+                    text: 'Гран-при',
+                    image: 'img/content/diploma_horiz.png'
+                },
+                {
+                    title: 'Диплом победителя',
+                    text: 'Гран-при',
+                    image: 'img/content/diploma_horiz.png'
+                },
+                {
+                    title: 'Гарнитур',
+                    text: '\"Сердце океана\"',
+                    image: 'img/content/history_jewellery.png'
                 }
             ]
         }
