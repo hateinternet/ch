@@ -95,24 +95,26 @@
                     return;
                 }
 
-                var hammertime = new Hammer($slider[0]);
+                $slides
+                    .filter(function () {
+                        return !$(this).hasClass('history');
+                    })
+                    .each(function () {
+                        var hammertime = new Hammer(this);
 
-                hammertime
-                    .get('swipe')
-                    .set({ direction: Hammer.DIRECTION_VERTICAL });
+                        hammertime
+                            .get('swipe')
+                            .set({ direction: Hammer.DIRECTION_VERTICAL });
 
-                hammertime.on('swipe', function (event) {
-                    switch (event.direction) {
-                        case Hammer.DIRECTION_DOWN:
-                            return move(-1);
-                        case Hammer.DIRECTION_UP:
-                            return move(1);
-                    }
-                });
-            }
-
-            function onScrollbarSwipe(event, direction) {
-                move(direction);
+                        hammertime.on('swipe', function (event) {
+                            switch (event.direction) {
+                                case Hammer.DIRECTION_DOWN:
+                                    return move(-1);
+                                case Hammer.DIRECTION_UP:
+                                    return move(1);
+                            }
+                        });
+                    });
             }
 
             function move(direction) {

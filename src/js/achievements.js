@@ -27,8 +27,6 @@
             }
 
             function styleContent() {
-                console.log('sdfsdf');
-
                 $contents.each(function (index) {
                     var $content = $(this);
 

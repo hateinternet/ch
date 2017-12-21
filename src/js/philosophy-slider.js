@@ -71,10 +71,6 @@
             }
 
             function onArrowClick(event) {
-                if ($wrapper.is(':animated')) {
-                    return;
-                }
-
                 var newDirection = $(event.target).hasClass('arrow-button_next') ? 1 : -1;
 
                 move(newDirection);
@@ -87,6 +83,10 @@
             }
 
             function move(newDirection) {
+                if ($wrapper.is(':animated')) {
+                    return;
+                }
+
                 direction = newDirection;
 
                 var temp = index + direction;
