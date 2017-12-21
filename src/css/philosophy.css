@@ -17,9 +17,18 @@
     right: 20px;
 }
 
-.philosophy__slide
+.philosophy__background_desktop,
+.philosophy__background_mobile
 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
     background: center / cover no-repeat;
+
+    transform: translateZ(0);
 }
 
 .philosophy__content
@@ -228,9 +237,9 @@
 
 @media (max-width: 767px)
 {
-    .philosophy__slide
+    .philosophy__background_desktop
     {
-        background-position: 70% 50%;
+        display: none;
     }
 
     .philosophy__content
@@ -338,6 +347,11 @@
 
 @media (min-width: 768px)
 {
+    .philosophy__background_mobile
+    {
+        display: none;
+    }
+
     .horizontal-slide_current .philosophy__content,
     .horizontal-slide_current .philosophy__label,
     .horizontal-slide_current .philosophy__quote,
@@ -429,7 +443,28 @@
     {
         left: 170px;
 
-        transform: scale(1.12) !important;
+        transform: scale(1.1) !important;
         transform-origin: 50% 0;
+    }
+}
+
+@media (min-width: 1920px)
+{
+    .philosophy .arrow-button_prev
+    {
+        left: 60px;
+    }
+
+    .philosophy .arrow-button_next
+    {
+        right: 60px;
+    }
+
+    .philosophy__content
+    {
+        top: 30vh;
+        left: 250px;
+
+        transform: scale(1.2) !important;
     }
 }

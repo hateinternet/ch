@@ -154,7 +154,9 @@
 
                             <% data.philosophy.forEach(function (item) { %>
 
-                                <article class="philosophy__slide horizontal-slide" style="background-image: url(<%= item.img.background %>)">
+                                <article class="philosophy__slide horizontal-slide">
+                                    <div class="philosophy__background_desktop" style="background-image: url(<%= item.img.background %>)"></div>
+                                    <div class="philosophy__background_mobile" style="background-image: url(<%= item.img.backgroundMobile %>)"></div>
 
                                     <div class="philosophy__content">
                                         <div class="philosophy__label">
@@ -312,9 +314,9 @@
                                                     <%= item.jewelry.title %>
                                                 </p>
 
-                                                <a class="achievements__passport">
+                                                <div class="achievements__passport">
                                                     <%= item.jewelry.subtitle %>
-                                                </a>
+                                                </div>
                                             </figcaption>
                                         </figure>
                                     </div>

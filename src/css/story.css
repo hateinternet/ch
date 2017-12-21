@@ -14,7 +14,8 @@
 }
 
 .story__image-wrapper:before,
-.story__image
+.story__image_desktop,
+.story__image_mobile
 {
     position: absolute;
     right: 0;
@@ -41,17 +42,20 @@
     animation: spin 4s infinite linear;
 }
 
-.story__image
+.story__image_desktop,
+.story__image_mobile
 {
     top: 0;
     bottom: 0;
+
+    transform: translateZ(0);
 }
 
 @keyframes spin
 {
     100%
     {
-        transform: rotate(360deg);
+        transform: rotate(360deg) translateZ(0);
     }
 }
 
@@ -166,6 +170,14 @@
     }
 }
 
+@media (min-width: 768px)
+{
+    .story__image_mobile
+    {
+        display: none;
+    }
+}
+
 @media (max-width: 767px)
 {
     .story__image-wrapper
@@ -176,6 +188,11 @@
     .story__image-wrapper:before
     {
         top: calc(50% - 130px);
+    }
+
+    .story__image_desktop
+    {
+        display: none;
     }
 
     .story__content
