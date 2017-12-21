@@ -40,7 +40,8 @@
             function bindToWin() {
                 Page.$win
                     .on('resize', onResize)
-                    .on('menu.click', onMenuClick);
+                    .on('menu.click', onMenuClick)
+                    .on('history.move', onHistoryMove);
             }
 
             function onResize(event) {
@@ -58,6 +59,11 @@
                 var newIndex = findIndexById(data.id);
 
                 moveTo(newIndex, data.jump);
+            }
+
+            function onHistoryMove(event, direction) {
+                direction === 'up' && move(-1);
+                direction === 'down' && move(1);
             }
 
             function findIndexById(id) {

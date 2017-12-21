@@ -27,7 +27,8 @@
                 Page.$win
                     .on('resize', onResize)
                     .on('slider.vertical', onVerticalSliderChange)
-                    .on('timeline.click', onTimelineClick);
+                    .on('timeline.click', onTimelineClick)
+                    .on('history.move', onHistoryMove);
             }
 
             function bindToSwipe() {
@@ -123,6 +124,11 @@
 
             function onTimelineClick(event, data) {
                 data.id === id && moveTo(data.index);
+            }
+
+            function onHistoryMove(event, direction) {
+                direction === 'left' && move(-1);
+                direction === 'right' && move(1);
             }
         });
 })();
