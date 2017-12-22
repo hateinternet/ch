@@ -25,11 +25,7 @@
                     scrollInertia: 0,
                     callbacks: {
                         onScroll: function () {
-                            var $this = $(this);
-
-                            setTimeout(function () {
-                                setStateData($this, this.mcs.topPct);
-                            }.bind(this), 250);
+                            setStateData(this, this.mcs.topPct);
                         }
                     }
                 });
@@ -41,21 +37,28 @@
             }
 
             function onScroll() {
-                var $this = $(this);
-
-                var scrollTop = $this.scrollTop();
+                var scrollTop = $(this).scrollTop();
                 var maxScrollTop = this.scrollHeight - this.clientHeight;
 
                 var percent = scrollTop / maxScrollTop * 100;
 
-                setStateData($this, percent);
+                setStateData(this, percent);
             }
 
-            function setStateData($elem, percent) {
-                $elem.data('state', {
-                    0: 'start',
-                    100: 'end'
-                }[percent] || '');
+            function setStateData(elem, percent) {
+                var state = { 0: 'start', 100: 'end' }[percent] || 'middle';
+
+                setTimeout(function () {
+                    $(elem)
+                        .closest('.history__slide')
+                        .data('state', state);
+                }.bind(this), 500);
+            }
+
+            function getState(elem) {
+                return $(elem)
+                    .closest('.history__slide')
+                    .data('state');
             }
 
             function bindToPan() {
@@ -66,7 +69,7 @@
 
                 hammertime
                     .get('pan')
-                    .set({ direction: Hammer.DIRECTION_ALL });
+                    .set({ direction: Hammer.DIRECTION_VERTICAL });
 
                 hammertime
                     .on('panstart', function (event) {
@@ -74,55 +77,12 @@
                         initialScrollTop = $scrollElement.scrollTop();
                     })
                     .on('pan', function (event) {
-                        $('.debug').text(event.deltaY);
-
-                        if (swipeTriggered) {
-                            return;
-                        }
-
-                        var state = $scrollElement.data('state');
-                        var swipeDirection = getSwipeDirection(event, state);
-
-                        if (!swipeDirection || swipeTriggered) {
-                            if (
-                                event.direction === Hammer.DIRECTION_UP ||
-                                event.direction === Hammer.DIRECTION_DOWN
-                            ) {
-                                $scrollElement.scrollTop(initialScrollTop - event.deltaY);
-                            }
-
-                            return;
-                        }
-
-                        Page.$html.trigger('history.swipe', swipeDirection);
-
-                        swipeTriggered = true;
-                        setTimeout(function () {
-                            swipeTriggered = false;
-                        }, 1000);
+                        $scrollElement.scrollTop(initialScrollTop - event.deltaY);
                     })
                     .on('panend', function () {
                         $scrollElement = null;
                         initialScrollTop = null;
                     });
-            }
-
-            function getSwipeDirection(event, state) {
-                var velocity = Math.abs(event.overallVelocity);
-                var direction = event.direction;
-
-                switch (true) {
-                    // case direction === Hammer.DIRECTION_RIGHT && velocity > X_VELOCITY_BOUND:
-                    //     return 'left';
-                    // case direction === Hammer.DIRECTION_LEFT && velocity > X_VELOCITY_BOUND:
-                    //     return 'right';
-                    case direction === Hammer.DIRECTION_DOWN && state === 'start' && velocity > Y_VELOCITY_BOUND:
-                        return 'up';
-                    case direction === Hammer.DIRECTION_UP && state === 'end' && velocity > Y_VELOCITY_BOUND:
-                        return 'down';
-                    default:
-                        return false;
-                }
             }
         });
 })();

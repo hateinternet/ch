@@ -140,10 +140,6 @@
             </div>
         </section>
 
-        <div class="debug">
-
-        </div>
-
         <script>
             document.cookie.indexOf('loaded=1') > -1 && document.querySelector('.loading').remove();
         </script>
@@ -231,6 +227,7 @@
                             <% data.history.forEach(function (item, index) { %>
                                 <article
                                     class="history__slide horizontal-slide <%= index % 2 ? 'history__slide_dark' : '' %>"
+                                    data-state="start"
                                     data-gallery='<%= JSON.stringify(item.gallery) %>'
                                     <%= index % 2 ? 'data-type="dark"' : '' %>
                                 >
@@ -341,7 +338,7 @@
                     <div class="timeline" data-id="achievements">
                         <ul class="timeline__inner">
                             <li class="timeline__item">
-                                <div class="timeline__text">Все дипломы</div>
+                                <div class="timeline__text">Все награды</div>
                             </li>
 
                             <%

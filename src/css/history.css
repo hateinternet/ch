@@ -281,7 +281,7 @@
     {
         overflow: hidden;
 
-        padding: 60px 0 40px;
+        padding: 60px 0 0;
 
         justify-content: flex-start;
     }
@@ -315,6 +315,15 @@
 
         font-size: 13px;
         line-height: 15px;
+    }
+
+    .history__text:after
+    {
+        display: block;
+
+        height: 40px;
+
+        content: '';
     }
 
     .history__content:after

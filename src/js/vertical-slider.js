@@ -101,26 +101,41 @@
                     return;
                 }
 
-                $slides
-                    .filter(function () {
-                        return !$(this).hasClass('history');
-                    })
-                    .each(function () {
-                        var hammertime = new Hammer(this);
+                $slides.each(function () {
+                    var hammertime = new Hammer(this);
 
-                        hammertime
-                            .get('swipe')
-                            .set({ direction: Hammer.DIRECTION_VERTICAL });
+                    hammertime
+                        .get('swipe')
+                        .set({ direction: Hammer.DIRECTION_VERTICAL });
 
-                        hammertime.on('swipe', function (event) {
-                            switch (event.direction) {
-                                case Hammer.DIRECTION_DOWN:
-                                    return move(-1);
-                                case Hammer.DIRECTION_UP:
-                                    return move(1);
-                            }
-                        });
+                    hammertime.on('swipe', function (event) {
+                        var $history = $(event.target).closest('.history__slide');
+                        var state = $history.data('state');
+
+                        var allowUp = true;
+                        var allowDown = true;
+
+                        if (state) {
+                            allowUp = state === 'start';
+                            allowDown = state === 'end';
+                        }
+
+                        switch (event.direction) {
+                            case Hammer.DIRECTION_DOWN:
+                                return allowUp && move(-1);
+                            case Hammer.DIRECTION_UP:
+                                return allowDown && move(1);
+                        }
                     });
+                });
+            }
+
+            function isHistoryTextAllowed(elem) {
+                var $wrapper = $(elem).closest('.history__slide');
+
+                console.log($wrapper.data('state'));
+
+                return true;
             }
 
             function move(direction) {
