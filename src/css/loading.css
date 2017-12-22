@@ -86,7 +86,7 @@
 .loading button
 {
     transition: transform .5s ease-in;
-    transform: translateY(100%);
+    transform: translateY(101%);
 }
 
 .loading_finished button
