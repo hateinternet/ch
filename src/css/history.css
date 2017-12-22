@@ -265,6 +265,7 @@
     .history__text
     {
         height: 35vh;
+        padding: 0 20px 0 0;
     }
 
     .history__text:after
