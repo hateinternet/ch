@@ -227,7 +227,6 @@
                             <% data.history.forEach(function (item, index) { %>
                                 <article
                                     class="history__slide horizontal-slide <%= index % 2 ? 'history__slide_dark' : '' %>"
-                                    data-state="start"
                                     data-gallery='<%= JSON.stringify(item.gallery) %>'
                                     <%= index % 2 ? 'data-type="dark"' : '' %>
                                 >

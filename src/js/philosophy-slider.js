@@ -113,7 +113,7 @@
                 var position = index * scrollStep;
                 var duration = jump ? 0 : SCROLL_DURATION;
 
-                $wrapper.animate({ scrollLeft: position }, duration);
+                $wrapper.animate({ scrollLeft: position }, duration, 'easeInOutSine');
 
                 triggerEvent();
 

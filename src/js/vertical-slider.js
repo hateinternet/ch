@@ -82,13 +82,16 @@
                     preventMouse: false,
                     callback: function (event) {
                         var direction = event.direction === 'up' ? -1 : 1;
+
                         var $text = $(event.target).closest('.history__text');
+                        var $slide = $text.closest('.history__slide');
+                        var state = $slide.length && $slide.data('state');
 
                         if (
                             !$text.length ||
                             $text.hasClass('mCS_no_scrollbar') ||
-                            $text.data('state') === 'end' && direction === 1 ||
-                            $text.data('state') === 'start' && direction === -1
+                            state === 'end' && direction === 1 ||
+                            state === 'start' && direction === -1
                         ) {
                             move(direction);
                         }
@@ -110,12 +113,13 @@
 
                     hammertime.on('swipe', function (event) {
                         var $history = $(event.target).closest('.history__slide');
+                        var $text = $(event.target).closest('.history__text');
                         var state = $history.data('state');
 
                         var allowUp = true;
                         var allowDown = true;
 
-                        if (state) {
+                        if ($text.length && state !== 'short') {
                             allowUp = state === 'start';
                             allowDown = state === 'end';
                         }
@@ -128,14 +132,6 @@
                         }
                     });
                 });
-            }
-
-            function isHistoryTextAllowed(elem) {
-                var $wrapper = $(elem).closest('.history__slide');
-
-                console.log($wrapper.data('state'));
-
-                return true;
             }
 
             function move(direction) {
@@ -171,7 +167,7 @@
 
                 position = position > maxPosition ? maxPosition : position;
 
-                $slider.animate({ scrollTop: position }, duration, function () {
+                $slider.animate({ scrollTop: position }, duration, 'easeInOutSine', function () {
                     isScrolling = false;
                 });
 

@@ -225,7 +225,7 @@
     {
         opacity: .5;
 
-        transition: all .7s cubic-bezier(.02, .01, .47, 1);
+        transition: all .7s cubic-bezier(.445, .05, .55, .95);
         transform: scale(.5);
     }
 
@@ -241,7 +241,7 @@
     {
         opacity: 1;
 
-        transition: all .7s cubic-bezier(.02, .01, .47, 1);
+        transition: all .7s cubic-bezier(.445, .05, .55, .95);
         transform: scale(1);
     }
 

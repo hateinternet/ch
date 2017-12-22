@@ -236,7 +236,7 @@
 .page_slide_collections .collections__image,
 .page_slide_collections .collections__button
 {
-    transition: transform .6s .6s cubic-bezier(.02, .01, .47, 1);
+    transition: transform .6s .6s cubic-bezier(.445, .05, .55, .95);
     transform: none;
 }
 .page_slide_collections .collections__image_top

@@ -368,7 +368,7 @@
     .horizontal-slide_current .philosophy__image
     {
         transition-delay: .6s;
-        transition-timing-function: cubic-bezier(.02, .01, .47, 1);
+        transition-timing-function: cubic-bezier(.445, .05, .55, .95);
         transition-property: transform;
     }
 

@@ -87,7 +87,7 @@
 
                 $wrapper
                     .stop()
-                    .animate({ scrollLeft: position }, duration);
+                    .animate({ scrollLeft: position }, duration, 'easeInOutSine');
 
                 updateBtns();
                 setCurrent();
