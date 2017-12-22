@@ -58,15 +58,18 @@
             }
 
             function bindToPan() {
-                var hammertime = new Hammer($scope[0]);
-
                 $wrappers.each(function () {
+                    var hammertime = new Hammer(this);
+                    var $this = $(this);
+
                     hammertime
                         .get('pan')
                         .set({ direction: Hammer.DIRECTION_ALL });
 
                     hammertime
                         .on('pan', function (event) {
+                            $this.scrollTop($this.scrollTop() - event.deltaY);
+
                             if (panTriggered) {
                                 return;
                             }
@@ -74,16 +77,20 @@
                             var $elem = $(event.target).closest('.history__content-wrapper');
                             var state = $elem.data('state');
 
+                            console.log(state);
+
                             var direction = getDirection(event, state);
 
-                            if (direction) {
-                                Page.$html.trigger('history.move', direction);
-
-                                panTriggered = true;
-                                setTimeout(function () {
-                                    panTriggered = false;
-                                }, 1000);
+                            if (!direction || panTriggered) {
+                                return;
                             }
+
+                            Page.$html.trigger('history.move', direction);
+
+                            panTriggered = true;
+                            setTimeout(function () {
+                                panTriggered = false;
+                            }, 1000);
                         })
                 })
             }
