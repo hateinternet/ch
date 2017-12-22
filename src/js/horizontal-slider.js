@@ -28,7 +28,7 @@
                     .on('resize', onResize)
                     .on('slider.vertical', onVerticalSliderChange)
                     .on('timeline.click', onTimelineClick)
-                    .on('history.move', onHistoryMove);
+                    .on('history.swipe', onHistoryMove);
             }
 
             function bindToSwipe() {

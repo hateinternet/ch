@@ -41,7 +41,7 @@
                 Page.$win
                     .on('resize', onResize)
                     .on('menu.click', onMenuClick)
-                    .on('history.move', onHistoryMove);
+                    .on('history.swipe', onHistoryMove);
             }
 
             function onResize(event) {

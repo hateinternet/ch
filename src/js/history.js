@@ -4,7 +4,7 @@
 
     $('.history')
         .each(function () {
-            var panTriggered = false;
+            var swipeTriggered = false;
             var hoverable = Page.hasState('hoverable');
 
             var $scope = $(this);
@@ -58,44 +58,55 @@
             }
 
             function bindToPan() {
-                $wrappers.each(function () {
-                    var hammertime = new Hammer(this);
-                    var $this = $(this);
+                var hammertime = new Hammer($scope[0]);
 
-                    hammertime
-                        .get('pan')
-                        .set({ direction: Hammer.DIRECTION_ALL });
+                var $scrollElement = null;
+                var initialScrollTop = null;
 
-                    hammertime
-                        .on('pan', function (event) {
-                            $this.scrollTop($this.scrollTop() - event.deltaY);
+                hammertime
+                    .get('pan')
+                    .set({ direction: Hammer.DIRECTION_ALL });
 
-                            if (panTriggered) {
-                                return;
+                hammertime
+                    .on('panstart', function (event) {
+                        $scrollElement = $(event.target).closest('.history__content-wrapper');
+                        initialScrollTop = $scrollElement.scrollTop();
+                    })
+                    .on('pan', function (event) {
+                        $('.debug').text(event.deltaY);
+
+                        if (swipeTriggered) {
+                            return;
+                        }
+
+                        var state = $scrollElement.data('state');
+                        var swipeDirection = getSwipeDirection(event, state);
+
+                        if (!swipeDirection || swipeTriggered) {
+                            if (
+                                event.direction === Hammer.DIRECTION_UP ||
+                                event.direction === Hammer.DIRECTION_DOWN
+                            ) {
+                                $scrollElement.scrollTop(initialScrollTop - event.deltaY);
                             }
 
-                            var $elem = $(event.target).closest('.history__content-wrapper');
-                            var state = $elem.data('state');
+                            return;
+                        }
 
-                            console.log(state);
+                        Page.$html.trigger('history.swipe', swipeDirection);
 
-                            var direction = getDirection(event, state);
-
-                            if (!direction || panTriggered) {
-                                return;
-                            }
-
-                            Page.$html.trigger('history.move', direction);
-
-                            panTriggered = true;
-                            setTimeout(function () {
-                                panTriggered = false;
-                            }, 1000);
-                        })
-                })
+                        swipeTriggered = true;
+                        setTimeout(function () {
+                            swipeTriggered = false;
+                        }, 1000);
+                    })
+                    .on('panend', function () {
+                        $scrollElement = null;
+                        initialScrollTop = null;
+                    });
             }
 
-            function getDirection(event, state) {
+            function getSwipeDirection(event, state) {
                 var velocity = Math.abs(event.overallVelocity);
                 var direction = event.direction;
 

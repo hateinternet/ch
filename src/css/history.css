@@ -279,7 +279,7 @@
 
     .history__content-wrapper
     {
-        overflow: auto;
+        overflow: hidden;
 
         padding: 60px 0 40px;
 

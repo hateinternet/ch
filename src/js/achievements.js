@@ -11,9 +11,8 @@
             var $images = $scope.find('.achievements__jewellery-image');
             var $diplomas = $scope.find('.achievements__diploma');
 
-            Page.$win
-                .on('resize orientationchange', onResize)
-                .resize();
+            Page.$win.on('resize orientationchange', onResize);
+            setTimeout(Page.$win.resize.bind(Page.$win), 100);
 
             $('.page_hoverable')
                 .on('mouseenter mouseleave', '.gallery-open', onHover);
