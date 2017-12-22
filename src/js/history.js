@@ -1,6 +1,7 @@
 (function () {
     var PADDING = 140;
-    var VELOCITY_BOUND = 3;
+    var X_VELOCITY_BOUND = 3;
+    var Y_VELOCITY_BOUND = 2;
 
     $('.history')
         .each(function () {
@@ -111,16 +112,16 @@
                 var direction = event.direction;
 
                 switch (true) {
-                    case velocity < VELOCITY_BOUND:
-                        return;
-                    case direction === Hammer.DIRECTION_RIGHT:
-                        return 'left';
-                    case direction === Hammer.DIRECTION_LEFT:
-                        return 'right';
-                    case direction === Hammer.DIRECTION_DOWN && state === 'start':
+                    // case direction === Hammer.DIRECTION_RIGHT && velocity > X_VELOCITY_BOUND:
+                    //     return 'left';
+                    // case direction === Hammer.DIRECTION_LEFT && velocity > X_VELOCITY_BOUND:
+                    //     return 'right';
+                    case direction === Hammer.DIRECTION_DOWN && state === 'start' && velocity > Y_VELOCITY_BOUND:
                         return 'up';
-                    case direction === Hammer.DIRECTION_UP && state === 'end':
+                    case direction === Hammer.DIRECTION_UP && state === 'end' && velocity > Y_VELOCITY_BOUND:
                         return 'down';
+                    default:
+                        return false;
                 }
             }
         });
