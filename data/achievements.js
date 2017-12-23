@@ -15,7 +15,7 @@ module.exports = [
                 {
                     title: 'Диплом победителя',
                     text: 'I место в номинации<br>\"Ювелирный эксперимент\"',
-                    image: 'img/content/diploma/2011/junwex_experiment_piter/diploma_experiment_big_bang_2011@2x.png'
+                    image: 'img/content/diploma/2011/junwex_experiment_piter/diploma_experiment_big_bang_2011.png'
                 }
 
             ]
@@ -110,12 +110,12 @@ module.exports = [
                 {
                     title: 'Гарнитур',
                     text: '\"Сердце океана\"',
-                    image: 'img/content/diploma/2013/alinbars_13/jewerly_granpri_roual_blue_2012_sergi.png'
+                    image: 'img/content/diploma/2013/alinbars_13/jewerly_roual_blue_2012_sergi.png'
                 },
                 {
                     title: 'Гарнитур',
                     text: '\"Сердце океана\"',
-                    image: 'img/content/diploma/2013/alinbars_13/jewerly_granpri_roual_blue_2012_ring.png'
+                    image: 'img/content/diploma/2013/alinbars_13/jewerly_roual_blue_2012_ring.png'
                 },
             ]
         }
@@ -132,8 +132,8 @@ module.exports = [
         jewelry: {
             title: 'Кольцо \"Принцесса Лотоса\"',
             subtitle: 'Золото, бриллианты',
-            image: 'img/content/diploma/2013/junwex_moscow/diploma_ocean_heart_and_prince_2013.png',
-            image2x: 'img/content/diploma/2013/junwex_moscow/diploma_ocean_heart_and_prince_2013@2x.png'
+            image: 'img/content/diploma/2013/junwex_moscow/jewerly_prince_2012_preview.png',
+            image2x: 'img/content/diploma/2013/junwex_moscow/jewerly_prince_2012_preview@2x.png'
         },
         gallery: {
             year: 2013,
@@ -167,14 +167,13 @@ module.exports = [
                 {
                     title: 'Гарнитур',
                     text: '\"Сердце океана\"',
-                    image: 'img/content/diploma/2013/alinbars_13/jewerly_granpri_roual_blue_2012_sergi.png'
+                    image: 'img/content/diploma/2013/alinbars_13/jewerly_roual_blue_2012_sergi.png'
                 },
                 {
                     title: 'Гарнитур',
                     text: '\"Сердце океана\"',
-                    image: 'img/content/diploma/2013/alinbars_13/jewerly_granpri_roual_blue_2012_ring.png'
+                    image: 'img/content/diploma/2013/alinbars_13/jewerly_roual_blue_2012_ring.png'
                 },
-
             ]
         }
     },
@@ -214,12 +213,12 @@ module.exports = [
                 {
                     title: 'Гарнитур',
                     text: '\"Сердце океана\"',
-                    image: 'img/content/diploma/2013/alinbars_13/jewerly_granpri_roual_blue_2012_sergi.png'
+                    image: 'img/content/diploma/2013/alinbars_13/jewerly_roual_blue_2012_sergi.png'
                 },
                 {
                     title: 'Гарнитур',
                     text: '\"Сердце океана\"',
-                    image: 'img/content/diploma/2013/alinbars_13/jewerly_granpri_roual_blue_2012_ring.png'
+                    image: 'img/content/diploma/2013/alinbars_13/jewerly_roual_blue_2012_ring.png'
                 },
             ]
         }
@@ -251,7 +250,7 @@ module.exports = [
                 {
                     title: 'Паспорт ювелирного изделия',
                     text: 'I место в номинации<br>\"Классика XX столетия\"',
-                    image: 'img/content/diploma/2014/junwex_snow_queen/passport_snow_queen_junwex_2014.jpg'
+                    image: 'img/content/diploma/2014/junwex_snow_queen/passport_snow_queen_junwex_2014.jpg.png'
                 },
                 {
                     title: 'Гарнитур',
@@ -314,7 +313,7 @@ module.exports = [
                 {
                     title: 'Гарнитур',
                     text: '\"Одиссея\"',
-                    image: 'img/content/diploma/2014/junwex_odissea/jewerly_odissea_junwex_201_ring.png'
+                    image: 'img/content/diploma/2014/junwex_odissea/jewerly_odissea_junwex_2014_ring.png'
                 },
 
             ]
@@ -346,7 +345,7 @@ module.exports = [
                 {
                     title: 'Паспорт ювелирного изделия',
                     text: 'I место в номинации<br>\"Бриллиантовый стиль\"',
-                    image: 'iimg/content/diploma/2014/junwex_lucky_star/passport_lucky_star_junwex_2014.png'
+                    image: 'img/content/diploma/2014/junwex_lucky_star/passport_lucky_star_junwex_2014.png'
                 },
                 {
                     title: 'Коллекция',
@@ -384,6 +383,13 @@ module.exports = [
             image: 'img/content/diploma/2014/alinbars12_best_jewerly/diploma_lucky_star_kazan_2014.png',
             image2x: 'img/content/diploma/2014/alinbars12_best_jewerly/diploma_lucky_star_kazan_2014@2x.png',
         },
+        jewelry: {
+            title: 'Коллекция \"Под счастливой звездой\"',
+            subtitle: 'Золото, бриллианты',
+            image: 'img/content/diploma/2014/alinbars12_best_jewerly/jewerly_lucky_star_kazan_2014_preview.png',
+            image2x: 'img/content/diploma/2014/alinbars12_best_jewerly/jewerly_lucky_star_kazan_2014_preview@2x.png'
+        },
+
         gallery: {
             year: 2014,
             title: 'Конкурс \"Алтын Барс\"',
@@ -479,7 +485,7 @@ module.exports = [
                 {
                     title: 'Диплом победителя',
                     text: 'Гран-при',
-                    image: 'img/content/diploma_horiz.png'
+                    image: 'img/content/diploma/2015/alinbars_queen/Diploma_granpri_russian_imperator_kazan_2015.png'
                 },
                 {
                     title: 'Серьги',
