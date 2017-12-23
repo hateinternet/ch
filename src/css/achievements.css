@@ -1,8 +1,11 @@
+.achievements
+{
+    background: #f7f6f5;
+}
+
 .horizontal-slide.achievements__slide
 {
     display: inline-flex;
-
-    background: #f7f6f5;
 
     justify-content: center;
     align-items: center;
@@ -88,6 +91,7 @@
 
 .achievements__jewellery-image
 {
+    max-height: 200px;
     margin: 0 0 15px;
 }
 
@@ -306,6 +310,8 @@
 {
     .horizontal-slide.achievements__slide
     {
+        padding: 50px 250px;
+
         transform: translateZ(0) scale(1.2);
     }
 }

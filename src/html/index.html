@@ -282,7 +282,7 @@
                             <article class="achievements__slide horizontal-slide">
                                 <div class="achievements__total">
                                     <div class="achievements__total-number"><%= data.achievements.length %></div>
-                                    <div class="achievements__total-text">награды</div>
+                                    <div class="achievements__total-text">наград</div>
                                 </div>
                             </article>
 
@@ -306,19 +306,23 @@
                                             </div>
                                         </div>
 
-                                        <figure class="gallery-open">
-                                            <img draggable="false" class="achievements__jewellery-image gallery-open__image" src="<%= item.jewelry.image %>" srcset="<%= item.jewelry.image2x %> 2x" alt="">
+                                        <% if (item.jewelry) { %>
 
-                                            <figcaption>
-                                                <p class="achievements__jewellery-name">
-                                                    <%= item.jewelry.title %>
-                                                </p>
+                                            <figure class="gallery-open">
+                                                <img draggable="false" class="achievements__jewellery-image gallery-open__image" src="<%= item.jewelry.image %>" srcset="<%= item.jewelry.image2x %> 2x" alt="">
 
-                                                <div class="achievements__passport">
-                                                    <%= item.jewelry.subtitle %>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
+                                                <figcaption>
+                                                    <p class="achievements__jewellery-name">
+                                                        <%= item.jewelry.title %>
+                                                    </p>
+
+                                                    <div class="achievements__passport">
+                                                        <%= item.jewelry.subtitle %>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
+
+                                        <% } %>
                                     </div>
 
                                 </article>
