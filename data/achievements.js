@@ -132,8 +132,8 @@ module.exports = [
         jewelry: {
             title: 'Кольцо \"Принцесса Лотоса\"',
             subtitle: 'Золото, бриллианты',
-            image: 'img/content/diploma/2013/junwex_moscow/diploma_ocean_heart_and_prince_2013_preview.png',
-            image2x: 'img/content/diploma/2013/junwex_moscow/diploma_ocean_heart_and_prince_2013_preview@2x.png'
+            image: 'img/content/diploma/2013/junwex_moscow/diploma_ocean_heart_and_prince_2013.png',
+            image2x: 'img/content/diploma/2013/junwex_moscow/diploma_ocean_heart_and_prince_2013@2x.png'
         },
         gallery: {
             year: 2013,

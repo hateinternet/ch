@@ -351,3 +351,9 @@
         transform: scale(.72);
     }
 }
+
+.gallery_one .gallery__count,
+.gallery_one .arrow-button
+{
+    display: none;
+}

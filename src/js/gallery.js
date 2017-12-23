@@ -109,7 +109,10 @@
 
                 updateDimensions();
 
-                moveTo(data.list.length > 1 ? EXTRA_ITEMS : 0, true);
+                var isOne = data.list.length === 1;
+
+                $gallery.toggleClass('gallery_one', isOne);
+                moveTo(isOne ? 0 : EXTRA_ITEMS, true);
             }
 
             function updateInfo(data) {
