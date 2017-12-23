@@ -91,7 +91,7 @@
 
 .achievements__jewellery-image
 {
-    max-height: 200px;
+    max-height: 120px;
     margin: 0 0 15px;
 }
 
@@ -313,5 +313,13 @@
         padding: 50px 250px;
 
         transform: translateZ(0) scale(1.2);
+    }
+}
+
+@media (min-width: 1600px)
+{
+    .achievements__jewellery-image
+    {
+        max-height: 180px;
     }
 }

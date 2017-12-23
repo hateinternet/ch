@@ -41,7 +41,7 @@
                         Page.delState('gallery');
                     })
                     .on('click', '.gallery__item', function () {
-                        var isNext = $(this).index() > index;
+                        var isNext = $(this).index() >= index;
 
                         move(isNext ? 1 : -1);
                     })
@@ -109,18 +109,18 @@
 
                 updateDimensions();
 
-                moveTo(EXTRA_ITEMS, true);
+                moveTo(data.list.length > 1 ? EXTRA_ITEMS : 0, true);
             }
 
             function updateInfo(data) {
                 $totalCount
-                    .text(data.list.length);
+                    .html(data.list.length);
 
                 $title
-                    .text(data.title);
+                    .html(data.title);
 
                 $year
-                    .text(data.year)
+                    .html(data.year)
                     [data.year ? 'show' : 'hide']();
             }
 
@@ -129,7 +129,10 @@
                     return html + itemHtml(item, index);
                 }, ''));
 
-                addFakes();
+                if (list.length > 1) {
+                    addFakes();
+                }
+
                 cacheElems();
             }
 
@@ -147,7 +150,7 @@
                         'class="gallery__item-image" ' +
                         'alt="' + item.title + '" ' +
                         'src="' + item.image + '" ' +
-                        'srcset="' + item.image.replace(/\.[^\.]*$/, '_2x$&') + ' 2x" ' +
+                        'srcset="' + item.image.replace(/\.[^\.]*$/, '@2x$&') + ' 2x" ' +
                     '/>'
             }
 
@@ -215,7 +218,7 @@
 
             function setCurrent() {
                 $currentCount
-                    .text(index - EXTRA_ITEMS + 1);
+                    .html(index - EXTRA_ITEMS + 1);
 
                 $items
                     .removeClass('gallery__item_current')

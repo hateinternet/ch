@@ -315,24 +315,24 @@ module.exports = [
         label: 'Ювелирный бренд.<br>Топ 10',
         title: 'Ювелирный бренд. Топ 10',
         text: '<p>К 2015 году холдинга имеет значительный опыт участия и завоевания громких побед на российских и международных ювелирных выставках, а также в престижных конкурсах. Множество наград и призов, полученных за эти годы, многократно подтверждает талант, креативность и мастерство дизайнеров и ювелиров JF Carat.</p><p>В числе регалии компании только за последние пять лет: Золотая медаль, 2 диплома первой степени, 4 Гран-При, 10 дипломов за первое место в различных номинациях, среди которых: «Бриллиантовый стиль», «Классика XX столетия», «Драгоценный камень», «Эксклюзивные украшения с драгоценными камнями» и многие другие.</p><p>Однако, столь высокая и глобальна оценка деятельности компании-производителя как диплом «Ювелирный бренд. Топ 10» полученный в этом году от Клуба «Российская Ювелирная Торговля» стал, безусловно, одной из самых знаковых наград для JF Carat.</p>',
-        image: 'img/content/history/2015/TOP 10/jewerly_gold_queen_2015_preview.png',
-        image2x: 'img/content/history/2015/TOP 10/jewerly_gold_queen_2015_preview@2x.png',
+        image: 'img/content/history/2015/TOP_10/jewerly_gold_queen_2015_preview.png',
+        image2x: 'img/content/history/2015/TOP_10/jewerly_gold_queen_2015_preview@2x.png',
         gallery: {
             year: 2015,
             title: 'Ювелирный бренд. Топ 10',
             list: [
                 {
-                    image: 'img/content/history/2015/TOP 10/jewerly_gold_queen_2015.png',
+                    image: 'img/content/history/2015/TOP_10/jewerly_gold_queen_2015.png',
                     title: 'Серьги  \"Российская императрица\"',
                     text: 'Золото, изумруды, бриллианты'
                 },
                 {
-                    image: 'img/content/history/2015/TOP 10/granpri_gold_queen_kazan_2015.png',
+                    image: 'img/content/history/2015/TOP_10/granpri_gold_queen_kazan_2015.png',
                     title: 'Гран-при конкурса \"Алтын Барс\"',
                     text: 'в рамках XIII выставки \"ЮвелирЭкспо. Казань\»'
                 },
                 {
-                    image: 'img/content/history/2015/TOP 10/junwex_gold_queen_2015.png',
+                    image: 'img/content/history/2015/TOP_10/junwex_gold_queen_2015.png',
                     title: 'I место в номинации \"Драгоценный камень\"',
                     text: 'Конкурс XIV выставки JUNWEX \"Новый Русский Стиль-2015\"'
                 }
@@ -344,24 +344,24 @@ module.exports = [
         label: 'Рождение<br>нового бренда',
         title: 'Рождение нового бренда',
         text: '<p>2015 год – это рубежный год для компании Александра Чамовских. JF Carat выходит на уровень производства позволяющий создавать нечто совершенно безупречное и по форме, и по содержанию. Холдинг использует только лучшие драгоценные камни планеты, воплощая лучшие дизайнерские идеи с глубоким художественным замыслом. Это не просто украшения – это воплощение настоящей ювелирной сказки. Александр наконец-то может получить собственную высшую оценку и, что очень важно, с радостью и гордостью преподнести украшения от своего холдинга самым дорогим и близким людям.</p><p>Теперь для собственника холдинга становится абсолютно очевидно, что для дальнейшего развития необходимо разделить направлений работы, оставив под маркой JF Carat только мелкосерийное производство. Создание украшений luxury-сегмента – произведений высокого ювелирного искусства важно обособить, ведь оно отличается тонкой спецификой и требует особых условий</p><p>Так рождается новый бренд - CHAMOVSKIKH Jewellery House.</p>',
-        image: 'img/content/history/2015/brand Chamovskikh/ch_salon_2015_openong_photo_preview.png',
-        image2x: 'img/content/history/2015/brand Chamovskikh/ch_salon_2015_openong_photo_preview@2x.png',
+        image: 'img/content/history/2015/brand_Chamovskikh/ch_salon_2015_openong_photo_preview.png',
+        image2x: 'img/content/history/2015/brand_Chamovskikh/ch_salon_2015_openong_photo_preview@2x.png',
         gallery: {
             year: 2015,
             title: 'Рождение нового бренда',
             list: [
                 {
-                    image: 'img/content/history/2015/brand Chamovskikh/ch_salon_2015_openong_photo.png',
+                    image: 'img/content/history/2015/brand_Chamovskikh/ch_salon_2015_openong_photo.png',
                     title: 'CHAMOVSKIKH Jewellery House',
                     text: 'Открытие первого фирменного салона'
                 },
                 {
-                    image: 'img/content/history/2015/brand Chamovskikh/ch_salon_2015_01.png',
+                    image: 'img/content/history/2015/brand_Chamovskikh/ch_salon_2015_01.png',
                     title: 'CHAMOVSKIKH Jewellery House',
                     text: 'Открытие первого фирменного салона'
                 },
                 {
-                    image: 'img/content/history/2015/brand Chamovskikh/ch_salon_2015_02.png',
+                    image: 'img/content/history/2015/brand_Chamovskikh/ch_salon_2015_02.png',
                     title: 'CHAMOVSKIKH Jewellery House',
                     text: 'Открытие первого фирменного салона'
                 }
