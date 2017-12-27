@@ -229,14 +229,6 @@
         transform: scale(.5);
     }
 
-    .gallery__item:hover .gallery__item-image
-    {
-        opacity: .6;
-
-        transition-duration: .2s;
-        transform: scale(.6);
-    }
-
     .gallery__item.gallery__item_current .gallery__item-image
     {
         opacity: 1;

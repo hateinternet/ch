@@ -5,6 +5,6 @@ module.exports = {
     },
     link: {
         href: '//google.com',
-        text: 'Перейти в каталог'
+        text: 'Перейти к коллекциям'
     }
 };

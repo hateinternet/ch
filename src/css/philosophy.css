@@ -68,7 +68,7 @@
 
     background-color: #bd8f65;
 
-    transition: transform 0s 1s;
+    transition: transform 0s 1.2s;
     transform: scaleX(0);
     transform-origin: 0 0;
 }
@@ -273,7 +273,7 @@
 
         opacity: 1;
 
-        transition: transform 1s, opacity .5s;
+        transition: transform 1.2s, opacity .6s;
     }
 
     .philosophy__content_prev,
@@ -281,17 +281,17 @@
     {
         opacity: .75;
 
-        transition: transform 1s, opacity .5s .5s;
+        transition: transform 1.2s, opacity .6s .6s;
     }
 
     .philosophy__content_prev
     {
-        transform: scale(.9) translateX(-25px);
+        transform: scale(.9) translate3d(-25px, 0, 0);
     }
 
     .philosophy__content_next
     {
-        transform: scale(.9) translateX(25px);
+        transform: scale(.9) translate3d(25px, 0, 0);
     }
 
     .philosophy__slide .philosophy__content
@@ -365,72 +365,72 @@
     .horizontal-slide_current .philosophy__link,
     .horizontal-slide_current .philosophy__image
     {
-        transition-delay: .6s;
+        transition-delay: .8s;
         transition-timing-function: cubic-bezier(.445, .05, .55, .95);
         transition-property: transform;
     }
 
     .philosophy__content
     {
-        transition-duration: .5s;
+        transition-duration: .7s;
     }
 
     .horizontal-slide:not(.horizontal-slide_current) .philosophy__content
     {
-        transform: translateX(-30px);
+        transform: translate3d(-8%, 0, 0);
     }
 
     .horizontal-slide_current + .horizontal-slide .philosophy__content
     {
-        transform: translateX(30px);
+        transform: translate3d(8%, 0, 0);
     }
 
     .philosophy__label
     {
-        transition-duration: .5s;
+        transition-duration: .7s;
     }
 
     .horizontal-slide:not(.horizontal-slide_current) .philosophy__label
     {
-        transform: translateX(-50px);
+        transform: translate3d(-10%, 0, 0);
     }
 
     .horizontal-slide_current + .horizontal-slide .philosophy__label
     {
-        transform: translateX(50px);
+        transform: translate3d(10%, 0, 0);
     }
 
     .philosophy__quote,
     .philosophy__link
     {
-        transition-duration: .6s;
+        transition-duration: .8s;
     }
 
     .horizontal-slide:not(.horizontal-slide_current) .philosophy__quote,
     .horizontal-slide:not(.horizontal-slide_current) .philosophy__link
     {
-        transform: translateX(-75px);
+        transform: translate3d(-15%, 0, 0);
     }
 
     .horizontal-slide_current + .horizontal-slide .philosophy__quote,
     .horizontal-slide_current + .horizontal-slide .philosophy__link
     {
-        transform: translateX(75px);
+        transform: translate3d(15%, 0, 0);
     }
 
     .philosophy__image
     {
-        transition-duration: .7s;
+        transition-duration: .8s;
     }
 
     .horizontal-slide:not(.horizontal-slide_current) .philosophy__image
     {
-        transform: translateX(-100px);
+        transform: translate3d(-30%, 0, 0);
     }
 
     .horizontal-slide_current + .horizontal-slide .philosophy__image
     {
-        transform: translateX(100px);
+        transform: translate3d(30%, 0, 0);
     }
 }
 

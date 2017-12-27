@@ -2,72 +2,106 @@
 {
     position: absolute;
     right: 0;
-    bottom: 7vh;
+    bottom: 6vh;
     left: 0;
+    width: 100px;
 
-    box-sizing: border-box;
-    width: 18px;
-    height: 25px;
     margin: auto;
 
     text-align: center;
-
-    line-height: 10px;
-
-    border: 1px solid #fff;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, .2);
-
-    transition: all .2s ease-in-out;
 }
 
-.page:not(.page_hoverable) .scroll-icon
-{
-    bottom: 25px;
-
-    height: auto;
-
-    border: none;
-    background: none;
-}
-
-.scroll-icon:before
-{
-    display: inline-block;
-
-    width: 2px;
-    height: 5px;
-
-    content: '';
-
-    background: #fff;
-}
-
-.page:not(.page_hoverable) .scroll-icon:before
+.page:not(.page_js) .scroll-icon,
+.page:not(.page_hoverable) .scroll-icon_mouse,
+.page.page_hoverable .scroll-icon_touch
 {
     display: none;
+}
+
+.scroll-icon_mouse
+{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .2);
+    position: relative;
+}
+
+.scroll-icon_mouse:before
+{
+    border: 1px solid #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+
+    height: 30px;
+    width: 20px;
+    margin: 10px 0 0;
+    content: '';
+    display: inherit;
+}
+
+.scroll-icon__dot
+{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    top: 13px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    margin: auto;
+    background: #fff;
+
+    animation: drip infinite 2s linear;
+}
+
+.scroll-icon__dot:nth-child(2)
+{
+    animation-delay: 1s;
+}
+
+@keyframes drip
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    25%,
+    50%
+    {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+
+    75%
+    {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+.scroll-icon_touch
+{
+    display: inline-block;
+    width: 10px;
+    bottom: 25px;
 }
 
 .scroll-icon__arrow
 {
     position: relative;
-    top: 18px;
+    top: 0;
 
     overflow: hidden;
 
+    margin: 0 0 2px;
     height: 5px;
 
-    transform: scaleX(1.2);
-    animation: pulse infinite 1.5s linear;
-}
-
-.page:not(.page_hoverable) .scroll-icon__arrow
-{
-    top: 0;
-
-    height: 8px;
-
     transform: scale(1.6, 1.4);
+    animation: pulse infinite 1.5s linear;
 }
 
 .scroll-icon__arrow:nth-child(2)
@@ -83,7 +117,7 @@
 .scroll-icon__arrow:before
 {
     position: relative;
-    top: -8px;
+    top: -12px;
 
     display: inline-block;
 

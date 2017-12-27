@@ -1,4 +1,6 @@
 (function () {
+    Page.setState('js');
+
     delayTransitions();
     checkIfHidpi();
     checkIfHoverable();

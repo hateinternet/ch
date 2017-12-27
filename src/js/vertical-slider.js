@@ -1,5 +1,5 @@
 (function () {
-    var SCROLL_DURATION = 1000;
+    var SCROLL_DURATION = 1200;
 
     $('.vertical-slider')
         .each(function () {

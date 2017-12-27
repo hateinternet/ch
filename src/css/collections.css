@@ -208,7 +208,7 @@
 .collections__button,
 .collections__text
 {
-    transition: transform 1s;
+    transition: transform 1.2s;
     transform: translateZ(0);
 }
 
@@ -236,7 +236,7 @@
 .page_slide_collections .collections__image,
 .page_slide_collections .collections__button
 {
-    transition: transform .6s .6s cubic-bezier(.445, .05, .55, .95);
+    transition: transform .7s .7s cubic-bezier(.445, .05, .55, .95);
     transform: none;
 }
 .page_slide_collections .collections__image_top

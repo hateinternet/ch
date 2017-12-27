@@ -21,7 +21,7 @@
 
     border-bottom: 1px solid;
 
-    transition: margin 1s ease-in-out;
+    transition: margin 1.2s ease-in-out;
 }
 
 .timeline__item
@@ -71,7 +71,7 @@
 
     opacity: 0;
 
-    transition: all 1s ease-in-out;
+    transition: all 1.2s ease-in-out;
     transform: translateZ(0);
 }
 
@@ -128,7 +128,7 @@
     font-size: 13px;
     line-height: 1;
 
-    transition: transform 1s ease-in-out;
+    transition: transform 1.2s ease-in-out;
     transform-origin: 50% 100%;
 }
 
